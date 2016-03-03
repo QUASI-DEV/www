@@ -3,12 +3,12 @@
 
 var langs = [
   ['index.html'   ,'img/icon_en.png','english'], 
-  ['index_de.html','img/icon_de.png','german',false], 
-  ['index_fr.html','img/icon_fr.png','french',false], 
+  ['index_de.html','img/icon_de.png','german',true], 
+  ['index_fr.html','img/icon_fr.png','french',true], 
   ['index_ru.html','img/icon_ru.png','russian'], 
   ['index_pl.html','img/icon_pl.png','polish'], 
-  ['index_es.html','img/icon_es.png','spanish',false], 
-  ['index_ja.html','img/icon_ja.png','japanese',false], 
+  ['index_es.html','img/icon_es.png','spanish',true], 
+  ['index_ja.html','img/icon_ja.png','japanese',true], 
   ['index_zh.html','img/icon_zh.png','chinese'] 
 ];
 
