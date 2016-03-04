@@ -1,6 +1,6 @@
 
 /// <reference path="../typings/node/node.d.ts" />
-var allLangs= true
+var allLangs= false; 
 var langs = [
   ['index.html'   ,'img/icon_en.png','english'], 
   ['index_de.html','img/icon_de.png','german',allLangs], 
