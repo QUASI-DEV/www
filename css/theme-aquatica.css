@@ -1321,20 +1321,21 @@ img.phone-portrait {
   padding-bottom: 16px;
 }
 .client-row img {
-  max-height: 60px;
-  max-width: 140px;
+  max-height: 80px;
+  max-width: 200px;
   opacity: 1; /* was 0.3 */ 
   -webkit-transition: all .3s ease;
   -moz-transition: all .3s ease;
   transition: all .3s ease;
   -webkit-backface-visibility: none;
 }
+
 .client-row img:hover {
   opacity: 1;
 }
 .client-row .row-wrapper {
   display: inline-block;
-  width: 80%;
+  width: 90%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .client-row:last-child .row-wrapper {
@@ -1362,6 +1363,18 @@ img.phone-portrait {
   transition: all .3s ease;
   opacity: 0.4;
 }
+
+.clients-2 img {
+  max-height: 60px;
+  max-width: 140px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  opacity: 0.4;
+}
+
+
+
 .clients-2 img:hover {
   opacity: 1;
 }
