@@ -112,7 +112,7 @@ We're currently approaching our partners and various financial institutions to t
 
 ### Aren't the Slocks going to get vandalized?
 
-Of course some will, as Slocks aren't a panacea for theft or damage. What Slocks can do that traditional locks cannot, is provide an insurance option 'baked' into the usage contract. 
+Of course some will, as Slocks aren't a panacea against theft or damage. What Slocks can do that traditional locks cannot, is provide an insurance option 'baked' into the usage contract. 
 
 If no insurance is required in the case of lower value or cumbersome items, a basic deposit implementation is provided by default and will suffice.  
 
