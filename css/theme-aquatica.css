@@ -277,7 +277,7 @@ section.duplicatable-content {
   padding-bottom: 40px;
 }
 section:nth-of-type(odd) {
-  background: #f4f4f4;
+  background: #f8f8f8;
 }
 section:nth-of-type(even) {
   background: #ffffff;
@@ -2434,7 +2434,7 @@ input[type="submit"] {
   height: 100%;
   top: 0px;
   content: '';
-  opacity: 0.4;
+  opacity: 0.6;
   z-index: 2;
   background-color: #01a2a6;
   -webkit-transition: all .5s ease;
