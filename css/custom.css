@@ -78,3 +78,11 @@ img.grayscale {
   margin-left: 8px;
   
 }
+
+
+/* turn off showing links in prints */
+@media print {
+   a[href]:after {
+      content: "" !important;
+   }
+}
