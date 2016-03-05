@@ -1,8 +1,7 @@
-> Version 1.4
+> Version 1.5
 
 # Slock.it, in-depth
   
-> This document is in development, it can and will change. We'd love your feedback.<br>
 > To become part of the conversation, ask questions or receive help, join our [Slack chat room](http://Slock.it:3000/).
 
 
