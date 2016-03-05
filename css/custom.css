@@ -276,3 +276,10 @@ img.grayscale {
        url('/fonts/Open-Sans-800italic/Open-Sans-800italic.svg#OpenSans') format('svg');
 }
 
+
+/* turn off showing links in prints */
+@media print {
+   a[href]:after {
+      content: "" !important;
+   }
+}
