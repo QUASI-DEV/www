@@ -283,3 +283,10 @@ img.grayscale {
       content: "" !important;
    }
 }
+
+
+form .bg1 {
+  background-color: #F1f1f1;
+  padding: 10px;
+  padding-left: 20px;
+}

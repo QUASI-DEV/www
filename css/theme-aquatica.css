@@ -1243,7 +1243,7 @@ img.phone-portrait {
   font-size: 32px;
 }
 .feature-icon-left .feature-text {
-  width: 217px;
+  width: 100%;
   float: left;
   padding-top: 8px;
 }
