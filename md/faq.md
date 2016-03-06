@@ -10,6 +10,15 @@
 ## The Project
 
 
+### Where am I?
+
+Slock.it UG is a German company building the future infrastructure of the collaborative economy. Our first product, the [Ethereum Computer](/ethereum_computer.html), bring blockchain technology to the entire home, making it possible to rent access to any compatible smart object and accept payments without intermediaries. We aim for this product and its ecosystem to be funded by a DAO, a type of digital company where backers benefits financially from the revenue of the products they supported - think of it as a Kickstarter on steroids.
+
+The DAO model is free and open source for anyone to reproduce or study, and our white paper can be downloaded [here](http://j.mp/slockit).
+
+Slock.it UG will soon make its Ethereum Computer proposal to the DAO available to the public. Once ready, it will be posted on this website in .pdf format.
+
+
 ### What are you trying to achieve?
 
 Our mission is to build the future infrastructure of the sharing economy by enabling anyone to rent, sell or share anything - without middlemen.
@@ -28,8 +37,7 @@ If it can be locked, it can be Slocked!
 For an in-depth introduction to our vision, please see Christoph Jentzsch's [project reveal at Devcon One](https://www.youtube.com/embed/49wHQoJxYPo?start=29s&showinfo=0&rel=0&modestbranding=1).
 
 
-
-### Who is Slock.it's potential market?
+### Who is the potential market?
 
 Anywhere where there are underused assets such as parked cars, parking slots or temporarily vacant apartments, there is an opportunity to make a profit using Slock.it. Our solution enables both consumers and businesses to turn their assets into income. Almost anything can be retrofitted with a Slock: homes, offices, power tools, bicycles, household electronics, wifi routers, cars, motorcycles and of course lockers.
 
@@ -55,24 +63,24 @@ We are currently reaching out to a number of partners, in particular:
 
 ### Is Slock.it open source?
 
-As the service provider for the DAO, Slock.it GmbH will make all the code, the smart contracts, user interfaces, mobile apps, and everything forming the DAO free and open source, for anyone to use and re-purpose. We'll not only make these things public, we'll also do everything in our power to see companies other than us develop Slock.it compatible products, as we are keen to see the ecosystem grow beyond what we started.
+As the service provider for the DAO, Slock.it UG will make all the code, the smart contracts, user interfaces, mobile apps, and everything forming the DAO and the output of all the DAO commissioned worked free and open source, for anyone to use and re-purpose. We'll not only make these things public, we'll also do everything in our power to see companies other than us develop Slock.it compatible products, as we are keen to see the ecosystem grow beyond what we started.
 
 
-### What's in it for Slock.it GmbH then?
+### What's in it for Slock.it UG then?
 
-At the end of the the DAO token sale, Slock.it GmbH will become the DAO's default service provider. Slock.it GmbH is a for profit company, and the DAO will be one of its clients. It's critical for us to align incentives between the DAO and our company, so you can expect a symbiotic relationship: what we will work on privately will also benefit the Slock.it ecosystem as a whole. For example, Slock.it GmbH could engage in partnerships with lock manufacturers, consult for real estate companies building smart homes, integrate the Slock.it API at part of popular smart objects, work with banks for Slocks to accept FIAT payments, etc. 
+At the end of the the DAO token sale, Slock.it UG will become the DAO's default service provider. Slock.it UG is a for profit company, and the DAO will be one of its clients. It's critical for us to align incentives between the DAO and our company, so you can expect a symbiotic relationship: what we will work on privately should also benefit the Slock.it ecosystem as a whole. For example, Slock.it UG could engage in partnerships with lock manufacturers, consult for real estate companies building smart homes, integrate the Slock.it API at part of popular smart objects, work with banks for Slocks to accept FIAT payments, etc. 
 
 
 ### Can I help with anything?
 
-Yes, it's an open source project and everyone is encouraged to participate in any way they can. We're currently trialling a volunteer program in the #communityorganizers of our Slack.
+Yes, it's an open source project and everyone is encouraged to participate in any way they can. We're currently trialling a volunteer program in the #communityorganizers of our [Slack](http://slock.it:3000/).
 
 Things we could use help with include:
 
 - Reviewing and contributing code on [github](https://github.com/Slockit/) (it's an open source project after all!)
-- Analyzing the market in different parts of the world
 - Translating the site, the whitepaper, the videos and the apps into your native language
-- Operating local forums (especially in non-roman character sets)
+- Introduce Slock.it UG to partners with a view to integrate new connected products
+- Introduce Slock.it at meetups
 - Testing prototype hardware
 
 To join, simply request access to our [chat room](http://slock.it:3000/).
@@ -85,14 +93,14 @@ To join, simply request access to our [chat room](http://slock.it:3000/).
 
 ### What are 'Slocks'?
 
-'Slock' is a porte-manteau of 'Smart, Safe and Secure Lock'. Any object supporting ZigBee, Z-Wave, Bluetooth LE or Wi-Fi can already be used as a Slock thanks to our first product, the Ethereum Computer. When it comes to powering up a ‘dumb’ object, it will be a case of retrofitting it using smart plugs. Slocks will also come in many shapes and sizes: bike Slocks, car Slocks and door Slocks are already being explored through partnerships with IoT manufacturers.
+'Slock' is a porte-manteau of 'Smart, Safe and Secure Lock'. Any object supporting ZigBee, Z-Wave, Bluetooth LE or Wi-Fi can already be used as a Slock thanks to our first product, the [Ethereum Computer](/ethereum_computer.html). When it comes to powering up a ‘dumb’ object, it will be a case of retrofitting it using smart plugs.
 
 
 ### How do Slocks work?
 
 The owner of a Slock sets a deposit amount (if needed) and a price for using the item. Users can find the Slock using the mobile app and then make a payment on the Ethereum blockchain, thereby gaining permission to open or close that Slock with their smart phone.
 
-If selected, a deposit is held as collateral in a smart contract until the user returns the item. The smart contract is automatically enforced, with the deposit returned to the user minus the cost of the rental, which in turn will be automatically disbursed to the owner of the Slock.
+An (optional) deposit is held as collateral in a smart contract until the user returns the item. The smart contract is automatically enforced, with the deposit returned to the user minus the cost of the rental, which in turn will be automatically disbursed to the owner of the Slock.
 
 We're working with our partner [SafeShare](http://www.safeshareinsurance.com/), to provide ad-hoc insurance where a deposit wouldn't be appropriate.
 
@@ -101,7 +109,7 @@ All of this happens without any assistance from a third-party.
 
 ### Will users have to pay every time they use a Slock?
 
-They won't have to, as only renting access to the lock costs money. Any current user (which could also include the owner) sends [Whisper](https://github.com/ethereum/wiki/wiki/Whisper-Overview)-signed messages (which do not cost anything) to open or close the Slock.
+They won't have to, as only renting access to the lock costs money. Any active user (which could also include the owner) only need to send [Whisper](https://github.com/ethereum/wiki/wiki/Whisper-Overview)-signed messages (which do not cost anything) to open or close the Slock.
 
 
 ### Will users be able to use a debit or credit card to open a Slock?
@@ -115,7 +123,7 @@ Of course some will, as Slocks aren't a panacea against theft or damage. What Sl
 
 If no insurance is required in the case of lower value or cumbersome items, a basic deposit implementation is provided by default and will suffice.  
 
-For higher value items, and thanks to our partner [SafeShare](http://www.safeshareinsurance.com/), we're working towards being able to offer a revolutionary, universal, on-the-spot insurance where users would pay only for the type of insurance they need, when they need it. The insurance provider will read from the Ethereum blockchain when the objects are rented out, and owners will only pay for the time the property was being rented.
+For higher value items, and thanks to our partner [SafeShare](http://www.safeshareinsurance.com/), we're working towards implementing a universal, on-the-spot insurance where users would pay only for the type of insurance they need, when they need it. The insurance provider will read from the Ethereum blockchain when the objects are rented out, and owners will only pay for the time the property was being rented.
 
 
 ### What happens if there is no power or Internet?
@@ -130,7 +138,7 @@ The same thing that would happen if any other smart lock was employed: some will
 
 ### What exactly is the "Ethereum Computer"?
 
-The "Ethereum Computer" is the tentative name for a consumer product Slock.it GmbH hopes to develop on behalf of the DAO. The Ethereum computer is a tiny, preinstalled, preconfigured home server running an  Ethereum node optimized for the IoT.
+The "Ethereum Computer" is the tentative name for a consumer product Slock.it UG hopes to develop on behalf of the DAO. The Ethereum computer is a tiny, preinstalled, preconfigured home server running an  Ethereum node optimized for the IoT.
 
 - It’s a secure Slock gateway between the web & web3 to your home or small office IoT, communicating wirelessly with your smart objects. 
 - It’s the easiest way to browse exciting new [decentralised applications](http://dapps.ethercasts.com/), including Mist.
@@ -178,7 +186,7 @@ We're still defining the cost, as it will be dependent on many factors, includin
 
 ### When is the DAO token sale?
 
-It will take place early 2016 and will last roughly a month. Further details will be released as soon as we have them. If you'd like to be notified once things are ready, please sign up to our [mailing list](/presale.html). 
+It will take place early 2016 and will last roughly a month. Further details will be released as soon as we have them. If you'd like to be notified once things are ready, please sign up to our [mailing list](/dao.html). 
 
 
 ### Why do a DAO token sale?
@@ -277,7 +285,7 @@ What parameters are available depend on the service provider's smart contract an
 
 ### In practice, what will happen after the DAO token sale? 
 
-The default service provider Slock.it GmbH will submit a proposal to develop products and services (including of course the Ethereum Computer) in the form of a smart contract. The DAO can then vote on this proposal and, if accepted, interact with the smart contract using Mist, the Ethereum browser. 
+The default service provider Slock.it UG will submit a proposal to develop products and services (including of course the Ethereum Computer) in the form of a smart contract. The DAO can then vote on this proposal and, if accepted, interact with the smart contract using Mist, the Ethereum browser. 
 
 
 ### I'm not a programmer - what will the first proposal to the DAO include?
@@ -315,7 +323,7 @@ Version 1 of the DAO will be activated at the end of the token sale to hold the 
 The DAO could enter into a hedging contract to protect its funds from ether's volatility. This contract would be provided by the service provider as part of a new proposal.
 
 
-### Why doesn't Slock.it GmbH raise money through a direct crowdsale instead?
+### Why doesn't Slock.it UG raise money through a direct crowdsale instead?
 
 Because we believe DAOs are the future of how businesses will be structured. A DAO will provide much greater security and transparency than a traditional token sale as investors will stay in control of the funds even after the token sale has ended. DAOs also bring about open governance by allowing any DAO token holder to vote on all major business decisions.
 
@@ -352,7 +360,7 @@ This takes place in two steps. The first step is a simple vote on keeping the ex
 
 ### I thought DAOs were fully automated, why do you call this a DAO?
 
-Slock.it GmbH is set on building a fully automated DAO, that is, the first proposal to the DAO will include an proposal relating to the continuous improvement of the DAO's own codebase. 
+Slock.it UG is set on building a fully automated DAO, that is, the first proposal to the DAO will include an proposal relating to the continuous improvement of the DAO's own codebase. 
 
 Version 1 of the DAO, while not fully automated is fully autonomous in the sense that the DAO token holders will be 100% in control of it and we as the code creators will have no influence over it. Thisl represents a considerably better process than a traditional 'crypto kickstarter'. Longer term, a Version 2 could see the percentage of transactions going back to the DAO to become dynamic and orchestrated by a narrow AI, lowering the fee as more Slocks are deployed, or raising it when in need of further funds - this effectively would automate the decentralized organization. Such a switch would however first require a vote by the DAO token holders. 
 
