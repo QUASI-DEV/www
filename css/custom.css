@@ -290,3 +290,8 @@ form .bg1 {
   padding: 10px;
   padding-left: 20px;
 }
+
+
+.bg-primary_custom {
+  background-color: #e74c3c !important;
+}

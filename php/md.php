@@ -120,7 +120,7 @@
       <section style="display:none;"></section>
 
 
-			<section class="page-header" style="padding-top:200px;">
+			<section class="page-header" style="padding-top:200px; padding-bottom: 80px;">
       <!-- 				<div class="background-image-holder parallax-background">
 					<img class="background-image" alt="Background Image" src="img/hero4.jpg">
 				</div> -->
@@ -134,7 +134,7 @@
 							<p class="lead">
 								<?php echo $post; ?><br><br>
 								<ul style="font-size:20px; line-height: 200%;">									
-									<?php echo $header; ?> 
+									<?php echo $header; ?>
 								</ul>
 							</p>
 						</div>
