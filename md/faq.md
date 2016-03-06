@@ -138,10 +138,10 @@ The same thing that would happen if any other smart lock was employed: some will
 
 ### What exactly is the "Ethereum Computer"?
 
-The "Ethereum Computer" is the tentative name for a consumer product Slock.it UG hopes to develop on behalf of the DAO. The Ethereum computer is a tiny, preinstalled, preconfigured home server running an  Ethereum node optimized for the IoT.
+The "Ethereum Computer" is a consumer electronics product Slock.it UG looks forward to develop on behalf of the DAO. The Ethereum Computer is a small, preconfigured smart hub running an optimized Ethereum blockchain node and a series of decentralized applications.
 
-- It’s a secure Slock gateway between the web & web3 to your home or small office IoT, communicating wirelessly with your smart objects. 
-- It’s the easiest way to browse exciting new [decentralised applications](http://dapps.ethercasts.com/), including Mist.
+- The Ethereum Computer is a source of revenue, making it possible to rent access to any space or compatible smart object and accept payments without intermediaries.
+- It's the simplest and most secure way to browse exciting new [decentralised applications](http://dapps.ethercasts.com/) (or ‘Dapps’) from the convenience of a desktop or home theater.
 - And it’s also a brilliant development platform, packaging all the software needed to build Ethereum Dapps as part of a straightforward, optimized image.
 
 We want to make the Ethereum Computer the easiest entry point to the world of Slock.it and Ethereum, without having to struggle with setting up a client, buying ether from an exchange or worrying about security updates.
@@ -150,22 +150,23 @@ We want to make the Ethereum Computer the easiest entry point to the world of Sl
 
 ### What could I do with the Ethereum Computer?
 
-- Enable your entire home to communicate with the blockchain: rent your flat, your office space, access to your Wi-Fi hotspot, or share any Slock.it enabled smart object in range directly and securely
-- Try out new, exciting applications: The Ethereum Computer is a full blown implementation of the Ethereum stack, and therefore can serve any Dapp via HDMI out to your home theater.
-- Browse web3 securely: you can point your browser, mobile phone or tablet to the Ethereum Computer, and the 3rd party web servers will only be used to serve static HTML assets, while your precious crypto keys will safely stay within the confines of your home.
-- Earn a passive income: the Ethereum Computer can be used to run an IPFS node, perhaps even receiving rewards for renting your unused hard drive space. We're also looking at the possibility of letting you use your Ethereum Computer as an Oracle, earning tokens by providing physical data to blockchain smart contracts.
-- Develop applications with Ethereum and never have to worry about installation difficulties. We’ll sort out updates and compatibility issues between the various components of the Ethereum 'stack' (Whisper, EVM, Web3.js, Swarm, etc), and will push updates only when we have tested the framework top to bottom.
-- Help secure the Ethereum network and get rewarded for it (once Ethereum has switched to PoS), without having to dedicate larger, more expensive and less secure equipment to that task.
+- Enable the entire home to communicate with the blockchain: rent out a flat, an office space, access to Wi-Fi hotspots, or share any compatible smart object in range directly and securely.
+- Try out new, exciting applications: The Ethereum Computer is a full blown implementation of the Ethereum stack, and therefore can serve any Đapp via HDMI out to a home theater.
+- Browse the decentralized web securely: it’s easy to point a browser, mobile phone or tablet to the Ethereum Computer, keeping precious cryptographic keys secure within the confines of the local network.
+- Earn a passive income: the Ethereum Computer can be used to run an IPFS node and perhaps receiving rewards for renting unused hard drive space. The Ethereum Computer could also facilitate the creation of Oracles, earning tokens by providing physical data to blockchain smart contracts.
+- Develop applications with Ethereum! Developers will never have to worry about installation difficulties. We’ll resolve compatibility issues between the various components of the Ethereum 'stack' (Whisper, EVM, Web3.js, Swarm, etc) and will push updates for users to accept only after we have tested the framework top to bottom.
+- Get rewarded for helping secure the Ethereum network without having to dedicate larger, more expensive equipment to that task (will be available once Ethereum has switched to PoS).
+
 
 
 ### Will it be hackable/open?
 
-Absolutely. We'll not only make the devkit images publicly available, but also all of the detailed code that went into building the 'stack' so you can modify/improve on the installation. (we already [started](https://blog.slock.it/let-s-play-with-snappy-ethereum-816588198528)). A dedicated hacker could completely rebuild an Ethereum Computer from scratch if they wanted to. Having some GPIO available will also allow anyone to connect wired objects to the Ethereum network. We want you to be able to experiment!
+Absolutely. We'll not only make the devkit images publicly available, but also all of the detailed code that went into building the 'stack' so you can modify/improve on the installation. (we already [started](https://blog.slock.it/let-s-play-with-snappy-ethereum-816588198528)). A dedicated hacker could completely rebuild an Ethereum Computer from scratch if they wanted to. We want you to be able to experiment!
 
 
 ### When will the Ethereum Computer become available to purchase?
 
-Sometime in 2017, although we anticipate devkits much earlier as part of an iterative development process. You can register your interest for a devkit by <a href="mailto:info@slock.it?subject=Ethereum%20Computer%20Devkit&body=Full%20name:%0ACountry:%0ACity:%0AProject%20Description:">contacting us</a>. 
+Sometime in 2017, although we anticipate devkits much earlier. Slock.it UG will make a small number of prototypes available to early adopters that can demonstrate an active engagement in the development of related apps and have the intention to deploy these apps on the Ethereum Computer. Applications to receive a prototype can be submitted by <a href="mailto:info@slock.it?subject=Ethereum%20Computer%20Devkit&body=Full%20name:%0ACountry:%0ACity:%0AProject%20Description:">contacting us</a>. 
 
 
 ### Will it be useful for mining?
@@ -173,10 +174,10 @@ Sometime in 2017, although we anticipate devkits much earlier as part of an iter
 The Ethereum Computer is a full Ethereum client and therefore perfectly capable to have its mining function enabled. That said, it would not be a good platform to mine on while Ethereum is still using Proof of Work, as its form factor prevents it from having the hashing power GPUs have. The Ethereum Computer will however be a perfectly appropriate platform to help secure the network once Ethereum switches to Proof of Stake, keeping your keys secure as part of a hardened stack.
 
 
-### How much will it cost
+### How much will the Ethereum Computer cost?
 
-We're still defining the cost, as it will be dependent on many factors, including product design (we want the Ethereum Computer to become a worthy conversation piece for your desk). It is our intention to keep it very accessible. 
-
+We're still defining the Ethereum Computer cost of productions, as they will be dependent on many factors, including product design (we want the Ethereum Computer to become a worthy conversation piece for your desk). It is our intention to keep it very accessible and we are aiming for a RRP of roughly USD $249 or equivalent (pricing may vary by location).
+ 
 
 
 
