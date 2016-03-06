@@ -116,16 +116,21 @@
 			<!-- *******          HEADER           ******** -->
 			<!-- ****************************************** -->
 
-			<header class="page-header" style="padding-top:250px;">
+      <!-- hack to fix bad alternate bg colors -->
+      <section style="display:none;"></section>
+
+
+			<section class="page-header" style="padding-top:200px;">
       <!-- 				<div class="background-image-holder parallax-background">
 					<img class="background-image" alt="Background Image" src="img/hero4.jpg">
 				</div> -->
 				
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-12">
-							<span class="alt-font"><?php echo $pre; ?></span>
-							<h1><?php echo $title; ?></h1>
+						<div class="col-sm-12 text-center">
+							
+							<h1 style="font-size: 42px; margin-bottom: 5px;"><?php echo $title; ?></h1>
+              <div class="alt-font" style="margin-bottom: 20px"><?php echo $pre; ?></div>
 							<p class="lead">
 								<?php echo $post; ?><br><br>
 								<ul style="font-size:20px; line-height: 200%;">									
@@ -135,7 +140,7 @@
 						</div>
 					</div>
 				</div>
-			</header>
+			</section>
 
 
 
