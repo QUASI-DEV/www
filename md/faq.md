@@ -63,12 +63,12 @@ We are currently reaching out to a number of partners, in particular:
 
 ### Is Slock.it open source?
 
-As the service provider for the DAO, Slock.it UG will make all the code, the smart contracts, user interfaces, mobile apps, and everything forming the DAO and the output of all the DAO commissioned worked free and open source, for anyone to use and re-purpose. We'll not only make these things public, we'll also do everything in our power to see companies other than us develop Slock.it compatible products, as we are keen to see the ecosystem grow beyond what we started.
+As the Service Provider for the DAO, Slock.it UG will make all the code, the smart contracts, user interfaces, mobile apps, and everything forming the DAO and the output of all the DAO commissioned worked free and open source, for anyone to use and re-purpose. We'll not only make these things public, we'll also do everything in our power to see companies other than us develop Slock.it compatible products, as we are keen to see the ecosystem grow beyond what we started.
 
 
 ### What's in it for Slock.it UG then?
 
-At the end of the the DAO token sale, Slock.it UG will become the DAO's default service provider. Slock.it UG is a for profit company, and the DAO will be one of its clients. It's critical for us to align incentives between the DAO and our company, so you can expect a symbiotic relationship: what we will work on privately should also benefit the Slock.it ecosystem as a whole. For example, Slock.it UG could engage in partnerships with lock manufacturers, consult for real estate companies building smart homes, integrate the Slock.it API at part of popular smart objects, work with banks for Slocks to accept FIAT payments, etc. 
+At the end of the the DAO token sale, Slock.it UG will become the DAO's default Service Provider. Slock.it UG is a for profit company, and the DAO will be one of its clients. It's critical for us to align incentives between the DAO and our company, so you can expect a symbiotic relationship: what we will work on privately should also benefit the Slock.it ecosystem as a whole. For example, Slock.it UG could engage in partnerships with lock manufacturers, consult for real estate companies building smart homes, integrate the Slock.it API at part of popular smart objects, work with banks for Slocks to accept FIAT payments, etc. 
 
 
 ### Can I help with anything?
@@ -161,7 +161,23 @@ We want to make the Ethereum Computer the easiest entry point to the world of Sl
 
 ### Will it be hackable/open?
 
-Absolutely. We'll not only make the devkit images publicly available, but also all of the detailed code that went into building the 'stack' so you can modify/improve on the installation. (we already [started](https://blog.slock.it/let-s-play-with-snappy-ethereum-816588198528)). A dedicated hacker could completely rebuild an Ethereum Computer from scratch if they wanted to. We want you to be able to experiment!
+Absolutely. We'll not only make the devkit images publicly available, but also all of the detailed code that went into building the 'stack' so you can modify/improve on the installation. (we already [started](https://blog.slock.it/let-s-play-with-snappy-ethereum-816588198528)). A dedicated hobbyist should be able replicate the Ethereum Computer using off-the-shelf parts without having to buy it directly from a distributor.. We want you to be able to experiment!
+
+Furthermore, if any given lock manufacturer wanted to be able to embed the software as part of their own designs, in order to benefit from incremental revenue, then in our view, nothing should get in their way either, as this all ultimately benefits the DAO financially by opening the doors to a larger user base.
+
+
+### If it's open, won't people be able to bypass the contract system?
+
+All Ethereum Computers, regardless of provenance, will be required to give the percentage reward to the DAO to be part of the DAO's network. 
+
+To not be part of the DAO's network means losing all the advantages of decentralization, namely:
+- Efficiency, as the DAO removes the need to host a website, or use payment providers
+- Trusted key management on the blockchain without third parties involved
+- Transparency: the DAO allows you to always prove that you have the permission to open any given lock
+- Stability, as DAO-enabled locks work without any 3rd party involved, and have zero downtime
+- The open API for smart contracts
+- And of course the device would no longer be searchable in the Ethereum Computer directory of connected things
+
 
 
 ### When will the Ethereum Computer become available to purchase?
@@ -187,16 +203,40 @@ We're still defining the Ethereum Computer cost of productions, as they will be 
 
 ### When is the DAO token sale?
 
-It will take place early 2016 and will last roughly a month. Further details will be released as soon as we have them. If you'd like to be notified once things are ready, please sign up to our [mailing list](/dao.html). 
+It will take place early 2016 and will last roughly a month. There is no defined timeframe besides "Soon". If you'd like to be notified once things are ready, please sign up to our [mailing list](/dao.html). 
+
+
+### How much will each DAO token cost?
+This will be announced soon. The [smart contracts](https://github.com/slockit/dao) are flexible enough to select any potential denomination.
+
+
+### How many DAO token be crated?
+There will be as many tokens as there are purchases. The total volume of purchases defines the total volume of tokens. If 2,000,000 tokens are purchased, then there will be 2,000,000 tokens created, no more, no less. 
+
+
+### Will anyone hold 'premined' tokens?
+
+There will be no 'premine' whatsoever, and no preferential assignment to anyone, including ourselves as individuals or Slock.it UG. If members of our team would like to own DAO tokens, they will have to purchase them with their own money: the only tokens in circulation will be the ones purchased during the DAO token sale. 
+
+
+### Will the DAO token sale accept Bitcoin, Doge, etc.?
+
+Yes, we have partnered with Shapeshift for the DAO token sale to accept most cryptocurrencies in existence, including Ether, Bitcoin, Litecoin, Dogecoin, MaidsafeCoin, StorjcoinX, Bitshares, Ripple, BitUSD, NXT, DASH, CLAMS and many, many others.
+
+For larger purchases denominated in cryptocurrencies, we have partnered with both [Bity](https://bity.com/) and [Gatecoin](https://gatecoin.com/).
+
+Note: The DAO is an Ethereum-based entity and therefore 'speaks' only ether - ether will therefore be the simplest and most cost-effective way to participate directly in the DAO.
 
 
 ### Why do a DAO token sale?
 
-We're using smart contracts to build on the Ethereum blockchain so people all over the world can be empowered to build a new future for the sharing economy, and in exchange for their early help, they will receive a reward in the form of DAO tokens which hold many benefits.
+A detailed explanation of the DAO model's advantages can be found on our [blog](https://blog.slock.it/daos-or-how-to-replace-both-the-kickstarter-and-token-presale-models-1b2b8898d6e7#.r9of6ntmh). There are however, three main reasons for this choice:
 
-In order to keep governance fair and decentralized, this DAO will be created so that the funds held by the sharing community will never be centrally managed. A small fee will be taken from the profits of each Slock transaction not paid in DAO tokens. This will be returned to the DAO, giving it the option to reinvest the profits to support its growth.
+- To be inclusive: we're using smart contracts on the Ethereum blockchain so anyone, anywhere in the world can be empowered to build a new future for the sharing economy, and in exchange for their early help, receive a reward in the form of DAO tokens which hold many benefits.
 
-DAO tokens holders will be able to vote on important decisions relating to the management of the DAO, including the power to redistribute the profits amongst themselves.
+- To incentivize backers: the funds held by the DAO will never be centrally managed. A reward, defined as a percentage, will be taken from each rental  transaction initiated by the Ethereum Computer and not paid in DAO tokens. These rewards will be sent to the DAO, giving it the option to use the accumulated funds to support its growth.
+
+- To keep governance fair and decentralized: DAO tokens holders will be able to vote on important decisions relating to the management of the DAO, including the power to redistribute its profits amongst themselves.
 
 
 ### What are DAO tokens?
@@ -204,24 +244,24 @@ DAO tokens holders will be able to vote on important decisions relating to the m
 DAO tokens:
 
 - Give voting rights on important issues in the DAO 
-- Can be used to open or close Slocks without having to pay a fee to the DAO
 - Can be traded peer to peer or on a exchange
-- If voted in by the DAO, provide access to a portion of the profits (generated by the Slocks), proportionally to how many tokens are held
+- If voted in by the DAO, provide access to a portion of the profits (generated by the Slocks), proportionally to how many tokens a participant holds
+- Can be used to open or close Slocks without having to pay a fee to the DAO
 
 
 ### What if users want to own a Slock outright?
 
-It's possible to avoid paying the per-use fees by opting to pay a one-time deployment fee to the DAO. Note that the amount in question will be determined by the DAO itself as it engages with the service provider.
+It's possible to avoid paying the per-use fees by opting to pay a one-time deployment fee to the DAO. Note that the amount in question will be determined by the DAO itself as it engages with the Service Provider's contract.
 
 
 ### Can I mine DAO tokens?
 
-No. DAO tokens are used purely to represent the proportion of votes a DAO token holder is entitled to as part of the DAO. If you would like to mine something, try [ether](https://github.com/ethereum/go-ethereum/wiki/Mining).
+No. DAO tokens are used purely to represent the proportion of votes a DAO token holder is entitled to as part of the DAO. If you would like to mine, [ether](https://github.com/ethereum/go-ethereum/wiki/Mining) is a good choice.
 
 
 ### Will I be able to send, receive and exchange DAO tokens?
 
-Yes, there will be functions built into the smart contract to send/receive DAO tokens and trading peer to peer will be possible from day one. 
+Yes, there will be functions built into the smart contract to send/receive DAO tokens. Trading peer to peer will be possible from the time the DAO token sale ends. Several exchanges have already expressed interest in listing the DAO tokens as soon as technically possible.
 
 
 ### Will I need to be a programmer to purchase tokens?
@@ -229,36 +269,31 @@ Yes, there will be functions built into the smart contract to send/receive DAO t
 No, we want to be inclusive every step of the way so that as many people as possible can participate in this new sharing community. The purchase process will be done entirely online via a simple website. If you already have an ether wallet, you'll be able to use that, or the site will just generate a wallet for you.
  
 
-### Will anyone hold 'premined' tokens?
+### Where will the tokens be held?
 
-No. No one will get an unfair advantage: the only tokens in circulation will be the ones purchased during the DAO token sale.
+The tokens will be held safely the DAO's immutable smart contract, the blockchain 'ledger' that tracks who own what. Tokens are therefore not held in a wallet - they are manipulated by using a GUI that transparently signs transactions to the DAO's using the private keys held in your main Ethereum wallet.
 
 
 ### Will there be another opportunity to purchase tokens?
 
-There will be only one DAO token sale. Once launched during the course of 2016, the DAO will be fully autonomous and decentralized. How it then manages itself, including decisions on its finances, is entirely up to 'it'. DAO token holders will hold voting rights, be able to submit proposals, and pass motions.
+There is currently no code in the DAO's smart contract to autostart another funding round. Once launched during the course of 2016, the DAO will be fully autonomous and decentralized. How it then manages itself, including decisions on its finances, is entirely up to 'it'. DAO token holders will hold voting rights, be able to submit proposals, and pass motions, which could include a second round.
+
+This likely would mean the DAO will set a higher price for the new tokens, making existing ones more valuable. This process would be akin to having a series A,B,C, D etc.. in a startUp, where series A investors usually gain the most benefit from the series B, C rounds.
 
 
 ### How will the DAO control the funds it receives during the token sale?
 
-The DAO token holders will elect the service provider of their choosing, and the conditions under which funds are distributed. These decisions are entirely governed by smart contracts, and accessible through a simple online interface.
+The DAO token holders will elect the Service Provider of their choosing, and the conditions under which funds are distributed. These decisions are entirely governed by smart contracts, and accessible through a simple online interface. Video tutorials on how to install the necessary software and taking the most common actions will be made available.
 
 
 ### Is there a minimum goal for the token sale?
 
-Yes. A minimum of 500,000 USD (equivalent) is required to build a meaningful DAO and first product. If the minimum is not reached, participants in the token sale will be able to request their funds back (denominated in ether).
-
-
-### Will the DAO token sale accept Bitcoin, Doge, etc.?
-
-Yes, we have partnered with Shapeshift so that the DAO token sale will accept most cryptocurrencies in existence, including Ether, Bitcoin, Litecoin, Dogecoin, MaidsafeCoin, StorjcoinX, Bitshares, Ripple, BitUSD, NXT, DASH, CLAMS and many, many others.
-
-For larger purchases denominated in cryptocurrencies, we are currently looking at partnering directly with exchanges. 
+Yes. A minimum of 500,000 USD (equivalent) is required to build a meaningful DAO and first product. If the minimum is not reached, the exercise will end, and participants in the token sale will be able to request their funds back (denominated in ether).
 
 
 ### Will the DAO token sale accept FIAT currencies?
 
-Not directly. In order to take part, you must use a cryptocurrency. To exchange FIAT for cryptocurrencies you could use an exchange such as [Kraken](https://kraken.com). We are currently working with exchange to see if we could streamline this process. 
+Not directly. In order to take part, you must use a cryptocurrency. To exchange FIAT for cryptocurrencies you could use an exchange such as [Kraken](https://kraken.com). We are currently working with exchanges to streamline this process.
 
 
 
@@ -267,51 +302,53 @@ Not directly. In order to take part, you must use a cryptocurrency. To exchange 
 
 ### DA.. what?
 
-A Decentralized Autonomous Organization (DAO) is a form of company which operates entirely on the blockchain. In this case, the DAO is composed of DAO token holders that can review proposals and cast their votes to elect and direct a service provider which will represent them in the physical world. This process is very similar to selecting a vendor or supplier. A DAO is however superior in many respects to a traditional company in the sense that all the decisions it makes are transparent, its finances can be audited by anyone and corruption is impossible.
+A Decentralized Autonomous Organization (DAO) is a form of company which operates entirely on the blockchain. The DAO is composed of DAO token holders that can review proposals and cast their votes to elect and direct a Service Provider which will represent them in the physical world. This process is very similar to selecting a vendor or supplier. A DAO is however superior in many respects to a traditional company in the sense that all the decisions it makes are transparent, its finances can be audited by anyone and corruption is impossible.
+
+A primer to the mechanisms powering the DAO can be found on our <a href="https://blog.slock.it/a-primer-to-the-decentralized-autonomous-organization-dao-69fb125bd3cd#.wsxe19yc1" target="_new">blog</a>.
 
 
 ### Is this just for geeks?
 
-Definitely not. In order to make decisions, DAO token holders will be able to vote using a straightforward interface using Mist, the Ethereum browser. You'll have to be able to install software on your machine, and use what essentially looks and feel like a website. That's it.
+Definitely not. In order to make decisions, DAO token holders will be able to vote using a straightforward interface using Mist, the Ethereum browser. You'll have to be able to install software on your machine, and use what essentially looks and feel like a website. We will also provide video tutorials explaining most common tasks.
 
 
 ### What can the DAO do exactly?
 
-The DAO can choose a service provider to implement a technology or develop a product, either by sending funds directly or signing a smart contract. The smart contract specifies the terms of the relationship between the DAO and its service provider.
+The DAO can choose a Service Provider to implement a technology or develop a product by signing a smart contract. The smart contract specifies the terms of the relationship between the DAO and its Service Provider.
 
-Once a service provider has been selected, the DAO can call functions on the service provider smart contract, setting the values of operating parameters which could include, for example, what percentage of each Slock transaction is used to further fund the DAO, or what milestones have to be reached before the service provider receives certain payments.
+Once a Service Provider has been selected, the DAO can call functions on the Service Provider smart contract, setting the values of operating parameters. In our case, it could be setting what percentage of each Ethereum Computer transaction is used to further fund the DAO, or what milestones have to be reached before the Service Provider receives certain payments.
 
-What parameters are available depend on the service provider's smart contract and can range from a 'hands off' approach to having the DAO hold complete operational control.
+What parameters are available depend on the Service Provider's smart contract and can range from a 'hands off' approach to having the DAO hold complete operational control.
 
 
 ### In practice, what will happen after the DAO token sale? 
 
-The default service provider Slock.it UG will submit a proposal to develop products and services (including of course the Ethereum Computer) in the form of a smart contract. The DAO can then vote on this proposal and, if accepted, interact with the smart contract using Mist, the Ethereum browser. 
+The default Service Provider Slock.it UG will submit a proposal to develop the Ethereum Computer and its ecosystem in the form of a smart contract. The DAO will then vote on this proposal and, if accepted, interact with the smart contract.
 
 
-### I'm not a programmer - what will the first proposal to the DAO include?
+### What will the first proposal to the DAO include?
 
-Ahead of the token sale, we'll make public on our blog the terms of the smart contract or smart contracts we could sign off with the DAO. This proposal will include tutorials, a whitepaper, a FAQ, and 'how to' videos.
+We'll soon make make public the terms of the smart contract we intend to sign with the DAO. This detailed proposal will include a complete scope of work including Product Strategy, Hardware, Software, Marketing, Distribution, Education, Staffing, Communication and Licensing. All of it will be first distributed in plain English for the convenience of prospective participants.
 
 
 ### Will there be further proposals?
 
-Of course. No business can predict the future, not even the DAO - so it's expected for the DAO to review its engagement with the service provider at regular intervals. New proposals can be submitted by the service provider at anytime - each of these can be as simple or as complex as needed as the terms are written in a turing complete smart contract language. 
+Of course. No business can predict the future, not even the DAO - so it's expected for the DAO to review its engagement with the Service Provider at regular intervals. New proposals can be submitted by the Service Provider at anytime - each of these can be as simple or as complex as needed as the terms are written in a turing complete smart contract language. 
 
 
 ### Will the terms of the proposal be explained in plain English? 
 
-Not only they will be explained in plain English, the smart contract itself can store plain English - holding the service provider responsible for its proposal. 
+Not only they will be explained in plain English, the smart contract itself can store plain English - holding the Service Provider responsible for its proposal. 
 
 
-### Can the DAO fire the service provider?
+### Can the DAO fire the Service Provider?
 
-Of course. Proposals will usually include a total amount (say, USD 1m to complete project A), an initial deposit (USD 300k to bootstrap project A) and a monthly payment (for example, USD 50K / month for 24 months). At anytime, the DAO can stop the regular payments if it is dissatisfied by the service provider, effectively firing it. 
+Of course. Proposals will usually include a total amount (say, USD 5M to complete project A), an initial deposit (USD 1M to bootstrap project A) and a monthly payment (for example, USD 200K / month for 20 months). At anytime, the DAO can stop the regular payments if it is dissatisfied by the Service Provider, effectively firing it. 
 
 
 ### Does this mean you created a model where you can be fired yourself?
 
-Yes, absolutely. We believe a relationship whereby the DAO stays in control of its funds is actually more beneficial to both parties than a traditional token sale where the service provider retains 100% of the funds. 
+Yes, absolutely. We believe a relationship whereby the DAO stays in control of its funds is actually more beneficial to both parties than a traditional token sale where the Service Provider retains 100% of the funds. 
 
 
 ### How will voting take place?
@@ -321,7 +358,7 @@ Version 1 of the DAO will be activated at the end of the token sale to hold the 
 
 ### How can the DAO protect its funds from ether's volatility?
 
-The DAO could enter into a hedging contract to protect its funds from ether's volatility. This contract would be provided by the service provider as part of a new proposal.
+The DAO could enter into a hedging contract to protect its funds from ether's volatility. This contract would be provided by the Service Provider as part of a new proposal. 
 
 
 ### Why doesn't Slock.it UG raise money through a direct crowdsale instead?
@@ -329,12 +366,32 @@ The DAO could enter into a hedging contract to protect its funds from ether's vo
 Because we believe DAOs are the future of how businesses will be structured. A DAO will provide much greater security and transparency than a traditional token sale as investors will stay in control of the funds even after the token sale has ended. DAOs also bring about open governance by allowing any DAO token holder to vote on all major business decisions.
 
 
-### How often can the DAO change service provider?
+### Who owns the intellectual property created as part of the project?
+
+This depends entirely on the terms of the proposal from the Service Provider - and then it's up to the DAO to approve these terms or not. 
+
+In the context of the proposal Slock.it UG will make to the DAO with regards to the development of the Ethereum Computer, this will state that all the code and design that form the output of the work will be licensed as freely as possible, under the MIT license. 
+
+Our opinion - reflected in the proposal terms - is that it's in the DAOs financial advantage to see both the software and the hardware distributed as widely as possible, in order to benefit from the largest user base possible, as each subsequently deployed Ethereum Computer represents potential incremental revenue to the DAO.
+
+
+### How often can the DAO change Service Provider?
 
 At anytime and as often as it sees fit. 
 
 
+### What is the process for selecting a new Service Provider?
+
+Changing the Service Provider takes the form of a proposal with a special flag. Votes on changing the Service Provider take place in two steps. The first, an informal vote on whether the DAO would like to switch Service Provider or not. The second, a confirmation vote to give a chance to participants to confirm the result of the first vote, or a chance for the minority to ‘split’ the DAO into two and retain control over their funds.
+
+
+### Would I still be entitled to my rewards after a split?
+
+Yes. If a split occurs, both DAOs would continue to operate, each with their own tokens, and each with a different Service Provider. This would be the equivalent of a large company splitting into two. The rewards for projects already funded by the DAO are also split and fairly distributed between the backers. Of course, projects funded after the split will only pay out rewards to their respective DAO.
+
+
 ### Where will proposals and smart contract interactions be discussed?
+
 Both will be discussed in our [Slack chat room](http://Slock.it:3000/), while voting will be done entirely on the blockchain.
 
 
@@ -346,31 +403,19 @@ Both will be discussed in our [Slack chat room](http://Slock.it:3000/), while vo
 
 ### What's a 51% attack, and how do you prevent it?
 
-If someone was to acquire 51% of the DAO tokens, they could vote themselves as the service provider, and then send 100% of the funds to their own account. In order to prevent this, the DAO is able to split itself proportionally to the vote results, leaving the attacker with their funds and the rest of the participants in control of their own. Because of this mechanism, there is no incentive to execute such an attack, since it is not only unprofitable, but the attacker would also be stuck with worthless tokens from their own fork of the DAO.
+If someone was to acquire 51% of the DAO tokens, they could vote themselves as the Service Provider, and then send 100% of the funds to their own account. In order to prevent this, the DAO is able to split itself proportionally to the vote results, leaving the attacker with their funds and the rest of the participants in control of their own. Because of this mechanism renders the attack unprofitable, there is no incentive to execute it.
 
 
-### Why is there only a single service provider at any given time?
+### Why is there only a single Service Provider at any given time?
 
-For safety reasons. In order to prevent a 51% attack, we needed to introduce the rule that the DAO may split up in case there is no mutual agreement on a selecting a service provider, which in turn removes any incentive to even attempt to bring about such an attack. Having room for more than a single service provider would negate this fail-safe.
-
-
-### What is the process for selecting a new service provider?
-
-This takes place in two steps. The first step is a simple vote on keeping the existing service provider or choosing a new one. The second step is a confirmation vote, where the minority, having lost the previous vote but comfortable the winner is indeed not an attacker, can vote alongside the majority in order to avoid splitting the DAO. On the other hand, if the minority does suspects a 51% attack, it's important for it to keep its ability to stick with its decision to split the DAO, effectively rendering any attack unprofitable.
-
-
-### I thought DAOs were fully automated, why do you call this a DAO?
-
-Slock.it UG is set on building a fully automated DAO, that is, the first proposal to the DAO will include an proposal relating to the continuous improvement of the DAO's own codebase. 
-
-Version 1 of the DAO, while not fully automated is fully autonomous in the sense that the DAO token holders will be 100% in control of it and we as the code creators will have no influence over it. Thisl represents a considerably better process than a traditional 'crypto kickstarter'. Longer term, a Version 2 could see the percentage of transactions going back to the DAO to become dynamic and orchestrated by a narrow AI, lowering the fee as more Slocks are deployed, or raising it when in need of further funds - this effectively would automate the decentralized organization. Such a switch would however first require a vote by the DAO token holders. 
+For safety reasons. In order to prevent a 51% attack, we needed to introduce the rule that the DAO may split up in case there is no mutual agreement on a selecting a Service Provider, which in turn removes any incentive to even attempt to bring about such an attack. Having room for more than a single Service Provider would negate this fail-safe.
 
 
 ### Why did you choose to abstract the operational parameters of the DAO?
 
-You might wonder why the operational parameters of the DAO have been abstracted as part of a series of smart contract between the DAO and its service provider. This is because the DAO will hold 100% of its funds from day one and had to be made immutable code-wise, while at the same time needed to retain enough flexibility to hire and fire service providers. 
+You might wonder why the operational parameters of the DAO have been abstracted as part of a series of smart contract between the DAO and its Service Provider. This is because the DAO will hold 100% of its funds from day one and had to be made immutable code-wise, while at the same time needed to retain enough flexibility to hire and fire Service Providers. 
 
-Using this model we are able to guarantee that the core DAO code itself (the part that holds the funds) will rarely, if ever need to be updated. To keep adapting rapidly to market changes, the DAO will vote on proposals and could even change service providers. This means the DAO will still be able to not only affect the operational parameters of its relationships with suppliers, but also completely change business models if needed.
+Using this model we are able to guarantee that the core DAO code itself (the part that holds the funds) will rarely, if ever need to be updated. To keep adapting rapidly to market changes, the DAO will vote on proposals and could even change Service Providers. This means the DAO will still be able to not only affect the operational parameters of its relationships with suppliers, but also completely change business models if needed.
 
 
 
