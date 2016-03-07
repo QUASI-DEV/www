@@ -304,7 +304,7 @@ Not directly. In order to take part, you must use a cryptocurrency. To exchange 
 
 A Decentralized Autonomous Organization (DAO) is a form of company which operates entirely on the blockchain. The DAO is composed of DAO token holders that can review proposals and cast their votes to elect and direct a Service Provider which will represent them in the physical world. This process is very similar to selecting a vendor or supplier. A DAO is however superior in many respects to a traditional company in the sense that all the decisions it makes are transparent, its finances can be audited by anyone and corruption is impossible.
 
-A primer to the mechanisms powering the DAO can be found on our <a href="https://blog.slock.it/a-primer-to-the-decentralized-autonomous-organization-dao-69fb125bd3cd#.wsxe19yc1" target="_new">blog</a>.
+A primer to the mechanisms powering the DAO can be found on our <a href="https://blog.slock.it/a-primer-to-the-decentralized-autonomous-organization-dao-69fb125bd3cd#.wsxe19yc1" target="_new">blog</a>. The whitepaper can be downloaded from our [website](https://download.slock.it/public/DAO/WHitePaper.pdf). 
 
 
 ### Is this just for geeks?
