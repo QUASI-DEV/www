@@ -161,7 +161,7 @@ We want to make the Ethereum Computer the easiest entry point to the world of Sl
 
 ### Will it be hackable/open?
 
-Absolutely. We'll not only make the devkit images publicly available, but also all of the detailed code that went into building the 'stack' so you can modify/improve on the installation. (we already [started](https://blog.slock.it/let-s-play-with-snappy-ethereum-816588198528)). A dedicated hobbyist should be able replicate the Ethereum Computer using off-the-shelf parts without having to buy it directly from a distributor.. We want you to be able to experiment!
+Absolutely. We'll not only make the devkit images publicly available, but also all of the detailed code that went into building the 'stack' so you can modify/improve on the installation. (we already [started](https://blog.slock.it/let-s-play-with-snappy-ethereum-816588198528)). A dedicated hobbyist should be able replicate the Ethereum Computer using off-the-shelf parts without having to buy it directly from a distributor. We want you to be able to experiment!
 
 Furthermore, if any given lock manufacturer wanted to be able to embed the software as part of their own designs, in order to benefit from incremental revenue, then in our view, nothing should get in their way either, as this all ultimately benefits the DAO financially by opening the doors to a larger user base.
 
@@ -241,7 +241,7 @@ A detailed explanation of the DAO model's advantages can be found on our [blog](
 
 - To be inclusive: we're using smart contracts on the Ethereum blockchain so anyone, anywhere in the world can be empowered to build a new future for the sharing economy, and in exchange for their early help, receive a reward in the form of DAO tokens which hold many benefits.
 
-- To incentivize backers: the funds held by the DAO will never be centrally managed. A reward, defined as a percentage, will be taken from each rental  transaction initiated by the Ethereum Computer and not paid in DAO tokens. These rewards will be sent to the DAO, giving it the option to use the accumulated funds to support its growth.
+- To incentivize backers: the funds held by the DAO will never be centrally managed. A reward, expressed as a percentage, will be taken from each rental transaction initiated by the Ethereum Computer and not paid in DAO tokens. These rewards will be sent to the DAO, giving it the option to use the accumulated funds to support its growth, or redistribute them to token holders as dividends.
 
 - To keep governance fair and decentralized: DAO tokens holders will be able to vote on important decisions relating to the management of the DAO, including the power to redistribute its profits amongst themselves.
 
