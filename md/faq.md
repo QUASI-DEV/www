@@ -207,11 +207,18 @@ It will take place early 2016 and will last roughly a month. There is no defined
 
 
 ### How much will each DAO token cost?
-This will be announced soon. The [smart contracts](https://github.com/slockit/dao) are flexible enough to select any potential denomination.
+
+This will be announced soon. The [smart contracts](https://github.com/slockit/dao) are flexible enough to select any potential denomination. Token will be divisible just like ether. 
 
 
-### How many DAO token be crated?
+### How many DAO token will be created?
+
 There will be as many tokens as there are purchases. The total volume of purchases defines the total volume of tokens. If 2,000,000 tokens are purchased, then there will be 2,000,000 tokens created, no more, no less. 
+
+
+### What will be the minimum purchase
+
+There will be no arbitrary minimum - the smallest purchase will therefore be 1 wei + gas cost of the transaction on the Ethereum network. Token are divisible just like ether. 
 
 
 ### Will anyone hold 'premined' tokens?
