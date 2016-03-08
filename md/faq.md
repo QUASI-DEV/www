@@ -12,7 +12,7 @@
 
 ### Where am I?
 
-Slock.it UG is a German company building the future infrastructure of the collaborative economy. Our first product, the [Ethereum Computer](/ethereum_computer.html), bring blockchain technology to the entire home, making it possible to rent access to any compatible smart object and accept payments without intermediaries. We aim for this product and its ecosystem to be funded by a DAO, a type of digital company where backers benefits financially from the revenue of the products they supported - think of it as a Kickstarter on steroids.
+Slock.it UG is a German company building the future infrastructure of the collaborative economy. Our first product, the [Ethereum Computer](/ethereum_computer.html), brings blockchain technology to the entire home, making it possible to rent access to any compatible smart object and accept payments without intermediaries. We aim for this product and its ecosystem to be funded by a DAO, a type of digital company where backers benefit financially from the revenue of the products they supported - think of it as a Kickstarter on steroids.
 
 The DAO model is free and open source for anyone to reproduce or study, and our white paper can be downloaded [here](http://j.mp/slockit).
 
@@ -208,7 +208,7 @@ It will take place early 2016 and will last roughly a month. There is no defined
 
 ### How much will each DAO token cost?
 
-This will be announced soon. The [smart contracts](https://github.com/slockit/dao) are flexible enough to select any potential denomination. Token will be divisible just like ether. 
+1 ETH for 100 tokens. This was chosen arbitrarily based on community feedback as the [DAO smart contracts](https://github.com/slockit/dao) are flexible enough to accept any denomination. Token will be divisible just like ether. 
 
 
 ### How many DAO token will be created?
