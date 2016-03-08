@@ -124,7 +124,7 @@
       <!-- 				<div class="background-image-holder parallax-background">
 					<img class="background-image" alt="Background Image" src="img/hero4.jpg">
 				</div> -->
-				
+			
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12 text-center">
@@ -141,6 +141,38 @@
 					</div>
 				</div>
 			</section>
+
+
+      <!-- ****************************************** -->
+      <!-- *******           PRESO            ******** -->
+      <!-- ****************************************** -->
+      <section class="video-inline">
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-6 col-sm-12">
+              <div class="media-holder">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/49wHQoJxYPo?rel=0&amp;controls=1&amp;showinfo=0&amp;start=4" frameborder="0" allowfullscreen=""></iframe>
+              </div>
+            </div>
+
+            <div class="col-md-1"></div>
+          
+            <div class="col-md-5 col-sm-12">
+              <h1 class="space-bottom-medium">Slock.it: IoT + Blockchain</h1>
+              <p class="lead space-bottom-medium">
+                Founder Christoph Jentzsch takes the audience at Devcon One through a detailed tour of our technology.
+              </p>
+              <a href="https://www.youtube.com/+SlockItproject" target="_new" class="btn btn-primary">More Videos</a>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+      
+
+
 
 
 
