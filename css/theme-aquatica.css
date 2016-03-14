@@ -1319,8 +1319,8 @@ img.phone-portrait {
   display: inline-block;
   min-height: 80px;
   line-height: 80px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 .client-row img {
   max-height: 80px;

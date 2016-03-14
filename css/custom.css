@@ -301,3 +301,24 @@ form .bg1 {
 .bg-primary_custom {
   background-color: #e74c3c !important;
 }
+
+
+.btn-purchase {
+  padding: 20px;
+  font-size: 23px;
+
+}
+
+.stat-number {
+  font-size: 38px;
+  color: #01a2a6;
+  margin-bottom: 20px;
+  margin-top:2px;
+}
+
+
+
+.bg-quadrary {
+  color: #FFF;
+  background-color: #EE5847 !important;
+}

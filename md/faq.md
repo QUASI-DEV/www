@@ -134,7 +134,7 @@ The same thing that would happen if any other smart lock was employed: some will
 
 
 
-## The Product
+## The Ethereum Computer
 
 ### What exactly is the "Ethereum Computer"?
 
