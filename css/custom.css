@@ -322,3 +322,7 @@ form .bg1 {
   color: #FFF;
   background-color: #EE5847 !important;
 }
+
+.text-white a {
+  color: #BBB;
+}
