@@ -322,6 +322,9 @@ form .bg1 {
   color: #FFF;
   background-color: #EE5847 !important;
 }
+.text-white a {
+  color: #BBB;
+}
 
 
 
@@ -377,6 +380,3 @@ md-toolbar h2 {
 md-toolbar.step-done {
    background-color: darkolivegreen
 }
-
-
-
