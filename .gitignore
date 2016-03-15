@@ -9,6 +9,7 @@
 Icon
 
 bower_components/
+server
 
 # Thumbnails
 ._*
