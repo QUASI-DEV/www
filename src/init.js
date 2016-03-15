@@ -29,7 +29,8 @@
  './src/aes.js',
  './src/ethutil.js',
  './src/CrowdsaleController.js',
- './src/AccountService.js'
+ './src/AccountService.js',
+ './src/status.js'
  ].forEach(function(path) {
       document.write('\x3Cscript type="text/javascript" src="'+path+'">\x3C/script>');
  });

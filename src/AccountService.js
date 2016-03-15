@@ -62,9 +62,14 @@ angular.module('crowdsale').service('accountService', ['$q','$http','$interval',
             _.ks.passwordProvider = function (callback) {  callback(null, passphrase);  };
             
             _.accountList=[{
-               address : addr,
+               address : "0x"+addr,
                private : _.ks.exportPrivateKey(addr, pwDerivedKey)
+//               address : "0x74bf499fa01c341b0a282610168c7f55df16e458",
+//               private : "a87ceb0430e4a4503efb076c2b45d7fdaf5551eddf07b4f7bd70c890fed21216"
             }];
+            
+            
+            
             d.resolve(_.accountList[0]);
         });
         this.accountList=null;

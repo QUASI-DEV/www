@@ -16,6 +16,8 @@
     <div id="crowdsaleApp" ng-app="crowdsale" layout="column" style="text-align: left;" layout-padding ng-controller="CrowdsaleController as cs">
 
       <div class="col-sm" style="margin-bottom:20px;text-align:center" ng-show="!acceptedTC">
+         
+         <div id="msgOutput"/>
         
         <input type="button" ng-click="acceptTC($event)" value="Purchase DAO Tokens" name="purchase" class="btn btn-primary btn-filled btn-purchase" style="margin-top: 45px;">
         

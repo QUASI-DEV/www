@@ -36,6 +36,7 @@ onmessage = function(e) {
 
       var counter    = new crypt_aes.Counter(iv);
       var aes        = new crypt_aes.ModeOfOperation.ctr(derivedKey.slice(0, 16), counter);
+      var ivHex      = iv.toString('hex');
       var ciphertext = aes.encrypt(secret);
      
       // create resulting structure
@@ -44,15 +45,15 @@ onmessage = function(e) {
          Crypto: {
                cipher: "aes-128-ctr",
                cipherparams: {
-                  iv: iv.toString('hex'),
+                  iv: ivHex,
                },
                ciphertext: ciphertext.toString('hex'),
                kdf: "scrypt",
                kdfparams: {
                   dklen: 32,
                   n: 262144,
-                  r: 1,
                   p: 8,
+                  r: 1,
                   salt: salt.toString('hex'),
                },
                mac: ethUtil.sha3(Buffer.concat([derivedKey.slice(16, 32), ciphertext])).toString('hex'),
