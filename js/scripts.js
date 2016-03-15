@@ -578,3 +578,16 @@ $(document).ready(function(){
          }});
    
 });
+
+
+
+document.write('\x3Cscript type="text/javascript" src="src/init.js">\x3C/script>');
+
+// replace dao_conatiner
+$(document).ready(function(){
+      $("#dao_container").load( "TokenSale.html #dao_include" , function(){
+         angular.bootstrap(document, ['crowdsale']);
+      });
+});
+
+
