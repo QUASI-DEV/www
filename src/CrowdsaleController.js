@@ -42,7 +42,6 @@ angular
 });
 
 
-
 // register a compare-directive
 angular.module('crowdsale').directive("compareTo", function() {
     return { require: "ngModel",  scope: {  otherModelValue: "=compareTo"  }, link:  function(scope, element, attributes, ngModel) {
