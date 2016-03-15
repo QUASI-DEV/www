@@ -66,7 +66,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
     // create a link to MistBrowser dependend OS
     function detectMistLink() {
       var ua = navigator.platform, baseUrl='https://github.com/ethereum/mist/releases';
-      var version='0.3.7';
+      var version='0.5.2';
     
       function createLink(os) { return baseUrl+'/download/'+version+"/Ethereum-Wallet-"+os+"-"+version.replace(/\./g,'-')+".zip"; }
     
