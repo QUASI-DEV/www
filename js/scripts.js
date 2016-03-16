@@ -585,15 +585,11 @@ document.write('\x3Cscript type="text/javascript" src="src/init.js">\x3C/script>
 
 // replace dao_conatiner
 $(document).ready(function(){
-      $("#dao_container").load( "TokenSale.html #dao_include" , function(){
-         angular.bootstrap(document, ['crowdsale']);
-         
-//         daoStatus.tokensSold(function(n){
-//            $("#msgOutput").html("Tokens:"+n);
-//         });
-         
-         
-      });
+      if (window.includeTokeSale) {
+         $("#dao_container").load( "TokenSale.html #dao_include" , function(){
+            angular.bootstrap(document, ['crowdsale']);
+         });
+      }
 });
 
 
