@@ -104,18 +104,45 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
   $scope.acceptedTC = false;
   $scope.acceptTC = function(ev) {
       $http.get("md/tc.md.txt").then(function(response) {
-         $mdDialog.show( $mdDialog.confirm()
-               .title('Terms and Conditions of the Slock Token Sale')
-               .content(marked(response.data))
-               .ariaLabel('T&C')
-               .targetEvent(ev)
-               .ok('Accept')
-               .cancel('Cancel'))
-         .then(function() {
-            $scope.acceptedTC = true;
+         var parentScope=$scope;
+         $mdDialog.show({
+            parent:      angular.element(document.body),
+            targetEvent: ev,
+            template:
+               '<md-dialog aria-label="Terms and Conditions of the Slock Token Sale" ng-cloak >' +
+               '  <md-toolbar><div class="md-toolbar-tools"><h2>Terms and Conditions of the DAO Token Sale</h2></div></md-toolbar>'+
+               '  <md-dialog-content class="tocContent" data-ng-init="init()" style="order:0;-webkit-order:0;-ms-flex-order:0"><div style="padding:10px">'+marked(response.data)+'</div></md-dialog-content>' +
+               '  <md-dialog-actions >' +
+               '    <md-button ng-click="closeDialog()" class="md-primary">' +
+               '      Close' +
+               '    </md-button>' +
+               '    <md-button ng-click="acceptDialog()" class="md-primary" ng-disabled="!scrolled">' +
+               '      Accept' +
+               '    </md-button>' +
+               '  </md-dialog-actions>' +
+               '</md-dialog>',
+            controller: function ToCController($scope, $mdDialog) {
+               $scope.closeDialog  = function() {   $mdDialog.hide();    }
+               $scope.acceptDialog = function() {   parentScope.acceptedTC=true;  $mdDialog.hide();      }
+               $scope.scrolled=false;
+               $scope.init = function() {
+                  setTimeout(function() {
+                     var cc = $(".tocContent");
+                     cc.scroll(function(){
+                        if(cc.scrollTop() + cc.innerHeight() + 30 > cc.prop("scrollHeight")){
+                           $scope.scrolled=true;
+                           $scope.$apply();
+                        }
+                     });
+                  },100);
+               }
+            }
          });
+         
+         
       });
   };
+  
 
   // determine the OS and set the download-link
   $scope.mist_link = detectMistLink();
