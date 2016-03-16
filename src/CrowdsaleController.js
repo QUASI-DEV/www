@@ -117,11 +117,12 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                '<md-dialog aria-label="Terms and Conditions of the Slock Token Sale" ng-cloak >' +
                '  <md-toolbar><div class="md-toolbar-tools"><h2>Terms and Conditions of the DAO Token Sale</h2></div></md-toolbar>'+
                '  <md-dialog-content class="tocContent" data-ng-init="init()" style="order:0;-webkit-order:0;-ms-flex-order:0"><div style="padding:10px">'+marked(response.data)+'</div></md-dialog-content>' +
-               '  <md-dialog-actions >' +
+               '  <md-dialog-actions style="text-align: right">' +
                '    <md-button ng-click="closeDialog()" class="md-primary">' +
                '      Close' +
                '    </md-button>' +
                '    <md-button ng-click="acceptDialog()" class="md-primary" ng-disabled="!scrolled">' +
+               '       <md-tooltip md-visible="!scrolled">You must read it to the end in order to accept it!</md-tooltip> ' +
                '      Accept' +
                '    </md-button>' +
                '  </md-dialog-actions>' +
@@ -129,7 +130,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
             controller: function ToCController($scope, $mdDialog) {
                $scope.closeDialog  = function() {   $mdDialog.hide();    }
                $scope.acceptDialog = function() {   parentScope.acceptedTC=true;  $mdDialog.hide();      }
-               $scope.scrolled=false;
+               $scope.scrolled=true;
                $scope.init = function() {
                   setTimeout(function() {
                      var cc = $(".tocContent");
@@ -139,7 +140,9 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                            $scope.$apply();
                         }
                      });
-                  },100);
+                     $scope.scrolled=false;
+                     $scope.$apply();
+                  },500);
                }
             }
          });
