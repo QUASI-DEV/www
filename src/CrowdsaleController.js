@@ -8,56 +8,50 @@ angular
 .module('crowdsale', [ 'ngMaterial', 'ngAnimate','ngMessages' ])
 .controller('CrowdsaleController', [ '$scope', '$mdBottomSheet', '$mdDialog','$log', '$q', '$http','accountService',  CrowdsaleController ])
 .config(function($mdThemingProvider){
-   
     $mdThemingProvider.theme('default')
     .primaryPalette('blue-grey')
     .accentPalette('red');
-
 })
+// ethaddress - check if this ia a correct address
 .directive("ethaddress", function(){
-   // requires an isloated model
    return {
-      // restrict to an attribute type.
       restrict: 'A',
-      // element must have ng-model attribute.
-      require: 'ngModel',
+      require : 'ngModel',
       link: function(scope, ele, attrs, ctrl){
-
-         // add a parser that will process each time the value is
-         // parsed into the model when the user updates it.
          ctrl.$parsers.unshift(function(value) {
             if(value){
-               // test and set the validity after update.
                var valid = isValidAddress(value);
                ctrl.$setValidity('ethaddress', valid);
             }
-
-            // if it's valid, return the value to the model,
-            // otherwise return undefined.
             return valid ? value : undefined;
          });
-
       }
    }
-});
-
-
-// register a compare-directive
-angular.module('crowdsale').directive("compareTo", function() {
+})
+// compare passwords
+.directive("compareTo", function() {
     return { require: "ngModel",  scope: {  otherModelValue: "=compareTo"  }, link:  function(scope, element, attributes, ngModel) {
         ngModel.$validators.compareTo = function(modelValue) {    return modelValue == scope.otherModelValue;  };
         scope.$watch("otherModelValue", function()           {    ngModel.$validate();                        });
     }};
 });
 
+
+// functions...
+
+// normalize eth-adr
 function normalizeAdr(adr) {
     if (adr.indexOf("0x")>=0) adr=adr.substring(2);
     while (adr.length<40) adr="0"+adr; 
     return adr;
 }
+
+// create random hex number
 function s4() {
    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
+
+// check eth-address
 function isValidAddress(adr) {
    if (!adr) return false;
    if (adr.indexOf("0x")==0) adr=adr.substring(2);
@@ -65,29 +59,30 @@ function isValidAddress(adr) {
    return pattern.test(adr) && adr.length==40;
 }
 
-function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $http, accountService) {
-
-    // create a link to MistBrowser dependend OS
-    function detectMistLink() {
-      var ua = navigator.platform, baseUrl='https://github.com/ethereum/mist/releases';
-      var version='0.5.2';
-    
-      function createLink(os) { return baseUrl+'/download/'+version+"/Ethereum-Wallet-"+os+"-"+version.replace(/\./g,'-')+".zip"; }
-    
-      if (ua.indexOf("Win")>=0) 
-        return  (navigator.appVersion.indexOf("WOW64")>=0 || navigator.appVersion.indexOf("Win64")>=0 )
-            ? createLink('win64') :  createLink('win32'); 
+// create a link to MistBrowser dependend OS
+function detectMistLink() {
+   var ua = navigator.platform, baseUrl='https://github.com/ethereum/mist/releases';
+   var version='0.5.2';
+   
+   function createLink(os) { return baseUrl+'/download/'+version+"/Ethereum-Wallet-"+os+"-"+version.replace(/\./g,'-')+".zip"; }
+   
+   if (ua.indexOf("Win")>=0) 
+      return  (navigator.appVersion.indexOf("WOW64")>=0 || navigator.appVersion.indexOf("Win64")>=0 )
+         ? createLink('win64') :  createLink('win32'); 
+         
+   else if (ua.indexOf("Linux")>=0) 
+      return  (ua.indexOf("x86_64")>=0 || ua.indexOf("x86-64")>=0)
+         ? createLink('linux64') :  createLink('linux32');
             
-      else if (ua.indexOf("Linux")>=0) 
-        return  (ua.indexOf("x86_64")>=0 || ua.indexOf("x86-64")>=0)
-            ? createLink('linux64') :  createLink('linux32');
-              
-      else if (navigator.appVersion.indexOf("Mac")>=0)
-          return createLink('MacOSX');
-      else
-          return baseUrl;
-    }
+   else if (navigator.appVersion.indexOf("Mac")>=0)
+         return createLink('MacOSX');
+   else
+         return baseUrl;
+}
 
+
+// define main-controller
+function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $http, accountService) {
 
    // helper for error-handling
    function showError(title,msg,ev) {
