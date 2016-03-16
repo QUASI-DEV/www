@@ -12,7 +12,7 @@ if (window.includeTokeSale) {
 
 
    // include scripts
-   ['./bower_components/angular/angular.js',
+   ['./bower_components/angular/angular.min.js',
    './bower_components/angular-animate/angular-animate.min.js',
    './bower_components/angular-messages/angular-messages.min.js',
    './bower_components/angular-aria/angular-aria.min.js',
@@ -20,13 +20,13 @@ if (window.includeTokeSale) {
       
    './bower_components/strftime/strftime.js',
    './bower_components/qrcode/dist/jquery.qrcode.min.js',
-   './bower_components/web3/dist/web3.js',
-   './bower_components/hooked-web3-provider/build/hooked-web3-provider.js',
-   './bower_components/eth-lightwallet/dist/lightwallet.js',
-   './bower_components/underscore/underscore.js',
-   './bower_components/bignumber.js/bignumber.js',
+   './bower_components/web3/dist/web3.min.js',
+   './bower_components/hooked-web3-provider/build/hooked-web3-provider.min.js',
+   './bower_components/eth-lightwallet/dist/lightwallet.min.js',
+   './bower_components/underscore/underscore-min.js',
+   './bower_components/bignumber.js/bignumber.min.js',
    './bower_components/marked/lib/marked.js',
-   './bower_components/buffer/buffer.js',
+   './bower_components/buffer/buffer.min.js',
    './src/scryptsy.js',
    './src/aes.js',
    './src/ethutil.js',
