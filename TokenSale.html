@@ -190,16 +190,20 @@
                   <form name="etherForm" ng-submit="sendEther($event)" >
                      <div ng-show="account.unlocked && account.adr">
                         <div>
-                           <p>How many SlockTokens do you want to buy ( 1 SlockToken = 1 Ether ) </p>
-                           <md-input-container>
-                              <label>the amount in Ether to invest</label>
-                              <input required type="number" step="any" name="ether" id="account_ether" ng-model="account.ether" />
-                              <div ng-messages="etherForm.ether.$error" role="alert" multiple  >
-                                 <div ng-message="required"> You must define the amount of ether. </div>
-                                 <div ng-message="min"> You must send at least some Ether. </div>
-                                 <div ng-message="max"> You cannnot transfer more than your current balance </div>
-                              </div>
-                           </md-input-container>
+                           <p>How many SlockTokens do you want to buy ( 1 SlockToken = {{tokenPrice}} Ether ) </p>
+                           
+                           <div class="row">
+                              <md-input-container class="col-md-6">
+                                 <label>the amount in Ether to invest</label>
+                                 <input required type="number" step="any" name="ether" id="account_ether" ng-model="account.ether" />
+                                 <div ng-messages="etherForm.ether.$error" role="alert" multiple  >
+                                    <div ng-message="required"> You must define the amount of ether. </div>
+                                    <div ng-message="min"> You must send at least some Ether. </div>
+                                    <div ng-message="max"> You cannnot transfer more than your current balance </div>
+                                 </div>
+                              </md-input-container>
+                              <div class="col-md-6" style="padding-top:40px">Ether &nbsp; &nbsp; &nbsp; &nbsp; (= {{(account.ether||0)/tokenPrice}} Tokens)</div>
+                           </div>
 
                            <div><md-button class="md-raised md-primary" ng-disabled="!account.ether || account.isSendingEther || !account.adr">Send Transaction {{ account.success ? 'again' : ''}}</md-button></div>
                            <md-progress-linear md-mode="indeterminate" ng-show="account.isSendingEther"></md-progress-linear>
@@ -331,6 +335,52 @@
         </md-content>
       </div>
                     
+
+
+
+
+      <!-- Check the Balance -->
+      <div>
+        <md-toolbar >
+           <div class="md-toolbar-tools"><h2 class="md-flex">Check your Token-Balance</h2></div>
+        </md-toolbar>
+        <md-content class="md-padding content-border" >
+           <p>
+              Here you can check anytime, how many Tokens you own.
+           </p>
+           
+           <form name="balanceForm" ng-submit="checkBalances($event)" >
+                  <div>
+                     <md-input-container style="margin-left:0px">
+                        <label>Adress of your Account</label>
+                        <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
+                        <div ng-messages="balanceForm.adr.$error" role="alert" multiple ng-show="balanceForm.adr.$dirty || balanceForm.$submitted" >
+                           <div ng-message="required">We need your ETH-Address in order to assign your tokens to it.</div>
+                           <div ng-message="ethaddress">This needs to be a valid Ethereum-Address like 0x1234567890abcdef...</div>
+                           <div ng-message="md-maxlength">The address has to be less than 40 characters long.</div>
+                        </div>                  
+                     </md-input-container>
+                     
+
+                     <div><md-button class="md-raised md-primary" ng-disabled="!account.adr">Check Balance</md-button></div>
+                     <md-progress-linear md-mode="indeterminate" ng-show="isCheckingBalance"></md-progress-linear>
+                     <div class="row" ng-show="checkResult" style="padding-top:20px">
+                        <div class="col-md-6" >
+                           Account Balance : <b style="font-size:19px">{{ checkResult.balance }}</b> Ether
+                        </div>
+                        <div class="col-md-6" >
+                           Token owned : <b style="font-size:19px">{{ checkResult.tokens }}</b> Tokens
+                        </div>
+                     </div>
+                     
+
+                  </div>
+            </form>
+                             
+        </md-content>
+      </div>
+               
+
 
     </div>
     </div>

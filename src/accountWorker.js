@@ -30,7 +30,6 @@ onmessage = function(e) {
       
       // encrypt the key
       var derivedKey = scryptsy(new Buffer(passphrase), salt, 262144, 1, 8, 32, function(progress) {
-         console.log("post progress... "+progress.percent);
          postMessage({action:'progress',val:progress.percent});
       });
 
