@@ -25,7 +25,7 @@
       
       
       <!-- 1. currency -->
-      <div ng-show="acceptedTC">
+      <div ng-show="acceptedTC" class="roundBorder">
         <md-toolbar ng-class="account.currencyType?'step-done':''">
            <div class="md-toolbar-tools"><h2 class="md-flex">Step 1 : Choose the Currency!</h2></div>
         </md-toolbar>
@@ -46,7 +46,7 @@
       </div>
       
       <!-- 2. account -->
-      <div ng-show="needsAccount()">
+      <div ng-show="needsAccount()" class="roundBorder">
         <md-toolbar ng-class="(account.existing && (account.adr || (account.currencyType=='ETH' && account.existing!='no')))?'step-done':''">
            <div class="md-toolbar-tools"><h2 class="md-flex">Step 2 : Your Account</h2></div>
         </md-toolbar>
@@ -137,7 +137,7 @@
       
       
       <!-- 3. Invest -->
-      <div ng-show="showInvest()">
+      <div ng-show="showInvest()" class="roundBorder">
         <md-toolbar ng-class="(account.investDone || account.success)?'step-done':''">
            <div class="md-toolbar-tools"><h2 class="md-flex">Step 3 : Invest</h2></div>
         </md-toolbar>
@@ -280,7 +280,7 @@
       </div>
       
       <!-- 4. Send Ether to the new account -->
-      <div ng-show="needsAccount() && account.existing && (account.existing!='no' || account.unlocked) && account.success && account.currencyType=='ETH'">
+      <div ng-show="needsAccount() && account.existing && (account.existing!='no' || account.unlocked) && account.success && account.currencyType=='ETH'" class="roundBorder">
         <md-toolbar >
            <div class="md-toolbar-tools"><h2 class="md-flex">Step 4 : Send some Ether</h2></div>
         </md-toolbar>
@@ -303,7 +303,7 @@
            
 
       <!-- 4. Send Ether to the new account -->
-      <div ng-show="account.currencyType=='FIAT'">
+      <div ng-show="account.currencyType=='FIAT'" class="roundBorder">
         <md-toolbar >
            <div class="md-toolbar-tools"><h2 class="md-flex">Step 2 : Register on Bity</h2></div>
         </md-toolbar>
@@ -340,8 +340,8 @@
 
 
       <!-- Check the Balance -->
-      <div>
-        <md-toolbar >
+      <div class="roundBorder">
+        <md-toolbar class="checkBalance">
            <div class="md-toolbar-tools"><h2 class="md-flex">Check your Token-Balance</h2></div>
         </md-toolbar>
         <md-content class="md-padding content-border" >
