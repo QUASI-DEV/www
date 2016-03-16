@@ -286,17 +286,17 @@
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>
-               Congratulations, 1 Final Step:
+               Congratulations, one final step:
                <p>
                   Now you must send a transaction with <b>{{account.ether}}</b> ether to your new wallet<br/><br/>
                   <pre>{{account.adr}}</pre>
                </p>
                <p>
-                 As soon as you have transfered the ether, you will receive an email with the confirmation that your <b>{{account.ether}}</b> ether have been contributeed to the Slock.it DAO.
+                 As soon as you have transfered the ether, you will receive an email with the confirmation that your <b>{{account.ether}}</b> ether has been sent to the DAO.
                </p>
             </p>
             <p>
-               Now read the tutorial, on how to setup your Ethereum Wallet to actively participate in the DAO!
+               Now read the tutorial on how to setup your Ethereum Wallet to actively participate in the DAO!
             </p>
         </md-content>
       </div>
@@ -309,8 +309,8 @@
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>
-              In order to buy DAO Tokens using US-Dollars, Euros, or Swiss Francs continue on with our partner Bity.com. 
-              They have made a custom interface for the DAO Token Sale.
+              In order to buy DAO Tokens using US Dollars, Euros, or Swiss Francs, please continue the purchase at Bity.com. 
+              They have partnered with us to build a custom interface for the DAO Token Sale.
               
                <p><a href="https://bity.com/"  target="_new"><img src="https://bity.com/assets/img/logo-without-circle.png" width="200"/></a></p>
            </p>
@@ -355,7 +355,7 @@
                         <label>Address of your account</label>
                         <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
                         <div ng-messages="balanceForm.adr.$error" role="alert" multiple ng-show="balanceForm.adr.$dirty || balanceForm.$submitted" >
-                           <div ng-message="required">We need your ETH address in order to get you your DAO Tokens.</div>
+                           <div ng-message="required">We need your ETH address in order for you to receive your DAO Tokens.</div>
                            <div ng-message="ethaddress">This needs to be a valid Ethereum address like 0x1234567890abcdef...</div>
                            <div ng-message="md-maxlength">The address has to be less than 40 characters long.</div>
                         </div>                  
