@@ -156,7 +156,6 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    // user-options
    $scope.accountProgress = 0;
    $scope.daoAddress      = "0x54715db7a8a57bc9bab660eb8e7b195774cb564d";
-   $scope.clients         = ['37.120.164.112:8545'];
    $scope.tokenPrice      = 100;
    $scope.account.getAccounts = function() {  return accountService.getAccounts();  };
    $scope.createAccount = function() {
@@ -298,10 +297,8 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    
    
    $scope.checkBalances = function(ev) {
-      
-      var host =  $scope.clients[parseInt(Math.random()*$scope.clients.length)];
       function sendRequest (method,params,cb) {
-        $.post("http://"+host, JSON.stringify({
+        $.post("/web3/", JSON.stringify({
            jsonrpc:"2.0",
            method:method,
            params: params,
