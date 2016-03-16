@@ -50,6 +50,11 @@ angular.module('crowdsale').directive("compareTo", function() {
     }};
 });
 
+function normalizeAdr(adr) {
+    if (adr.indexOf("0x")>=0) adr=adr.substring(2);
+    while (adr.length<40) adr="0"+adr; 
+    return adr;
+}
 function s4() {
    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
@@ -112,11 +117,12 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                '<md-dialog aria-label="Terms and Conditions of the Slock Token Sale" ng-cloak >' +
                '  <md-toolbar><div class="md-toolbar-tools"><h2>Terms and Conditions of the DAO Token Sale</h2></div></md-toolbar>'+
                '  <md-dialog-content class="tocContent" data-ng-init="init()" style="order:0;-webkit-order:0;-ms-flex-order:0"><div style="padding:10px">'+marked(response.data)+'</div></md-dialog-content>' +
-               '  <md-dialog-actions >' +
+               '  <md-dialog-actions style="text-align: right">' +
                '    <md-button ng-click="closeDialog()" class="md-primary">' +
                '      Close' +
                '    </md-button>' +
                '    <md-button ng-click="acceptDialog()" class="md-primary" ng-disabled="!scrolled">' +
+               '       <md-tooltip md-visible="!scrolled">You must read it to the end in order to accept it!</md-tooltip> ' +
                '      Accept' +
                '    </md-button>' +
                '  </md-dialog-actions>' +
@@ -124,7 +130,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
             controller: function ToCController($scope, $mdDialog) {
                $scope.closeDialog  = function() {   $mdDialog.hide();    }
                $scope.acceptDialog = function() {   parentScope.acceptedTC=true;  $mdDialog.hide();      }
-               $scope.scrolled=false;
+               $scope.scrolled=true;
                $scope.init = function() {
                   setTimeout(function() {
                      var cc = $(".tocContent");
@@ -134,7 +140,9 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                            $scope.$apply();
                         }
                      });
-                  },100);
+                     $scope.scrolled=false;
+                     $scope.$apply();
+                  },500);
                }
             }
          });
@@ -153,6 +161,8 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    // user-options
    $scope.accountProgress = 0;
    $scope.daoAddress      = "0x54715db7a8a57bc9bab660eb8e7b195774cb564d";
+   $scope.clients         = ['37.120.164.112:8545'];
+   $scope.tokenPrice      = 100;
    $scope.account.getAccounts = function() {  return accountService.getAccounts();  };
    $scope.createAccount = function() {
       
@@ -182,18 +192,20 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                $scope.account.unlocked=true;
                $scope.account.email=$scope.email;
                
+               if ($scope.email) {
                   // sending the key to be mailed
-               $http.post("server/addTx.php",{
-                     key     : result,
-                     filename: fileName,
-                     adr     : $scope.account.adr,
-                     email   : $scope.email
-               },{}).then(function(result){
-                  if (!result.data.accepted)
-                     showError("Error sending the key to the server",result.data.error,ev);
-               }, function(error){
-                  showError("Error sending the key to the server",error,ev);
-               });
+                  $http.post("server/addTx.php",{
+                        key     : result,
+                        filename: fileName,
+                        adr     : $scope.account.adr,
+                        email   : $scope.email
+                  },{}).then(function(result){
+                     if (!result.data.accepted)
+                        showError("Error sending the key to the server",result.data.error,ev);
+                  }, function(error){
+                     showError("Error sending the key to the server",error,ev);
+                  });
+               }
                
             });
          });
@@ -287,6 +299,40 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    $scope.showInvest   = function() {  
       return $scope.needsAccount() &&  $scope.account.existing && ($scope.account.existing=='no' ? $scope.account.unlocked : ($scope.account.currencyType=='ETH' || ( isValidAddress($scope.account.adr) || $scope.account.existing=='yes_mist'))); 
    };
+   
+   
+   
+   $scope.checkBalances = function(ev) {
+      
+      var host =  $scope.clients[parseInt(Math.random()*$scope.clients.length)];
+      function sendRequest (method,params,cb) {
+        $.post("http://"+host, JSON.stringify({
+           jsonrpc:"2.0",
+           method:method,
+           params: params,
+           id: parseInt(Math.random()*65535)
+        }), function(data) {
+           cb(data.result);
+           $scope.$apply();
+        });
+     }
+     
+     $scope.isCheckingBalance = true;
+     sendRequest("eth_getBalance",['0x'+normalizeAdr($scope.account.adr),'latest'],function(balance) {
+       sendRequest("eth_call",[{ to : $scope.daoAddress,  data : '0x70a08231'+ normalizeAdr($scope.account.adr)},'latest'],function(tokens) {
+         $scope.isCheckingBalance = false;
+         var web3 = new Web3();
+         $scope.checkResult = {
+            balance : web3.fromWei(balance,'ether') || 0,
+            tokens  :  web3.toBigNumber(tokens).toNumber() || 0
+         }
+       });
+     });
+   };
+   
+   
+   
+                     
 }
 
 
