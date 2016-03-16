@@ -120,7 +120,7 @@
       <section style="display:none;"></section>
 
 
-			<section class="page-header" style="padding-top:200px; padding-bottom: 80px;">
+			<section class="page-header" style="padding-top:219px; padding-bottom: 80px;">
       <!-- 				<div class="background-image-holder parallax-background">
 					<img class="background-image" alt="Background Image" src="img/hero4.jpg">
 				</div> -->
