@@ -46,6 +46,12 @@ function normalizeAdr(adr) {
     return adr;
 }
 
+function round(val,len) {
+   if (!val) return 0;
+   len = len || 100;
+   return Math.round(val*len)/len;
+}
+
 // create random hex number
 function s4() {
    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
@@ -315,13 +321,12 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
          $scope.isCheckingBalance = false;
          var web3 = new Web3();
          $scope.checkResult = {
-            balance : web3.fromWei(balance,'ether') || 0,
-            tokens  :  web3.toBigNumber(tokens).toNumber() || 0
+            balance :  round(web3.fromWei(balance,'ether')) || 0,
+            tokens  :  round(web3.toBigNumber(tokens).toNumber()) || 0
          }
        });
      });
    };
-   
    
    
                      
