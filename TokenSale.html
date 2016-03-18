@@ -52,7 +52,7 @@
         <md-content class="md-padding content-border" >
            
          <p>
-            No matter what currecny you use to buy DAO tokens, you need an account on the Ethereum blockchain.
+            No matter what currency you use to buy DAO tokens, you need an account on the Ethereum blockchain.
          </p>
          <form name="etheraccount" ng-submit="createAccount()" >
             <md-radio-group ng-model="account.existing" >
@@ -148,10 +148,11 @@
                <ol>
                   <li>Download the most recent version of the <a href="{{mist_link}}" target="_blank">Ethereum Wallet</a></li>
                   <li>Unzip the file where you want install the program.</li>
-                  <li>Start the Ethereum Wallet (Ethereum-Wallet.exe). <br/>(When the Ethereum Wallet is opened will synchronize the blockchain-data, which may take a while.)</li>
+                  <li>Start the Ethereum Wallet (Ethereum-Wallet.exe). <br/>(When the Ethereum Wallet is opened will synchronize the blockchain-data, which may take a while, especially the first time.)</li>
                   <li>Create an account</li>
+                  <li>Load this account with ether</li>
                   <li ng-show="account.currencyType=='ETH'">
-                        All you need to do is to transfer the amount of ether you want to contribute from your wallet to the following address of the DAO:<br/><br/>
+                        Send the amount of ether you want to contribute from your wallet to the following address of the DAO:<br/><br/>
                         <pre>{{daoAddress}}</pre>
                   </li>
                   <li ng-show="account.currencyType!='ETH'">Enter the address of your new account:
@@ -179,7 +180,7 @@
                <!--do it directly -->
                <div ng-show="account.existing=='yes'  ">
                   <p>
-                        All you need to do is to transfer the amount of ether you want to contribute from your existing account to the following address of the DAO:<br/><br/>
+                        Send the amount of ether you want to contribute from your wallet to the following address of the DAO:<br/><br/>
                         <pre>{{daoAddress}}</pre>
                   </p>
                </div>
@@ -210,7 +211,7 @@
 
                         </div>
                         <div style="font-size:10px">
-                           <p style="font-size:10px">Pressing this button will sign a transaction with your new account. We will execute this signed transaction as soon as you have the balance to do so. <br/>
+                           <p style="font-size:10px">Pressing this button will sign an ether transaction with the new account. We will execute this signed transaction as soon as you send ether to this account. <br/>
                            (The amount transfered will be slightly less than the specified amount, because of the gas required for the transaction to be completed.)
                         </div>
                      </div>
@@ -227,7 +228,7 @@
               
                <form name="btcForm" ng-submit="sendBTC($event,account.btc_amount,'btc_qrcode')" >
                         <div>
-                           <p>How many Bitcoins do you want to contribute? </p>
+                           <p>How many Bitcoins do you want to send? </p>
                            
                            <p>
                               <img src="img/gatecoin.svg" width="261" height="69" style="overflow:hidden;transform-origin: 50% 50% 0px;"/>
@@ -238,8 +239,8 @@
                               <label>The amount in BTC to contribute</label>
                               <input required type="number" step="any" name="btc_amount" id="account_btc_amount" ng-model="account.btc_amount" />
                               <div ng-messages="btcForm.btc_amount.$error" role="alert" multiple  >
-                                 <div ng-message="required"> You must define an amount of BTC. </div>
-                                 <div ng-message="min"> You must send a little more BTC than that. </div>
+                                 <div ng-message="required"> Plese enter an amount of BTC. </div>
+                                 <div ng-message="min"> Please send more BTC than that. </div>
                               </div>
                            </md-input-container>
 
@@ -250,7 +251,7 @@
                            <div ng-show="account.btc">
                               <p>
                                  Please send {{account.btc.amount}} BTC to this address: <pre>{{account.btc.adr}}</pre><br/><br/>
-                                 Or simply scan this QRCode with your Bitcoin wallet app!
+                                 Or simply scan this QRCode with your Bitcoin wallet app.
                               </p>
                               <div id="btc_qrcode"/>
                            </div>
