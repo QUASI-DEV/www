@@ -27,19 +27,18 @@
       <!-- 1. currency -->
       <div ng-show="acceptedTC" class="roundBorder">
         <md-toolbar ng-class="account.currencyType?'step-done':''">
-           <div class="md-toolbar-tools"><h2 class="md-flex">Step 1 : Choose the Currency!</h2></div>
+           <div class="md-toolbar-tools"><h2 class="md-flex">Step 1 : Choose your Currency!</h2></div>
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>
-              Choose the currency you are using to buy DAO tokens. 
-              Because the DAO lives on the Ethereum blockchain it will only  operate with ether, any other currency will be converted to ether before being sent to the DAO.
+              Choose the currency you are using to buy DAO tokens. Because the DAO lives on the Ethereum blockchain it will only directly accept ether, any other currency will be converted to ether by one of our partners before being sent to the DAO.
            </p>
            <form ng-cloak>
               <md-radio-group ng-model="account.currencyType" >
-                 <md-radio-button value="ETH">ETH (Ether) The recommended way to get DAO tokens.</md-radio-button>
+                 <md-radio-button value="ETH">ETH (Ether) (Recommended) way to get DAO tokens.</md-radio-button>
                  <md-radio-button value="BTC">BTC (Bitcoin)</md-radio-button>
                  <md-radio-button value="FIAT">USD/EUR/GPB</md-radio-button>
-                 <md-radio-button value="ALT COINS">Other Digital Currencies</md-radio-button>
+                 <md-radio-button value="COINS">Other Digital Currencies</md-radio-button>
               </md-radio-group>
            </form>
         </md-content>
@@ -53,7 +52,7 @@
         <md-content class="md-padding content-border" >
            
          <p>
-            In order to truly own your DAO tokens and fully participate in the DAO you need an account on the Ethereum blockchain that you alone hold the private key to.
+            No matter what currecny you use to buy DAO tokens, you need an account on the Ethereum blockchain that you alone hold the private key to.
          </p>
          <form name="etheraccount" ng-submit="createAccount()" >
             <md-radio-group ng-model="account.existing" >
@@ -95,7 +94,7 @@
                </div>
                <div layout="row" ng-show="password && repassword==password">
                   <p style="padding-left:13px;font-size:12px">
-                     If you have a secure email and would like to back up your private key by having it emailed to you please enter your email address here. Otherwise your private key will stay in the browser, make sure you find your key and back it up!
+                     If you would like to back up your private key by having it emailed to you please enter your email address here. Otherwise your private key will stay in the browser, make sure you find your key and back it up!
                   </p>
                </div>
                <div layout="row" ng-show="password && repassword==password">
