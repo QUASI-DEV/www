@@ -221,7 +221,7 @@ It will take place in early 2016 and will last roughly a month. There is no defi
 
 ### How many DAO token will be created?
 
-There will be as many DAO tokens as there are purchases. The total volume of purchases defines the total volume of tokens. If 2,000,000 ethers are sent to the DAO, then there will be 200,000,000 tokens created, no more, no less. 
+The total volume of DAO tokens purchased defines the total volume of DAO tokens in circulation. If 200,000,000 tokens are purchased during the sale, then there will be 200,000,000 tokens created, no more, no less. 
 
 
 ### What will be the minimum purchase
