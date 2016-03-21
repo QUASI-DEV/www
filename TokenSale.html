@@ -35,7 +35,7 @@
            </p>
            <form ng-cloak>
               <md-radio-group ng-model="account.currencyType" >
-                 <md-radio-button value="ETH">ETH (ether) (Recommended) </md-radio-button>
+                 <md-radio-button value="ETH">ETH (ether) (recommended) </md-radio-button>
                  <md-radio-button value="BTC">BTC (bitcoin)</md-radio-button>
                  <md-radio-button value="FIAT">USD/EUR/GPB</md-radio-button>
                  <md-radio-button value="COINS">Other Digital Currencies</md-radio-button>
@@ -56,9 +56,9 @@
          </p>
          <form name="etheraccount" ng-submit="createAccount()" >
             <md-radio-group ng-model="account.existing" >
-               <md-radio-button value="yes_mist">I would like help setting up the Ethereum Wallet so I can securely hold DAO tokens and fully participate in the DAO (Recommended) </md-radio-button>
-               <md-radio-button value="yes">I already have an Ethereum wallet, and I know how to use it to safely hold DAO tokens.</md-radio-button>
-               <md-radio-button value="no">I want to create my own Ethereum account right here in the browser and store the private key that controls my DAO tokens myself.</md-radio-button>
+               <md-radio-button value="yes">I already have an Ethereum wallet, and I know how to use it.</md-radio-button>
+               <md-radio-button value="yes_mist">I would like instructions on how to install the Ethereum Wallet.</md-radio-button>
+               <md-radio-button value="no">I want to create a new Ethereum account here in the browser.</md-radio-button>
             </md-radio-group>
 
              <div ng-show="account.existing=='yes' && account.currencyType!='ETH'">
