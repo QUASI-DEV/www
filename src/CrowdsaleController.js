@@ -320,6 +320,10 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    };
    
    
+   $scope.openShapeShift = function() {
+      var link = "https://shapeshift.io/shifty.html?destination="+$scope.daoAddress+"&output=ETH&apiKey=652c87e6d0e733745943f6b7f0e0d2bc8712db9996eb3996f39abb6bb29846fe755415d3c13dd85a6fc269dd5ac80135bb244a790486dd53e2babcb7b43c153c";
+      window.open(link,'1418115287605','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');
+   }
                      
 }
 
