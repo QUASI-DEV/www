@@ -58,7 +58,7 @@
             <md-radio-group ng-model="account.existing" >
                <md-radio-button value="yes">I already have an Ethereum wallet, and I know how to use it.</md-radio-button>
                <md-radio-button value="yes_mist">I would like instructions on how to install the Ethereum Wallet.</md-radio-button>
-               <md-radio-button value="no">I want to create a new Ethereum account here in the browser.</md-radio-button>
+               <md-radio-button value="no">I want to manually create a new Ethereum account here in the browser.</md-radio-button>
             </md-radio-group>
 
              <div ng-show="account.existing=='yes' && account.currencyType!='ETH'">
@@ -148,12 +148,13 @@
                <ol>
                   <li>Download the most recent version of the <a href="{{mist_link}}" target="_blank">Ethereum Wallet</a></li>
                   <li>Unzip the file where you want install the program.</li>
-                  <li>Start the Ethereum Wallet<br/>When the Ethereum Wallet is opened, it will synchronize the blockchain data, which may take a while. If syncing for the first time, it will likely take take several hours.</li>
+                  <li>Start the Ethereum Wallet<br/>When the Ethereum Wallet is opened, it will synchronize the blockchain data, which will likely take several hours.</li>
                   <li>Create an account</li>
                   <li ng-show="account.currencyType=='ETH'">
-                        Load ETH onto the account</li>
-                       <li> Send the amount of ETH you want to convert for DAO tokens from your wallet to the following address of the DAO:<br/><br/>
+                        Load ETH (ether) onto the account</li>
+                       <li>Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/><br/>
                         <pre>{{daoAddress}}</pre>
+                         <li>You can then check you balance <a href="/dao_token_sale.html">here</a>. <br/>Note that voting on proposals will go live at the end of the Token Sale.</li>
                   </li>
                   <li ng-show="account.currencyType!='ETH'">Enter the address of your Ethereum account:
                      <form name="wallet">
@@ -180,8 +181,9 @@
                <!--do it directly -->
                <div ng-show="account.existing=='yes'  ">
                   <p>
-                        Send the amount of ETH you want to use to buy DAO tokens to the DAO's contract address:<br/><br/>
-                        <pre>{{daoAddress}}</pre>
+                        Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address. Your DAO token will be purchased instantly.  <br/><br/>
+                        <pre>{{daoAddress}}</pre> <br/>
+                       You can then check you balance <a href="/dao_token_sale.html">here</a>. <br/>Note that voting on proposals will go live at the end of the Token Sale.<br/><br/>
                   </p>
                </div>
                
