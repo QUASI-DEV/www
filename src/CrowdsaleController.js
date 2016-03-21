@@ -248,11 +248,13 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    
    $scope.sendBTC = function(ev, btc, id) {
        // sending the key to be mailed
+      $scope.account.isSendingBTC=true;
       $http.post("server/gatecoin.php",{
             dao     : $scope.daoAddress,
             amount  : btc+'',
             data    : '0x13d4bc24'+ normalizeAdr($scope.account.adr,64)
       },{}).then(function(result){
+         $scope.account.isSendingBTC=false;
          if (result.data.error)
             showError("Error establishing the gatecoin-connection",result.data.msg,ev);
          else {
@@ -266,6 +268,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
          }
       }, function(error){
          showError("Error establishing the gatecoin-connection",error,ev);
+         $scope.account.isSendingBTC=false;
       });
    };
    
@@ -321,7 +324,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    
    
    $scope.openShapeShift = function() {
-      var link = "https://shapeshift.io/shifty.html?destination="+$scope.daoAddress+"&output=ETH&apiKey=652c87e6d0e733745943f6b7f0e0d2bc8712db9996eb3996f39abb6bb29846fe755415d3c13dd85a6fc269dd5ac80135bb244a790486dd53e2babcb7b43c153c";
+      var link = "https://shapeshift.io/shifty.html?destination="+$scope.account.adr+"&output=ETH&apiKey=652c87e6d0e733745943f6b7f0e0d2bc8712db9996eb3996f39abb6bb29846fe755415d3c13dd85a6fc269dd5ac80135bb244a790486dd53e2babcb7b43c153c";
       window.open(link,'1418115287605','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');
    }
                      

@@ -245,7 +245,7 @@
                            </md-input-container>
 
                            <div><md-button class="md-raised md-primary" ng-disabled="!account.btc_amount || account.isSendingEther">Create QRCode {{ account.success ? 'again' : ''}}</md-button></div>
-                           <md-progress-linear md-mode="indeterminate" ng-show="account.isSendingEther"></md-progress-linear>
+                           <md-progress-linear md-mode="indeterminate" ng-show="account.isSendingBTC"></md-progress-linear>
                            <div ng-show="account.isSendingEther"><p>{{account.status}}</p></div>
                            
                            <div ng-show="account.btc">
