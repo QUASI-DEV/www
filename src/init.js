@@ -13,7 +13,7 @@ if (window.includeTokeSale) {
 
    // include scripts
    [
-   './src/dao_stats.js',
+   './src/stats.js',
    './bower_components/angular/angular.min.js',
    './bower_components/angular-animate/angular-animate.min.js',
    './bower_components/angular-messages/angular-messages.min.js',
