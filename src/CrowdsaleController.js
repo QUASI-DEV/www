@@ -40,9 +40,9 @@ angular
 // functions...
 
 // normalize eth-adr
-function normalizeAdr(adr) {
+function normalizeAdr(adr, len) {
     if (adr.indexOf("0x")>=0) adr=adr.substring(2);
-    while (adr.length<40) adr="0"+adr; 
+    while (adr.length< (len || 40)) adr="0"+adr; 
     return adr;
 }
 
@@ -157,11 +157,9 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
   $scope.mist_link = detectMistLink();
   
   
-  
-  
    // user-options
    $scope.accountProgress = 0;
-   $scope.daoAddress      = "0x54715db7a8a57bc9bab660eb8e7b195774cb564d";
+   $scope.daoAddress      = "0xAEEF46DB4855E25702F8237E8f403FddcaF931C0";
    $scope.tokenPrice      = 100;
    $scope.account.getAccounts = function() {  return accountService.getAccounts();  };
    $scope.createAccount = function() {
@@ -249,33 +247,26 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    };
    
    $scope.sendBTC = function(ev, btc, id) {
-      function finishBTC(adr) {
-          $scope.account.btc= {
-               adr   : adr,
+       // sending the key to be mailed
+      $http.post("server/gatecoin.php",{
+            dao     : $scope.daoAddress,
+            amount  : btc+'',
+            data    : '0x13d4bc24'+ normalizeAdr($scope.account.adr,64)
+      },{}).then(function(result){
+         if (result.data.error)
+            showError("Error establishing the gatecoin-connection",result.data.msg,ev);
+         else {
+             $scope.account.btc= {
+               adr   : result.data.address,
                amount: btc
             };
             var $qrDepAddr=$("#"+id);
             $qrDepAddr.empty();
             $qrDepAddr.qrcode({width: 175, height: 175, text: 'bitcoin:' + $scope.account.btc.adr + '?amount=' + $scope.account.btc.amount});
-      }
-      
-      if ($scope.account.unlocked) {
-         // how much ether?
-         
-         //TODO
-         var ether = btc*300;
-         
-         
-         // we can send it directly....
-         $scope.sendEther(ev,ether,function() {
-            finishBTC('3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy');
-            return true; 
-         });
-      }
-      else {
-         //TODO ask the Gatecoin for a address...
-         finishBTC('3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy');
-      }
+         }
+      }, function(error){
+         showError("Error establishing the gatecoin-connection",error,ev);
+      });
    };
    
    $scope.currencies = [];
@@ -317,12 +308,12 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
      
      $scope.isCheckingBalance = true;
      sendRequest("eth_getBalance",['0x'+normalizeAdr($scope.account.adr),'latest'],function(balance) {
-       sendRequest("eth_call",[{ to : $scope.daoAddress,  data : '0x70a08231'+ normalizeAdr($scope.account.adr)},'latest'],function(tokens) {
+       sendRequest("eth_call",[{ to : $scope.daoAddress,  data : '0x70a08231'+ normalizeAdr($scope.account.adr,64)},'latest'],function(tokens) {
          $scope.isCheckingBalance = false;
          var web3 = new Web3();
          $scope.checkResult = {
             balance :  round(web3.fromWei(balance,'ether')) || 0,
-            tokens  :  round(web3.toBigNumber(tokens).toNumber()) || 0
+            tokens  :  (round(web3.fromWei(tokens,'ether')) || 0)/$scope.tokenPrice
          }
        });
      });
