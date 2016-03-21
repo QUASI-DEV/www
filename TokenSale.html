@@ -348,18 +348,16 @@
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>
-              Enter the Ethereum address you used in Step 2 to verify your DAO token balance. If you did not pay with ETH it may take a few hours before DAO tokens have been sent to your Ethereum account. 
+              Enter the Ethereum address you used to purchase DAO tokens verify your DAO token balance. If you did not pay with ether directly it may take a few hours before the DAO tokens are associated to your Ethereum account. 
            </p>
            
            <form name="balanceForm" ng-submit="checkBalances($event)" >
                   <div>
                      <md-input-container style="margin-left:0px">
-                        <label>Address of your account</label>
+                        <label>Address of the Ethereum account used to purchase DAO tokens</label>
                         <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
                         <div ng-messages="balanceForm.adr.$error" role="alert" multiple ng-show="balanceForm.adr.$dirty || balanceForm.$submitted" >
-                           <div ng-message="required">We need your ETH address for you to receive DAO tokens.</div>
-                           <div ng-message="ethaddress">This needs to be a valid Ethereum address like 0x1234567890abcdef...</div>
-                           <div ng-message="md-maxlength">The address has to be less than 40 characters long.</div>
+                           <div ng-message="ethaddress">This needs to be a valid Ethereum address such as 0x123....abcde</div>
                         </div>                  
                      </md-input-container>
                      
@@ -381,7 +379,6 @@
                              
         </md-content>
       </div>
-               
 
 
     </div>
