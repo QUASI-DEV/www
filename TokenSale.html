@@ -234,8 +234,8 @@
                <form name="btcForm" ng-submit="sendBTC($event,account.btc_amount,'btc_qrcode')" >
                         <div>
                             <div class="row">
-                                <p class="col-md-6">How many BTC do you want to send? </p>
-                                <p class="col-md-6"><img src="img/partner_logos/gatecoin.png" width="200" /></p>
+                                <p class="col-md-6">How many DAO tokens would you like to purchase?</p>
+
                              </div>
                            
                            
@@ -261,9 +261,11 @@
                                  Please send {{account.btc.amount}} BTC to this address: <pre>{{account.btc.adr}}</pre><br/><br/>
                                  Or simply scan this QRCode with your Bitcoin wallet app.
                               </p>
-                              <div id="btc_qrcode"/>
-                           </div>
-
+                              <div id="btc_qrcode"/> </div>
+                             <div align="center">Powered by:<br>
+                              <img src="img/partner_logos/gatecoin.png" width="200" />
+                            </div>
+                     
                         </div>
                   </form>
               
