@@ -14,7 +14,7 @@
 
 Slock.it UG is a German company building the future infrastructure of the sharing economy. Our first product, the [Ethereum Computer](/ethereum_computer.html), brings blockchain technology to the entire home, making it possible to rent access to any compatible smart object and accept payments without intermediaries. We aim for this product and its ecosystem to be funded by a Decentralized Autonomous Organization (DAO), a type of digital company or trust where token holders benefit financially from the revenue of the products they supported - think of it as a Kickstarter on steroids.
 
-The DAO model is free and open source for anyone to reproduce and study, and our white paper can be downloaded [here](https://download.slock.it/public/DAO/whitepaper.pdf).
+The DAO model is free and open source for anyone to reproduce and study, and our white paper can be downloaded [here](https://download.slock.it/public/DAO/WhitePaper.pdf).
 
 Slock.it UG will soon make the Ethereum Computer proposal to the DAO available to the public. Once ready, it will be posted on this website.
 
@@ -319,7 +319,7 @@ Not directly. In order to take part, you must use a cryptocurrency. To exchange 
 
 A Decentralized Autonomous Organization (DAO) is a form of company which operates entirely on the blockchain. The DAO is composed of DAO token holders that can review proposals and cast their votes to elect and direct a Service Provider which will represent them in the physical world. This process is very similar to selecting a vendor or supplier. A DAO is however superior in many respects to a traditional company in the sense that all the decisions it makes are transparent, its finances can be audited by anyone and corruption is impossible.
 
-A primer to the mechanisms powering the DAO can be found on our <a href="https://blog.slock.it/a-primer-to-the-decentralized-autonomous-organization-dao-69fb125bd3cd#.wsxe19yc1" target="_new">blog</a>. The whitepaper can be downloaded from our [website](https://download.slock.it/public/DAO/whitepaper.pdf). 
+A primer to the mechanisms powering the DAO can be found on our <a href="https://blog.slock.it/a-primer-to-the-decentralized-autonomous-organization-dao-69fb125bd3cd#.wsxe19yc1" target="_new">blog</a>. The whitepaper can be downloaded from our [website](https://download.slock.it/public/DAO/WhitePaper.pdf). 
 
 
 ### Is this just for geeks?
