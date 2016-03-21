@@ -195,7 +195,7 @@
                   <form name="etherForm" ng-submit="sendEther($event)" >
                      <div ng-show="account.unlocked && account.adr">
                         <div>
-                           <p>How many ETH would you like to convert into DAO tokens? </p>
+                           <p>How many DAO tokens would you like to purchase?</p>
                            
                            <div class="row">
                               <md-input-container class="col-md-6">
@@ -216,7 +216,7 @@
 
                         </div>
                        <div style="margin-bottom:10px;margin-left:10px;margin-top:10px;">
-                           <p>Pressing the "Send Transaction" button will sign an ETH transaction with your newly created account for the pledged amount. This signed transaction will purchase DAO tokens as soon the balance of your newly created account {{account.adr}} exceeds the pledged amount of ETH.<br/><br/>
+                           <p>Pressing the "Send Transaction" button will sign and broadcast an ETH transaction with your newly created account for the pledged amount. This signed transaction will purchase DAO tokens as soon the balance of your newly created account {{account.adr}} exceeds the pledged amount of ETH.<br/><br/>
                            Note that this does not lock in the price of the DAO tokens, and the price of the tokens will be the price at the time the ETH is sent to this newly created account. 
                         </div>
                      </div>
