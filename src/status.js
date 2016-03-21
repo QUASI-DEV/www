@@ -1,53 +1,56 @@
 // defines some status-functions
 
-var daoStatus = {
-  
-  settings : {
-     clients : ['37.120.164.112:8545'],
-     id : parseInt(Math.abs(Math.random()*10000)),
-     dao: '0x54715db7a8a57bc9bab660eb8e7b195774cb564d',
+$( document ).ready(function() {
+ 
+    
+      
+   $('#dao_account_form').submit(function(event){
+      event.preventDefault();
+      // normalize eth-adr
+      function normalizeAdr(adr, len) {
+         if (adr.indexOf("0x")>=0) adr=adr.substring(2);
+         while (adr.length< (len || 40)) adr="0"+adr; 
+         return adr;
+      }
+
+      function round(val,len) {
+         if (!val) return 0;
+         len = len || 100;
+         return Math.round(val*len)/len;
+      }
+
+      function sendRequest (method,params,cb) {
+         $.post("/web3/", JSON.stringify({
+            jsonrpc:"2.0",
+            method:method,
+            params: params,
+            id: parseInt(Math.random()*65535)
+         }), function(data) {
+            cb(data.result);
+         });
+      }
+      
+      var adr = $("#dao_account_adr").val();
+
+      sendRequest("eth_getBalance",['0x'+normalizeAdr(adr),'latest'],function(balance) {
+         sendRequest("eth_call",[{ to : window.daoStats.dao,  data : '0x70a08231'+ normalizeAdr(adr,64)},'latest'],function(tokens) {
+            var web3 = new Web3();
+            $("#dao_account_tokens").html(""+(round(web3.fromWei(tokens,'ether')) || 0)/100);
+            $("#dao_account_balance").html(""+(round(web3.fromWei(balance,'ether')) || 0));
+            $("#dao_account_result").show();
+         });
+      });
+
+   });    
+      
+      
+      
+    
+    
+    
+});
+
+
+
      
-     sendRequest: function(method,params,cb) {
-        if (!this.host)  {
-           var index = Math.random()*this.clients.length;
-           this.host = this.clients[parseInt(index)];
-        }
-        
-        $.post("http://"+this.host, JSON.stringify({
-           jsonrpc:"2.0",
-           method:method,
-           params: params,
-           id: (this.id=this.id+1)
-           
-        }), function(data) {
-           cb(data.result);
-        });
-     }
-  },
-  
-  normalize : function(adr) {
-    if (adr.indexOf("0x")>=0) adr=adr.substring(2);
-    while (adr.length<40) adr="0"+adr; 
-    return adr;
-  },
-  
-  myStatus : function(adr, cb) {
-     
-     this.settings.sendRequest("eth_call",[{
-        to : this.settings.dao,
-        data : '0x70a08231'+ this.normalize(adr)
-        
-     },'latest'],cb);
-     
-     
-//     this.settings.sendRequest("eth_blockNumber",[],cb);
-  } ,
-  
-  tokensSold : function(cb) {
-     
-     this.settings.sendRequest("eth_getBalance",[this.settings.dao,'latest'],cb);
-  } 
-  
-  
-   
-};
+

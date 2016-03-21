@@ -349,45 +349,6 @@
 
 
 
-      <!-- Check the Balance -->
-      <div class="roundBorder">
-        <md-toolbar class="checkBalance">
-           <div class="md-toolbar-tools"><h2 class="md-flex">Check your DAO token balance</h2></div>
-        </md-toolbar>
-        <md-content class="md-padding content-border" >
-           <p>
-              Enter the Ethereum address you used to purchase DAO tokens verify your DAO token balance. If you did not pay with ether directly it may take a few hours before the DAO tokens are associated to your Ethereum account. 
-           </p>
-           
-           <form name="balanceForm" ng-submit="checkBalances($event)" >
-                  <div>
-                     <md-input-container style="margin-left:0px">
-                        <label>Address of the Ethereum account used to purchase DAO tokens</label>
-                        <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
-                        <div ng-messages="balanceForm.adr.$error" role="alert" multiple ng-show="balanceForm.adr.$dirty || balanceForm.$submitted" >
-                           <div ng-message="ethaddress">This needs to be a valid Ethereum address such as 0x123....abcde</div>
-                        </div>                  
-                     </md-input-container>
-                     
-
-                     <div><md-button class="md-raised md-primary" ng-disabled="!account.adr">Check Balance</md-button></div>
-                     <md-progress-linear md-mode="indeterminate" ng-show="isCheckingBalance"></md-progress-linear>
-                     <div class="row" ng-show="checkResult" style="padding-top:20px">
-                        <div class="col-md-6" >
-                           Account Balance : <b style="font-size:19px">{{ checkResult.balance }}</b> ETH
-                        </div>
-                        <div class="col-md-6" >
-                           DAO tokens owned : <b style="font-size:19px">{{ checkResult.tokens * tokenUnits }}</b> DAO tokens
-                        </div>
-                     </div>
-                     
-
-                  </div>
-            </form>
-                             
-        </md-content>
-      </div>
-
 
     </div>
     </div>

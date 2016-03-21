@@ -204,6 +204,37 @@
 
 
 
+			<!-- ****************************************** -->
+			<!-- *******          Check Balances   ******** -->
+			<!-- ****************************************** -->
+			<section class="strip bg-primary" style="padding: 32px;">
+				<div class="container">
+					<div class="row clearfix">
+						<form id="dao_account_form" class="mail-list-signup" >
+							<div class="col-sm-8 col-xs-12 pull-left clear-fix">
+								<h3 class="text-white pull-left"><strong>Check your Balance:&nbsp;</strong></h3>
+								<input  type="text" value="" name="dao_account"  id="dao_account_adr"  class="signup-email-field validate-required validate-email" placeholder="Enter your account-adr">
+							</div>
+							
+							<div class="col-sm-4 col-xs-12 pull-right text-right">
+								<input type="submit" id="dao_account_btn" class="btn btn-primary btn-filled" style="max-width: 100%;" value="Check" >
+							</div>
+						</form>
+					</div>
+                <div id="dao_account_result" style="display:none">
+                     <div class="row" ng-show="checkResult" style="padding-top:20px">
+                        <div class="col-md-6" >
+                           Account Balance : <b style="font-size:19px" id="dao_account_balance">{{ checkResult.balance }}</b> ETH
+                        </div>
+                        <div class="col-md-6" >
+                           DAO tokens owned : <b style="font-size:19px" id="dao_account_tokens">{{ checkResult.tokens * tokenUnits }}</b> DAO tokens
+                        </div>
+                     </div>
+                  </div>
+					
+				</div>
+			</section>
+
 
 
 			<!-- ******************************************** -->
@@ -219,7 +250,7 @@
 
 					<div class="row"><div class="col-md-12 text-center" >
 
-						<img src="/img/dao/dao_process.png">
+						<img src="img/dao/dao_process.png">
 
 					</div>
 
@@ -561,6 +592,10 @@
 
 
     <!--/include footer -->
+        <script src="src/stats.js"></script>
+        <script src="src/status.js"></script>
+        <script src="./bower_components/web3/dist/web3.min.js"></script>
+
 
     </body>
 
