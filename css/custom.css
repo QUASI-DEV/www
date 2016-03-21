@@ -378,7 +378,7 @@ md-toolbar h2 {
 
 /* every step that is done will add this class */
 md-toolbar.step-done {
-   background-color: darkolivegreen
+   background-color: green
 }
 
 md-toolbar.checkBalance {
@@ -394,3 +394,8 @@ md-toolbar.checkBalance {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;   
 }
+
+
+ol{ margin-left: 0; padding-left: 30px; }
+
+ol li { padding-left: 10px;  font-size: 16px;    line-height: 34px;}

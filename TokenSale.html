@@ -156,7 +156,7 @@
                   <li>Create an account</li>
                   <li ng-show="account.currencyType=='ETH'">
                         Load ETH (ether) onto the account</li>
-                       <li>Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/><br/>
+                       <li>Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/>
                         <pre>{{daoAddress}}</pre>
                          <li>You can then check you balance <a href="/dao_token_sale.html">here</a>. <br/>Note that voting on proposals will go live at the end of the Token Sale.</li>
                   </li>
@@ -234,8 +234,8 @@
                <form name="btcForm" ng-submit="sendBTC($event,account.btc_amount,'btc_qrcode')" >
                         <div>
                             <div class="row">
-                                <p class="col-md-6">How many BTC do you want to send? </p>
-                                <p class="col-md-6"><img src="img/partner_logos/gatecoin.png" width="200" /></p>
+                                <p class="col-md-6">How many DAO tokens would you like to purchase?</p>
+
                              </div>
                            
                            
@@ -261,9 +261,11 @@
                                  Please send {{account.btc.amount}} BTC to this address: <pre>{{account.btc.adr}}</pre><br/><br/>
                                  Or simply scan this QRCode with your Bitcoin wallet app.
                               </p>
-                              <div id="btc_qrcode"/>
-                           </div>
-
+                              <div id="btc_qrcode"/> </div>
+                             <div align="center">Powered by:<br>
+                              <img src="img/partner_logos/gatecoin.png" width="200" />
+                            </div>
+                     
                         </div>
                   </form>
               
