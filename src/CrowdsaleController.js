@@ -281,7 +281,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
     $http.get("https://www.gatecoin.com/api/Public/LiveTickers").then(function(result){
       result.data.tickers.forEach(function(c) {
         if (c.currencyPair.indexOf("ETHBTC")==0) 
-          $scope.btceth=c.bid;
+          $scope.btceth=c.ask;
       }, this);
     }, function(error){
     });
