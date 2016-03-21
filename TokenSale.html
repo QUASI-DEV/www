@@ -151,9 +151,8 @@
                   <li>Start the Ethereum Wallet (Ethereum-Wallet.exe). <br/>When the Ethereum Wallet is opened, it will synchronize the blockchain-data, which may take a while, especially the first time it will likely take several hours.</li>
                   <li>Create an account</li>
                   <li ng-show="account.currencyType=='ETH'">
-                        Load this account with ETH
-                  </li>
-                  <li> Send the amount of ETH you want to convert from your wallet to the following address of the DAO:<br/><br/>
+                        Load this account with ETH</li>
+                       <li> Send the amount of ETH you want to convert from your wallet to the following address of the DAO:<br/><br/>
                         <pre>{{daoAddress}}</pre>
                   </li>
                   <li ng-show="account.currencyType!='ETH'">Enter the address of your Ethereum account:
