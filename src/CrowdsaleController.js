@@ -123,7 +123,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                '      Close' +
                '    </md-button>' +
                '    <md-button ng-click="acceptDialog()" class="md-primary" ng-disabled="!scrolled">' +
-               '       <md-tooltip md-visible="!scrolled">You must read it to the end in order to accept it!</md-tooltip> ' +
+               '       <md-tooltip md-visible="!scrolled">You must read the T&Cs to the end in order to accept them.</md-tooltip> ' +
                '      Accept' +
                '    </md-button>' +
                '  </md-dialog-actions>' +
