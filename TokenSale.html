@@ -58,7 +58,7 @@
             <md-radio-group ng-model="account.existing" >
                <md-radio-button value="yes">I already have an Ethereum wallet, and I know how to use it.</md-radio-button>
                <md-radio-button value="yes_mist">I would like instructions on how to install the Ethereum Wallet.</md-radio-button>
-               <md-radio-button value="no">I want to manually create a new Ethereum account here in the browser.</md-radio-button>
+               <md-radio-button value="no">I want to manually create a new Ethereum account here in the browser, to import later.</md-radio-button>
             </md-radio-group>
 
              <div ng-show="account.existing=='yes' && account.currencyType!='ETH'">
@@ -66,58 +66,59 @@
                   <label>Your Ethereum Account's Address</label>
                   <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
                   <div ng-messages="etheraccount.adr.$error" role="alert" multiple ng-show="etheraccount.adr.$dirty || etheraccount.$submitted" >
-                     <div ng-message="required">We need your ETH address in order for you to receive DAO tokens.</div>
                      <div ng-message="ethaddress">This needs to be a valid Ethereum address like 0x1234567890abcdef...</div>
-                     <div ng-message="md-maxlength">The address has to be less than 40 characters long.</div>
                   </div>                  
                </md-input-container>
             </div>
 
 
             <div ng-show="account.existing=='no'" >
+              <div style="margin-bottom:0px;margin-left:10px;margin-top:10px;">
+                Please enter a secure password and save it carefully, you will need it to access your DAO tokens.
+              </div>   
                <div layout="row" >
                   <md-input-container  style="margin-left:10px" flex="45">
-                     <label>Please enter a secure password and save it, you will need it to access your DAO tokens.</label>
-                     <input id="account_password" required name="password" ng-model="password" type="password" ng-minlength="7"/>
-                     <div ng-messages="etheraccount.password.$error" role="alert" multiple ng-show="etheraccount.password.$dirty || etheraccount.$submitted" >
-                        <div ng-message="minlength"> Please enter a password with at least 7 characters. </div>
-                     </div>
+                    <label>Please enter a secure password.</label>
+                    <input id="account_password" required name="password" ng-model="password" type="password" ng-minlength="7"/>
+                    <div ng-messages="etheraccount.password.$error" role="alert" multiple ng-show="etheraccount.password.$dirty || etheraccount.$submitted" >
+                       <div ng-message="minlength"> Please enter a password with at least 7 characters. </div>
+                    </div>
                   </md-input-container>
                   <md-input-container style="margin-left:20px" ng-show="password" flex="45">
                      <label>Re-enter your password to confirm</label>
                      <input required ng-model="repassword" name="repassword" type="password" compare-to="password" />
                      <div ng-messages="etheraccount.repassword.$error" role="alert" multiple ng-show="etheraccount.repassword.$dirty || etheraccount.$submitted" >
                         <div ng-message="required"> Please re-enter your password to confirm. </div>
-                        <div ng-message="compareTo"> Try again, your passwords did not match </div>
+                        <div ng-message="compareTo"> Passwords do not match, please try again. </div>
                      </div>
                   </md-input-container>
                </div>
                <div layout="row" ng-show="password && repassword==password">
-                  <p style="padding-left:13px;font-size:12px">
-                     If you would like to back up your private key by having it emailed to you please enter your email address here. Your private key will be downloaded by your browser as a file without an extension, be sure to back up this file and your password!
+                  <p style="padding-left:13px;">
+                     (optional) If you would like to back up your private key by having it emailed to you, please enter your email address below. 
                   </p>
                </div>
                <div layout="row" ng-show="password && repassword==password">
                   <md-input-container  style="margin-left:10px"  flex="45">
-                     <label>The email address where the private key will be sent</label>
+                     <label>The email address for the private key.</label>
                      <input name="email" ng-model="email" type="email" ng-pattern="/^.+@.+\..+$/"/>
                      <div ng-messages="etheraccount.email.$error" role="alert" multiple ng-show="etheraccount.email.$dirty || etheraccount.$submitted" >
                         <div ng-message="pattern"> Please enter a valid email address. </div>
                      </div>
                   </md-input-container>
                   <md-input-container style="margin-left:20px" ng-show="email"  flex="45">
-                     <label>Re-enter your email address to ensure there are no typos.</label>
+                     <label>Confirm your email address.</label>
                      <input ng-model="reemail" name="reemail" type="email" compare-to="email" />
                      <div ng-messages="etheraccount.reemail.$error" role="alert" multiple ng-show="etheraccount.reemail.$dirty || etheraccount.$submitted" >
                         <div ng-message="required"> Please re-enter the email. </div>
-                        <div ng-message="compareTo"> Both emails need to match. </div>
+                        <div ng-message="compareTo"> Both emails addresses need to match. </div>
                      </div>
                   </md-input-container>
                </div>
                <div><md-button class="md-raised md-primary" ng-disabled="password!=repassword || ( email && email!=reemail) || !password">Create an Account and Download your Private Key</md-button>
 
-               <div style="margin-bottom:10px;margin-left:10px;margin-top:10px;color:orange;">
-                  Make sure you save your private key and your password! You will need both of them in order to have full access to your DAO tokens. Your new Ethereum account address is: {{account.adr}}
+               <div style="margin-bottom:10px;margin-left:10px;margin-top:10px;color:red;">
+                  Your private key will be downloaded by your browser as a file without an extension, be sure to back up this file as well as your password! You will need <strong>both</strong> of them in order to have full access to your DAO tokens.<br/><br/> Your new Ethereum account address is: {{account.adr}}
                </div>
                <md-progress-linear id="accountProgressBar" md-mode="determinate" ng-show="accountProgress>0"  value="{{accountProgress}}"></md-progress-linear>
 
@@ -162,9 +163,8 @@
                            <label>Address of your new Account</label>
                            <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
                            <div ng-messages="wallet.adr.$error" role="alert" multiple ng-show="wallet.adr.$dirty || wallet.$submitted" >
-                              <div ng-message="required">We need your ETH address you to receive DAO tokens.</div>
                               <div ng-message="ethaddress"> Please enter a valid Ethereum address like 0x1234567890abcdef...</div>
-                              <div ng-message="md-maxlength">The address must be less than 40 characters long.</div>
+                              
                            </div>                  
                         </md-input-container>
                      </form>
