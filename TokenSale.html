@@ -273,9 +273,10 @@
 
             <!-- Pay in BTC -->
            <div ng-show="account.currencyType=='COINS' && account.adr">
-              
-              <p>
-                     ShapeShift.io allows us to accept almost any digital currency. ShapeShift will convert your digital currency into ETH and buy the DAO tokens for you. They will be found in your Ethereum account {{account.adr}} as soon as the ETH is received by the DAO.<br/>
+               
+              <p style="font-size: 16px;">
+                     ShapeShift.io allows you to convert almost any digitical currency into ETH then automatically purchase the DAO tokens in one single step.<br/><br/>
+                     DAO tokens will be accessible to your Ethereum account {{account.adr}} as soon as the ETH is received by the DAO.<br/>
                      <div>
                         
                         <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button></div>
