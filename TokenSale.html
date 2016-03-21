@@ -200,14 +200,14 @@
                            <div class="row">
                               <md-input-container class="col-md-6">
                                  <label>The amount in ETH being spent</label>
-                                 <input required type="number" step="any" name="ether" id="account_ether" ng-model="account.ether" />
+                                 <input required type="number" step="any" name="ether" min="0" max="1000000" id="account_ether" ng-model="account.ether" />
                                  <div ng-messages="etherForm.ether.$error" role="alert" multiple>
                                     <div ng-message="required"> Please define an amount of ETH.</div>
                                     <div ng-message="min">Please enter a larger amount of ETH.</div>
-                                    <div ng-message="max">You cannot transfer more than your current balance.</div>
+                                    <div ng-message="max">You cannot transfer more than 1000000 with one transaction!</div>
                                  </div>
                               </md-input-container>
-                              <div class="col-md-6" style="padding-top:40px"> ETH &nbsp; &nbsp; &nbsp; &nbsp; = approx. {{(account.ether||0)*tokenPrice-0.2}} DAO tokens</div>
+                              <div class="col-md-6" style="padding-top:40px"> ETH &nbsp; &nbsp; &nbsp; &nbsp; = approx. {{(account.ether||0)/tokenPrice*tokenUnits}} DAO tokens</div>
                            </div>
 
                            <div><md-button class="md-raised md-primary" ng-disabled="!account.ether || account.isSendingEther || !account.adr">Send Transaction {{ account.success ? 'again' : ''}}</md-button></div>
@@ -240,14 +240,18 @@
                            </p>
                            
                            
-                           <md-input-container>
-                              <label>The amount in BTC to convert into DAO tokens</label>
-                              <input required type="number" step="any" name="btc_amount" id="account_btc_amount" ng-model="account.btc_amount" />
-                              <div ng-messages="btcForm.btc_amount.$error" role="alert" multiple  >
-                                 <div ng-message="required"> Please enter an amount of BTC. </div>
-                                 <div ng-message="min"> Please send more BTC than that. </div>
-                              </div>
-                           </md-input-container>
+                           <div class="row">
+                              <md-input-container class="col-md-6">
+                                 <label>The amount in BTC to convert into DAO tokens</label>
+                                 <input required type="number" step="any" min="0" max="1000000" name="btc_amount" id="account_btc_amount" ng-model="account.btc_amount" />
+                                 <div ng-messages="btcForm.btc_amount.$error" role="alert" multiple  >
+                                    <div ng-message="required"> Please enter an amount of BTC. </div>
+                                    <div ng-message="min"> Please send more BTC than that. </div>
+                                    <div ng-message="max"> Please enter a realistic number of more BTC!</div>
+                                 </div>
+                              </md-input-container>
+                              <div class="col-md-6" style="padding-top:40px"> BTC ( 1 ETH = {{btceth}} BTC ) <br> &nbsp; = approx. {{(( account.btc_amount ||0) / btceth )/tokenPrice*tokenUnits | number:2}} DAO tokens</div>
+                           </div>
 
                            <div><md-button class="md-raised md-primary" ng-disabled="!account.btc_amount || account.isSendingEther">Create QRCode {{ account.success ? 'again' : ''}}</md-button></div>
                            <md-progress-linear md-mode="indeterminate" ng-show="account.isSendingBTC"></md-progress-linear>
@@ -374,7 +378,7 @@
                            Account Balance : <b style="font-size:19px">{{ checkResult.balance }}</b> ETH
                         </div>
                         <div class="col-md-6" >
-                           DAO tokens owned : <b style="font-size:19px">{{ checkResult.tokens }}</b> DAO tokens
+                           DAO tokens owned : <b style="font-size:19px">{{ checkResult.tokens * tokenUnits }}</b> DAO tokens
                         </div>
                      </div>
                      

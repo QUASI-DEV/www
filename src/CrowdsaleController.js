@@ -101,7 +101,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
             .targetEvent(ev));
    }
 
-
+  var stats = window.daoStats || {};
 
   // set scope-params  
   $scope.account={ existing:false};
@@ -159,8 +159,10 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
   
    // user-options
    $scope.accountProgress = 0;
-   $scope.daoAddress      = "0xAEEF46DB4855E25702F8237E8f403FddcaF931C0";
-   $scope.tokenPrice      = 100;
+   $scope.daoAddress      = stats.dao ||  "0xAEEF46DB4855E25702F8237E8f403FddcaF931C0";
+   $scope.tokenPrice      = stats.price || 1;
+   $scope.tokenUnits      = stats.units || 100; 
+   $scope.btceth          = 0.2;
    $scope.account.getAccounts = function() {  return accountService.getAccounts();  };
    $scope.createAccount = function() {
       
@@ -276,6 +278,18 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
    $scope.rates = {};
 
     // sending the key to be mailed
+    $http.get("https://www.gatecoin.com/api/Public/LiveTickers").then(function(result){
+      result.data.tickers.forEach(function(c) {
+        if (c.currencyPair.indexOf("ETHBTC")==0) 
+          $scope.btceth=c.bid;
+      }, this);
+    }, function(error){
+    });
+
+
+
+
+    // sending the key to be mailed
     $http.get("server/rates.php").then(function(result){
       result.data.objects.forEach(function(c) {
         if (c.pair.indexOf("ETH")==0) {
@@ -316,7 +330,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
          var web3 = new Web3();
          $scope.checkResult = {
             balance :  round(web3.fromWei(balance,'ether')) || 0,
-            tokens  :  (round(web3.fromWei(tokens,'ether')) || 0)/$scope.tokenPrice
+            tokens  :  (round(web3.fromWei(tokens,'ether')) || 0)/$scope.tokenUnits
          }
        });
      });
