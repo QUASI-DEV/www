@@ -12,7 +12,9 @@ if (window.includeTokeSale) {
 
 
    // include scripts
-   ['./bower_components/angular/angular.min.js',
+   [
+   './src/dao_stats.js',
+   './bower_components/angular/angular.min.js',
    './bower_components/angular-animate/angular-animate.min.js',
    './bower_components/angular-messages/angular-messages.min.js',
    './bower_components/angular-aria/angular-aria.min.js',
@@ -31,7 +33,7 @@ if (window.includeTokeSale) {
    './src/aes.js',
    './src/ethutil.js',
    './src/CrowdsaleController.js',
-   './src/AccountService.js'
+   './src/AccountService.js',
    ].forEach(function(path) {
          document.write('\x3Cscript type="text/javascript" src="'+path+'">\x3C/script>');
    });
