@@ -15,12 +15,12 @@
      
     <div id="crowdsaleApp" ng-app="crowdsale" layout="column" style="text-align: left;" layout-padding ng-controller="CrowdsaleController as cs">
 
-      <div class="col-sm" style="margin-bottom:20px;text-align:center" ng-show="!acceptedTC">
+      <div class="col-sm" style="text-align:center" ng-show="!acceptedTC">
          
          <div id="msgOutput"/>
         
-        <input type="button" ng-click="acceptTC($event)" value="Purchase DAO Tokens" name="purchase" class="btn btn-primary btn-filled btn-purchase" style="margin-top: 12px; margin-bottom: 8px">
-        
+        <input type="button" ng-click="acceptTC($event)" value="Purchase DAO Tokens" name="purchase" class="btn btn-primary btn-filled btn-purchase" style="margin-top: 12px; margin-bottom: 8px;"><br/>
+        You can also <a href="./dao.html"> check your DAO token balance</a>
       </div>
       
       
@@ -118,7 +118,7 @@
                <div><md-button class="md-raised md-primary" ng-disabled="password!=repassword || ( email && email!=reemail) || !password">Create an Account and Download your Private Key</md-button>
 
                <div style="margin-bottom:10px;margin-left:10px;margin-top:10px;color:red;">
-                  Your private key will be downloaded by your browser as a file without an extension, be sure to back up this file as well as your password! You will need <strong>both</strong> of them in order to have full access to your DAO tokens.<br/><br/> 
+                  Your private key will be downloaded by your browser as a file without an extension, be sure to back up this file as well as your password!<br/> You will need <strong>both</strong> of them in order to have full access to your DAO tokens.<br/><br/> 
                   <div ng-show="account.adr">
                      Your new Ethereum account address is: <strong>{{account.adr}}</strong>
                   </div>
@@ -163,9 +163,12 @@
                   <li ng-show="account.currencyType=='ETH'">
                      Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/>
                      <pre>{{daoAddress}}</pre>
+                      <span style="color:red">Note that this page will not refresh and you will not be notified of the transfer</span><br/>
+                      This is expected as you are sending ETH directly to the DAO contract via your wallet. 
                   </li>
                    <li>
-                     You can then check you balance <a href="dao.html#balance">here</a>. <br/>
+
+                     You will then be able to almost immediately (20-40 seconds) check your balance <a href="/dao.html">on the DAO page</a>. <br/>
                      Note that voting on proposals will go live at the end of the Token Sale.
                   </li>
                   <li ng-show="account.currencyType!='ETH' && account.currencyType!='FIAT'">Enter the address of your Ethereum account:
@@ -192,9 +195,11 @@
                <!--do it directly -->
                <div ng-show="account.existing=='yes'  ">
                   <p>
-                        Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address.<br/> Your DAO token will be purchased instantly.  <br/><br/>
+                      Your DAO token will be purchased instantly.  <br/>  Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address: <br/><br/>
                         <pre>{{daoAddress}}</pre> <br/>
-                       You can then check you balance <a href="/dao.html">here</a>. <br/>Note that voting on proposals will go live at the end of the Token Sale.<br/><br/>
+                       
+                     You will then be able to almost immediately (20-40 seconds) check your balance <a href="/dao.html">on the DAO page</a>. <br/>
+                     Note that voting on proposals will go live at the end of the Token Sale. <br/><br/>
                   </p>
                </div>
                
