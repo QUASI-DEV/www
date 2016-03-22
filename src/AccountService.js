@@ -7,12 +7,32 @@
 var scryptsy  = require("scryptsy");
 var crypt_aes = aesjs;
 var ethUtil   = require('ethereumjs-util');
-
+//var Buffer    = require('buffer').Buffer;
 var gas      = 50000;
 var gasPrice = 56000000000;
 var fnHash   = "0xa4821719";
 
 
+function randomBytes(length) {
+    var charset = "abcdef0123456789";
+    var i;
+    var result = "";
+    var isOpera = Object.prototype.toString.call(window.opera) == '[object Opera]';
+    if(window.crypto && window.crypto.getRandomValues) {
+        values = new Uint32Array(length);
+        window.crypto.getRandomValues(values);
+        for(i=0; i<length; i++) {
+            result += charset[values[i] % charset.length];
+        }
+        return result;
+    } else if(isOpera) {//Opera's Math.random is secure, see http://lists.w3.org/Archives/Public/public-webcrypto/2013Jan/0063.html
+        for(i=0; i<length; i++) {
+            result += charset[Math.floor(Math.random()*charset.length)];
+        }
+        return result;
+    }
+    else throw new Error("Your browser sucks and can't generate secure random numbers");
+}
 
 function toHex(val) {
    return "0x"+new BigNumber(val).toString(16);
@@ -44,34 +64,22 @@ angular.module('crowdsale').service('accountService', ['$q','$http','$interval',
       },
       
       // create the account and returns a primse with the account.
-      createAccount :  function(passphrase) {
+      createAccount :  function() {
          var d          = $q.defer();
          var _          = this;
-         var secretSeed = lightwallet.keystore.generateRandomSeed();
          
-         lightwallet.keystore.deriveKeyFromPassword(passphrase, function (err, pwDerivedKey) {
-
-            _.ks = new lightwallet.keystore(secretSeed, pwDerivedKey);
-
-            // generate a new address/private key pairs
-            // the corresponding private keys are also encrypted
-            _.ks.generateNewAddress(pwDerivedKey);
-            var addr = _.ks.getAddresses()[0];
-
-            // Create a custom passwordProvider to always return the password used when creating.
-            _.ks.passwordProvider = function (callback) {  callback(null, passphrase);  };
+         var private = new Buffer(randomBytes(64), 'hex');
+         var public = ethUtil.privateToPublic(private);
+         var address = ethUtil.publicToAddress(public).toString('hex');
+         while (address.length<40) address="0"+address;
+         
+         _.accountList=[{
+               address : "0x"+address,
+               private : private.toString('hex')
+         }];
             
-            _.accountList=[{
-               address : "0x"+addr,
-               private : _.ks.exportPrivateKey(addr, pwDerivedKey)
-            }];
-            
-            
-            
-            d.resolve(_.accountList[0]);
-        });
-        this.accountList=null;
-        return d.promise;
+         d.resolve(_.accountList[0]);
+         return d.promise;
       },
       
       // starts a webworker to encrypt the private key.

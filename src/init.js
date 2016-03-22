@@ -29,9 +29,9 @@ if (window.includeTokeSale) {
    './bower_components/bignumber.js/bignumber.min.js',
    './bower_components/marked/lib/marked.js',
    './bower_components/buffer/buffer.min.js',
-   './src/scryptsy.js',
+   './src/scryptsy.min.js',
    './src/aes.js',
-   './src/ethutil.js',
+   './src/ethutil.min.js',
    './src/CrowdsaleController.js',
    './src/AccountService.js',
    ].forEach(function(path) {
