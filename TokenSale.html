@@ -38,7 +38,7 @@
                  <md-radio-button value="ETH">ETH (ether) (recommended) </md-radio-button>
                  <md-radio-button value="BTC">BTC (bitcoin)</md-radio-button>
                  <md-radio-button value="FIAT">USD/EUR/GPB</md-radio-button>
-                 <md-radio-button value="COINS">Other Digital Currencies</md-radio-button>
+                 <md-radio-button value="COINS">XRP, LTC, MAID, DASH, DOGE, XMR, BTS and all other Digital Currencies</md-radio-button>
               </md-radio-group>
            </form>
         </md-content>
@@ -170,7 +170,8 @@
 
                      After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
                           Voting on proposals will go live at the end of the Token Sale. <br/><br/>
-
+                          
+                          You can now safely close this page.<br>
                           For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
                   </li>
                   <li ng-show="account.currencyType!='ETH' && account.currencyType!='FIAT'">Enter the address of your Ethereum account:
@@ -208,6 +209,7 @@
                           After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
                           Voting on proposals will go live at the end of the Token Sale. <br/><br/>
 
+                          You can now safely close this page.<br>
                           For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
                   </p>
                </div>
@@ -297,11 +299,24 @@
            <div ng-show="account.currencyType=='COINS' && account.adr">
                
               <p style="font-size: 16px;">
-                     ShapeShift.io allows you to convert almost any digitical currency into ETH then automatically purchase the DAO tokens in one single step.<br/><br/>
-                     DAO tokens will be accessible to your Ethereum account {{account.adr}} as soon as the ETH is received by the DAO.<br/>
+                     Thanks to our partnership with ShapeShift.io, you can purchase DAO tokens with almost any digital currency.<br/>
+                     You will also benefit from higher limits using this tool than using Shapeshift directly.<br/>
+                     Once you click the button below, a ShapeShift window will open.<br/><br/>
+
+                      <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button><br/>
+
+                        <span style="color:red; font-size: 16px;">Note that this page will not update and you will not be notified of the transfer. </span><br/>
+                        This is expected as Shapeshift will be sending ETH directly to the DAO contract on your behalf. <br/><br/>
+
+ DAO tokens will be accessible to your Ethereum account {{account.adr}} as soon as the ETH is received by the DAO.<br/>
+                          You can now safely close this page. After Shapeshift transfer the funds to the DAO (note: this can take a little bit of time), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
+                          Voting on proposals will go live at the end of the Token Sale. <br/><br/>
+
+                          
+                          For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
                      <div>
                         
-                        <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button>
+                       
                         
 
                      </div>
