@@ -20,7 +20,7 @@
          <div id="msgOutput"/>
         
         <input type="button" ng-click="acceptTC($event)" value="Purchase DAO Tokens" name="purchase" class="btn btn-primary btn-filled btn-purchase" style="margin-top: 12px; margin-bottom: 8px;"><br/>
-        You can also <a href="./dao.html"> check your DAO token balance</a>
+        You can also <a href="./dao.html#balance"> check your DAO token balance</a>
       </div>
       
       
@@ -143,8 +143,8 @@
       <div ng-show="showInvest()" class="roundBorder">
         <md-toolbar ng-class="(account.investDone || account.success)?'step-done':''">
            <div class="md-toolbar-tools">
-              <h2 class="md-flex" ng-show="account.currencyType!='FIAT'">Step 3: Buy DAO Tokens</h2>
-              <h2 class="md-flex" ng-show="account.currencyType=='FIAT'">Setup your Wallet</h2>
+              <h2 class="md-flex" ng-show="account.currencyType!='FIAT'">Step 3 : Buy DAO Tokens</h2>
+              <h2 class="md-flex" ng-show="account.currencyType=='FIAT'">Step 3 : Setup your Wallet</h2>
            </div>
         </md-toolbar>
         <md-content class="md-padding content-border" >
@@ -163,13 +163,15 @@
                   <li ng-show="account.currencyType=='ETH'">
                      Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/>
                      <pre>{{daoAddress}}</pre>
-                      <span style="color:red">Note that this page will not refresh and you will not be notified of the transfer</span><br/>
+                      <span style="color:red; ">Note that this page will not update and you will not be notified of the transfer. </span><br/>
                       This is expected as you are sending ETH directly to the DAO contract via your wallet. 
                   </li>
                    <li>
 
-                     You will then be able to almost immediately (20-40 seconds) check your balance <a href="/dao.html">on the DAO page</a>. <br/>
-                     Note that voting on proposals will go live at the end of the Token Sale.
+                     After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
+                          Voting on proposals will go live at the end of the Token Sale. <br/><br/>
+
+                          For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
                   </li>
                   <li ng-show="account.currencyType!='ETH' && account.currencyType!='FIAT'">Enter the address of your Ethereum account:
                      <form name="wallet">
@@ -188,6 +190,9 @@
             </div>
 
 
+
+
+
             <!-- Pay in ETH -->
            <div ng-show="account.currencyType=='ETH'"> 
 
@@ -197,9 +202,13 @@
                   <p>
                       Your DAO token will be purchased instantly.  <br/>  Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address: <br/><br/>
                         <pre>{{daoAddress}}</pre> <br/>
-                       
-                     You will then be able to almost immediately (20-40 seconds) check your balance <a href="/dao.html">on the DAO page</a>. <br/>
-                     Note that voting on proposals will go live at the end of the Token Sale. <br/><br/>
+                          <span style="color:red; font-size: 14px;">Note that this page will not update and you will not be notified of the transfer. </span><br/>
+                            This is expected as you are sending ETH directly to the DAO contract via your wallet. <br/><br/>
+
+                          After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
+                          Voting on proposals will go live at the end of the Token Sale. <br/><br/>
+
+                          For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
                   </p>
                </div>
                
@@ -308,30 +317,33 @@
       <!-- 4. Send Ether to the new account -->
       <div ng-show="needsAccount() && account.existing && (account.existing!='no' || account.unlocked) && account.success && account.currencyType=='ETH'" class="roundBorder">
         <md-toolbar >
-           <div class="md-toolbar-tools"><h2 class="md-flex">Step 4 : Send your ETH to the DAO</h2></div>
+           <div class="md-toolbar-tools"><h2 class="md-flex">Step 4 : Load ETH into your wallet</h2></div>
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>
-               Congratulations, one final step:
+               One final step:
                <p>
                   Please send a transaction with <b>{{account.ether}}</b> ETH to your new wallet:<br/><br/>
                   <pre>{{account.adr}}</pre>
                </p>
                <p>
-                 Once the ETH is received, you will be sent an email with the confirmation that your <b>{{account.ether}}</b> ETH has been sent to the DAO.
+                 Once the ETH is received, the transaction signed above will execute. If you have specified an email in the step above, you will be sent an email with the confirmation that your <b>{{account.ether}}</b> ETH have been sent to the DAO.
+                <br/><br/>
+                After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
+                Voting on proposals will go live at the end of the Token Sale. <br/><br/>
+
+                For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
                </p>
             </p>
-            <p>
-               Now watch this tutorial on how to setup your Ethereum Wallet to actively participate in the DAO! //TODO add link
-            </p>
+
         </md-content>
       </div>
            
 
-      <!-- 3. FIAT register at Bity -->
+      <!-- 4. FIAT register at Bity -->
       <div ng-show="account.currencyType=='FIAT' && account.existing && (account.existing!='no' || account.adr)" class="roundBorder">
         <md-toolbar >
-           <div class="md-toolbar-tools"><h2 class="md-flex">Step 3 : Register on Bity</h2></div>
+           <div class="md-toolbar-tools"><h2 class="md-flex">Step 4 : Register on Bity</h2></div>
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>
