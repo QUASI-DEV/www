@@ -9,7 +9,9 @@
   </head>
 
 
+
   <body>
+
     
   <div id="dao_include" >
      
@@ -58,7 +60,7 @@
             <md-radio-group ng-model="account.existing" >
                <md-radio-button value="yes">I already have an Ethereum wallet, and I know how to use it.</md-radio-button>
                <md-radio-button value="yes_mist">I would like instructions on how to install the Ethereum Wallet.</md-radio-button>
-               <md-radio-button value="no">I want to manually create a new Ethereum account here in the browser, to import later.</md-radio-button>
+               <md-radio-button value="no">I want to create a new Ethereum account here in the browser, to import later in any wallet.</md-radio-button>
             </md-radio-group>
 
              <div ng-show="account.existing=='yes' && account.currencyType!='ETH' && account.currencyType!='FIAT'">
@@ -100,7 +102,7 @@
                </div>
                <div layout="row" ng-show="password && repassword==password">
                   <md-input-container  style="margin-left:10px"  flex="45">
-                     <label>The email address for the private key.</label>
+                     <label>The email address where you would like to receive the private key.</label>
                      <input name="email" ng-model="email" type="email" ng-pattern="/^.+@.+\..+$/"/>
                      <div ng-messages="etheraccount.email.$error" role="alert" multiple ng-show="etheraccount.email.$dirty || etheraccount.$submitted" >
                         <div ng-message="pattern"> Please enter a valid email address. </div>
@@ -156,7 +158,7 @@
                   <li>Download the most recent version of the <a href="{{mist_link}}" target="_blank">Ethereum Wallet</a></li>
                   <li>Unzip the file where you want install the program.</li>
                   <li>Start the Ethereum Wallet<br/>When the Ethereum Wallet is opened, it will synchronize the blockchain data, which will likely take several hours.</li>
-                  <li>Create an account</li>
+                  <li>An account will be automatically created for you. Make a note of the account address.</li>
                   <li ng-show="account.currencyType=='ETH'">
                         Load ETH (ether) onto the account
                   </li>
@@ -166,13 +168,13 @@
                       <span style="color:red; ">Note that this page will not update and you will not be notified of the transfer. </span><br/>
                       This is expected as you are sending ETH directly to the DAO contract via your wallet. 
                   </li>
-                   <li>
+                   <li ng-show="account.currencyType=='ETH'">
 
                      After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
                           Voting on proposals will go live at the end of the Token Sale. <br/><br/>
                           
                           You can now safely close this page.<br>
-                          For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
+                          For all further information, please join the #DAO channel on  <a href="http://slack.slock.it:3000" target="_new">slack</a>.
                   </li>
                   <li ng-show="account.currencyType!='ETH' && account.currencyType!='FIAT'">Enter the address of your Ethereum account:
                      <form name="wallet">
@@ -210,7 +212,7 @@
                           Voting on proposals will go live at the end of the Token Sale. <br/><br/>
 
                           You can now safely close this page.<br>
-                          For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
+                          For all further information, please join the #DAO channel on  <a href="http://slack.slock.it:3000" target="_new">slack</a>.
                   </p>
                </div>
                
@@ -298,22 +300,21 @@
             <!-- Pay in BTC -->
            <div ng-show="account.currencyType=='COINS' && account.adr">
                
-              <p style="font-size: 16px;">
+              <p style="font-size: 14px;">
                      Thanks to our partnership with ShapeShift.io, you can purchase DAO tokens with almost any digital currency.<br/>
                      You will also benefit from higher limits using this tool than using Shapeshift directly.<br/>
-                     Once you click the button below, a ShapeShift window will open.<br/><br/>
+                     Once you click the button below, a ShapeShift window will open, where you will be able to conduct the transaction.<br/><br/>
 
-                      <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button><br/>
+                      <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button><br/><br/>
 
-                        <span style="color:red; font-size: 16px;">Note that this page will not update and you will not be notified of the transfer. </span><br/>
+                        <span style="color:red; font-size: 14px;">Note that this page will not update and you will not be notified of the transfer. </span><br/>
                         This is expected as Shapeshift will be sending ETH directly to the DAO contract on your behalf. <br/><br/>
 
- DAO tokens will be accessible to your Ethereum account {{account.adr}} as soon as the ETH is received by the DAO.<br/>
-                          You can now safely close this page. After Shapeshift transfer the funds to the DAO (note: this can take a little bit of time), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
+                         After Shapeshift transfer the funds to the DAO, you will be able to check your balance for account {{account.adr}} <a href="/dao.html#balance">on the DAO page</a>. <br/>
                           Voting on proposals will go live at the end of the Token Sale. <br/><br/>
 
-                          
-                          For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
+                            You can now safely close this page.<br/>
+                          For all further information, please join the #DAO channel on  <a href="http://slack.slock.it:3000" target="_new">slack</a>.
                      <div>
                         
                        
@@ -347,7 +348,7 @@
                 After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
                 Voting on proposals will go live at the end of the Token Sale. <br/><br/>
 
-                For all further information, please join #DAO on the <a href="http://slock.it:3000" target="_new">slack</a>.
+                For all further information, please join the #DAO channel on  <a href="http://slack.slock.it:3000" target="_new">slack</a>.
                </p>
             </p>
 

@@ -3,7 +3,7 @@
 # Häufige Fragen
   
 > Dieses Dokument ist in Entwicklung und kann und wird sich ändern. Wir freuen uns auf Ihre Anmerkungen. <br>
-> Um mitzudiskutieren, Fragen zu stellen oder Hilfe zu erhalten, registrieren Sie sich in unserem [Slack Chatraum](http://Slock.it:3000/).
+> Um mitzudiskutieren, Fragen zu stellen oder Hilfe zu erhalten, registrieren Sie sich in unserem [Slack Chatraum](http://slack.slock.it:3000/).
 
 
 ## Projekt
@@ -72,7 +72,7 @@ z.B.: können Sie in diesen Punkten unterstützen:
 - lokale Foren betreiben (vor allem in nicht-lateinischen Zeichensätze)
 - Tester unserer Prototypen
 
-Um mitzumachen, einfach im [Slack](http://Slock.it:3000/) registrieren.
+Um mitzumachen, einfach im [Slack](http://slack.slock.it:3000/) registrieren.
 
 
 ## Wie funktioniert es
