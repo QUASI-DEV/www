@@ -52,7 +52,7 @@
         <md-content class="md-padding content-border" >
            
          <p>
-            In order to purchase and own DAO tokens, you need an Ethereum account. 
+            In order to purchase and own DAO tokens, you need an Ethereum account and to fully participate in the DAO this account will need hold a small balance of ETH. We recommend at least 0.1 ETH. 
          </p>
          <form name="etheraccount" ng-submit="createAccount()" >
             <md-radio-group ng-model="account.existing" >
@@ -66,7 +66,7 @@
                   <label>Your Ethereum Account's Address</label>
                   <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
                   <div ng-messages="etheraccount.adr.$error" role="alert" multiple ng-show="etheraccount.adr.$dirty || etheraccount.$submitted" >
-                     <div ng-message="ethaddress">This needs to be a valid Ethereum address like 0x1234567890abcdef...</div>
+                     <div ng-message="ethaddress">This needs to be a valid Ethereum account address like 0x1234567890abcdef...</div>
                   </div>                  
                </md-input-container>
             </div>
@@ -111,7 +111,7 @@
                      <input ng-model="reemail" name="reemail" type="email" compare-to="email" />
                      <div ng-messages="etheraccount.reemail.$error" role="alert" multiple ng-show="etheraccount.reemail.$dirty || etheraccount.$submitted" >
                         <div ng-message="required"> Please re-enter the email. </div>
-                        <div ng-message="compareTo"> Both emails addresses need to match. </div>
+                        <div ng-message="compareTo"> Both email addresses need to match. </div>
                      </div>
                   </md-input-container>
                </div>
@@ -150,23 +150,22 @@
             <!-- use the mist-browser -->
             <div ng-show="account.existing=='yes_mist'">
                <ol>
-                  <li>Download the most recent version of the <a href="{{mist_link}}" target="_blank">Ethereum Wallet</a></li>
+                  <li>Download the most recent version of the <a href="{{mist_link}}" target="_blank">Ethereum Wallet</a>; this video can guide you through the installation process.</li>
                   <li>Unzip the file where you want install the program.</li>
-                  <li>Start the Ethereum Wallet<br/>When the Ethereum Wallet is opened, it will synchronize the blockchain data, which will likely take several hours.</li>
-                  <li>Create an account</li>
+                  <li>Follow the instructions to create an account. The Ethereum Wallet will need to synchronize with the Ethereum blockchain, which may take several hours. It may freeze on certain blocks. This is normal, please let it continue to synchronize. </li>
                   <li ng-show="account.currencyType=='ETH'">
-                        Load ETH (ether) onto the account</li>
-                       <li>Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/>
+                        Load ETH onto the account</li>
+                      <li> To buy DAO tokens, send the amount of ETH you want to spend from your wallet to the following DAO contract address:<br/>
                         <pre>{{daoAddress}}</pre>
-                         <li>You can then check you balance <a href="/dao.html">here</a>. <br/>Note that voting on proposals will go live at the end of the Token Sale.</li>
+                         <li>You can then check your balance <a href="/dao.html">here</a>. <br/>Note that voting on proposals will go live at the end of the DAO Token Sale; to fully participate in the DAO this account will need hold a small balance of ETH. We recommend at least 0.1 ETH.</li>
                   </li>
                   <li ng-show="account.currencyType!='ETH'">Enter the address of your Ethereum account:
                      <form name="wallet">
                         <md-input-container style="margin-left:0px">
-                           <label>Address of your new Account</label>
+                           <label>Address of your new account</label>
                            <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
                            <div ng-messages="wallet.adr.$error" role="alert" multiple ng-show="wallet.adr.$dirty || wallet.$submitted" >
-                              <div ng-message="ethaddress"> Please enter a valid Ethereum address like 0x1234567890abcdef...</div>
+                              <div ng-message="ethaddress"> Please enter a valid Ethereum account address like 0x1234567890abcdef...</div>
                               
                            </div>                  
                         </md-input-container>
@@ -184,9 +183,9 @@
                <!--do it directly -->
                <div ng-show="account.existing=='yes'  ">
                   <p>
-                        Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address.<br/> Your DAO token will be purchased instantly.  <br/><br/>
+                        Send the amount of ETH you would like to spend on DAO tokens to the following DAO contract address.<br/> Your DAO tokens will be purchased almost instantly.  <br/><br/>
                         <pre>{{daoAddress}}</pre> <br/>
-                       You can then check you balance <a href="/dao.html">here</a>. <br/>Note that voting on proposals will go live at the end of the Token Sale.<br/><br/>
+                       You can check your balance <a href="/dao.html">here</a>. <br/>Note that voting on proposals will go live at the end of the DAO Token Sale and you will need a small amount of ETH in your account to participate. We recommend 0.1 ETH.<br/><br/>
                   </p>
                </div>
                
@@ -216,7 +215,7 @@
 
                         </div>
                        <div style="margin-bottom:10px;margin-left:10px;margin-top:10px;">
-                           <p>Pressing the "Send Transaction" button will sign and broadcast an ETH transaction with your newly created account for the pledged amount. This signed transaction will purchase DAO tokens as soon the balance of your newly created account {{account.adr}} exceeds the pledged amount of ETH.<br/><br/>
+                           <p>Pressing the "Send Transaction" button will sign and broadcast an ETH transaction with your newly created account for the pledged amount. This signed transaction will purchase DAO tokens as soon the balance of your newly created account {{account.adr}} exceeds the pledged amount of ETH. To fully participate in the DAO this account will need hold a small balance of ETH. We recommend at least 0.1 ETH.<br/><br/>
                            Note that this does not lock in the price of the DAO tokens, and the price of the tokens will be the price at the time the ETH is sent to this newly created account. 
                         </div>
                      </div>
@@ -241,12 +240,12 @@
                            
                            <div class="row">
                               <md-input-container class="col-md-6">
-                                 <label>The amount in BTC to convert into DAO tokens</label>
+                                 <label>The amount of BTC you would like to spend on DAO tokens</label>
                                  <input required type="number" step="any" min="0" max="1000000" name="btc_amount" id="account_btc_amount" ng-model="account.btc_amount" />
                                  <div ng-messages="btcForm.btc_amount.$error" role="alert" multiple  >
                                     <div ng-message="required"> Please enter an amount of BTC. </div>
                                     <div ng-message="min"> Please send more BTC than that. </div>
-                                    <div ng-message="max"> Please enter a realistic number of more BTC!</div>
+                                    <div ng-message="max"> Please enter a realistic number of BTC!</div>
                                  </div>
                               </md-input-container>
                               <div class="col-md-6" style="padding-top:40px"> BTC ( 1 ETH = {{btceth}} BTC ) <br> &nbsp; = approx. {{(( account.btc_amount ||0) / btceth )/tokenPrice*tokenUnits | number:2}} DAO tokens</div>
@@ -275,8 +274,8 @@
            <div ng-show="account.currencyType=='COINS' && account.adr">
                
               <p style="font-size: 16px;">
-                     ShapeShift.io allows you to convert almost any digitical currency into ETH then automatically purchase the DAO tokens in one single step.<br/><br/>
-                     DAO tokens will be accessible to your Ethereum account {{account.adr}} as soon as the ETH is received by the DAO.<br/>
+                     ShapeShift.io allows you to convert almost any digital currency into ETH and purchase the DAO tokens in one single step.<br/><br/>
+                     As soon as the ETH is received by the DAO, your DAO token balance can be confirmed using your Ethereum account's address: <pre>{{account.adr}}</pre><br/>
                      <div>
                         
                         <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button></div>
@@ -322,25 +321,23 @@
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>
-              In order to buy DAO tokens using US Dollars, Euros, or Swiss Francs, please continue the purchase at Bity.com. 
-              They have partnered with us to build a custom interface for the DAO Token Sale.
+              In order to buy DAO tokens using US Dollars, Euros, or Swiss Francs, please continue the purchase at Bity.com. They have partnered with us to build a custom interface for the DAO Token Sale.
               
                <p><a href="https://bity.com/"  target="_new"><img src="https://bity.com/assets/img/logo-without-circle.png" width="200"/></a></p>
            </p>
            
            <p>
-              So when you get to their website take these steps:
-              
+                      
               <ol>
-                <li><a href="https://bity.com/register" target="_new">Go to Bity</a></li>
-                <li>Create new account (or use an existing)</li>
+                <li><a href="https://bity.com/register" target="_new">Proceed to Bity.com/a></li>
+                <li>Create a new account</li>
                 <li>Login</li>
-                <li>Enter your phone number and verify your account (if it's a new account).</li>
-                <li>Buy DAO tokens by generating a new ETH address or providing one of your own.</li>
+                <li>Enter your phone number and verify your account</li>
+                <li>Register your Ethereum account's address</li>
                 <li>Follow the instructions.</li>
-                <li>Set amount you want to contribute</li>
+                <li>Enter the amount you want to spend to buy DAO tokens. To buy more than 250 EUR, USD or CHF you will have to further verify your identity with Bity</li>
                 <li>Select bank transfer</li>
-                <li>And confirm you have those funds available in your bank account</li>
+                <li>Follow the instructions to complete the payment and be sure to include the reference code</li>
               </ol>
               
               
