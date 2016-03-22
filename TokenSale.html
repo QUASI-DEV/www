@@ -9,7 +9,9 @@
   </head>
 
 
+
   <body>
+
     
   <div id="dao_include" >
      
@@ -58,7 +60,7 @@
             <md-radio-group ng-model="account.existing" >
                <md-radio-button value="yes">I already have an Ethereum wallet, and I know how to use it.</md-radio-button>
                <md-radio-button value="yes_mist">I would like instructions on how to install the Ethereum Wallet.</md-radio-button>
-               <md-radio-button value="no">I want to manually create a new Ethereum account here in the browser, to import later.</md-radio-button>
+               <md-radio-button value="no">I want to create a new Ethereum account here in the browser, to import later in any wallet.</md-radio-button>
             </md-radio-group>
 
              <div ng-show="account.existing=='yes' && account.currencyType!='ETH' && account.currencyType!='FIAT'">
@@ -156,7 +158,7 @@
                   <li>Download the most recent version of the <a href="{{mist_link}}" target="_blank">Ethereum Wallet</a></li>
                   <li>Unzip the file where you want install the program.</li>
                   <li>Start the Ethereum Wallet<br/>When the Ethereum Wallet is opened, it will synchronize the blockchain data, which will likely take several hours.</li>
-                  <li>Create an account</li>
+                  <li>An account will be automatically created for you. Make a note of the account address.</li>
                   <li ng-show="account.currencyType=='ETH'">
                         Load ETH (ether) onto the account
                   </li>
@@ -166,7 +168,7 @@
                       <span style="color:red; ">Note that this page will not update and you will not be notified of the transfer. </span><br/>
                       This is expected as you are sending ETH directly to the DAO contract via your wallet. 
                   </li>
-                   <li>
+                   <li ng-show="account.currencyType=='ETH'">
 
                      After the first confirmation (20-40 seconds), you will be able to check your balance <a href="/dao.html#balance">on the DAO page</a>. <br/>
                           Voting on proposals will go live at the end of the Token Sale. <br/><br/>
@@ -308,7 +310,7 @@
                         <span style="color:red; font-size: 14px;">Note that this page will not update and you will not be notified of the transfer. </span><br/>
                         This is expected as Shapeshift will be sending ETH directly to the DAO contract on your behalf. <br/><br/>
 
-                         After Shapeshift transfer the funds to the DAO (note: this can take a little bit of time), you will be able to check your balance for account {{account.adr}} <a href="/dao.html#balance">on the DAO page</a>. <br/>
+                         After Shapeshift transfer the funds to the DAO, you will be able to check your balance for account {{account.adr}} <a href="/dao.html#balance">on the DAO page</a>. <br/>
                           Voting on proposals will go live at the end of the Token Sale. <br/><br/>
 
                             You can now safely close this page.<br/>
