@@ -16,6 +16,7 @@ $( document ).ready(function() {
       function round(val,len) {
          if (!val) return 0;
          len = len || 100;
+         if (val<0.01) return val;
          return Math.round(val*len)/len;
       }
 
