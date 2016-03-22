@@ -129,8 +129,16 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                '  </md-dialog-actions>' +
                '</md-dialog>',
             controller: function ToCController($scope, $mdDialog) {
-               $scope.closeDialog  = function() {   $mdDialog.hide();    }
-               $scope.acceptDialog = function() {   parentScope.acceptedTC=true;  $mdDialog.hide();      }
+               $scope.closeDialog  = function() {   $mdDialog.hide();     }
+               $scope.acceptDialog = function() {   
+                  parentScope.acceptedTC=true;  
+                  $mdDialog.hide();  
+                  setTimeout(function() {
+                     $('html, body').animate({
+                        scrollTop: $("#dao_choose_currency").offset().top-130 + 'px'
+                     }, 'fast');
+                  },500);                  
+               }
                $scope.scrolled=true;
                $scope.init = function() {
                   setTimeout(function() {
