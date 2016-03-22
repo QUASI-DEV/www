@@ -61,7 +61,7 @@
                <md-radio-button value="no">I want to manually create a new Ethereum account here in the browser, to import later.</md-radio-button>
             </md-radio-group>
 
-             <div ng-show="account.existing=='yes' && account.currencyType!='ETH'">
+             <div ng-show="account.existing=='yes' && account.currencyType!='ETH' && account.currencyType!='FIAT'">
                <md-input-container style="margin-left:10px">
                   <label>Your Ethereum Account's Address</label>
                   <input md-maxlength="42" md-minlength="40" name="adr" ng-model="account.adr" ethaddress />
@@ -142,7 +142,10 @@
       <!-- 3. Buy DAO Tokens -->
       <div ng-show="showInvest()" class="roundBorder">
         <md-toolbar ng-class="(account.investDone || account.success)?'step-done':''">
-           <div class="md-toolbar-tools"><h2 class="md-flex">Step 3: Buy DAO Tokens</h2></div>
+           <div class="md-toolbar-tools">
+              <h2 class="md-flex" ng-show="account.currencyType!='FIAT'">Step 3: Buy DAO Tokens</h2>
+              <h2 class="md-flex" ng-show="account.currencyType=='FIAT'">Setup your Wallet</h2>
+           </div>
         </md-toolbar>
         <md-content class="md-padding content-border" >
 
@@ -155,12 +158,17 @@
                   <li>Start the Ethereum Wallet<br/>When the Ethereum Wallet is opened, it will synchronize the blockchain data, which will likely take several hours.</li>
                   <li>Create an account</li>
                   <li ng-show="account.currencyType=='ETH'">
-                        Load ETH (ether) onto the account</li>
-                       <li>Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/>
-                        <pre>{{daoAddress}}</pre>
-                         <li>You can then check you balance <a href="/dao.html">here</a>. <br/>Note that voting on proposals will go live at the end of the Token Sale.</li>
+                        Load ETH (ether) onto the account
                   </li>
-                  <li ng-show="account.currencyType!='ETH'">Enter the address of your Ethereum account:
+                  <li ng-show="account.currencyType=='ETH'">
+                     Send the amount of ETH you want to convert for DAO tokens to the following DAO contract address:<br/>
+                     <pre>{{daoAddress}}</pre>
+                  </li>
+                   <li>
+                     You can then check you balance <a href="dao.html#balance">here</a>. <br/>
+                     Note that voting on proposals will go live at the end of the Token Sale.
+                  </li>
+                  <li ng-show="account.currencyType!='ETH' && account.currencyType!='FIAT'">Enter the address of your Ethereum account:
                      <form name="wallet">
                         <md-input-container style="margin-left:0px">
                            <label>Address of your new Account</label>
@@ -279,7 +287,7 @@
                      DAO tokens will be accessible to your Ethereum account {{account.adr}} as soon as the ETH is received by the DAO.<br/>
                      <div>
                         
-                        <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button></div>
+                        <md-button ng-click="openShapeShift()"><img src="https://shapeshift.io/images/shifty/small_light_altcoins.png" class="ss-button"></md-button>
                         
 
                      </div>
@@ -315,10 +323,10 @@
       </div>
            
 
-      <!-- 4. Send Ether to the new account -->
-      <div ng-show="account.currencyType=='FIAT'" class="roundBorder">
+      <!-- 3. FIAT register at Bity -->
+      <div ng-show="account.currencyType=='FIAT' && account.existing && (account.existing!='no' || account.adr)" class="roundBorder">
         <md-toolbar >
-           <div class="md-toolbar-tools"><h2 class="md-flex">Step 2 : Register on Bity</h2></div>
+           <div class="md-toolbar-tools"><h2 class="md-flex">Step 3 : Register on Bity</h2></div>
         </md-toolbar>
         <md-content class="md-padding content-border" >
            <p>

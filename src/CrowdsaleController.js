@@ -282,8 +282,7 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
       });
    };
    
-   $scope.currencies = [];
-   $scope.rates = {};
+
 
     // sending the key to be mailed
     $http.get("https://www.gatecoin.com/api/Public/LiveTickers").then(function(result){
@@ -295,25 +294,16 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
     });
 
 
-
-
-    // sending the key to be mailed
-    $http.get("server/rates.php").then(function(result){
-      result.data.objects.forEach(function(c) {
-        if (c.pair.indexOf("ETH")==0) {
-          $scope.currencies.push(c.pair.substring(3));
-          $scope.rates[c.pair.substring(3)]=parseFloat(c.rate);
-        } 
-      }, this);
-      $scope.account.currency=$scope.currencies[0];
-    }, function(error){
-    });
   
-  
-   $scope.needsAccount = function() {  return $scope.acceptedTC && $scope.account.currencyType!='FIAT' && $scope.account.currencyType; };
+   $scope.needsAccount = function() {  return $scope.acceptedTC && $scope.account.currencyType; };
    
    $scope.showInvest   = function() {  
-      return $scope.needsAccount() &&  $scope.account.existing && ($scope.account.existing=='no' ? $scope.account.unlocked : ($scope.account.currencyType=='ETH' || ( isValidAddress($scope.account.adr) || $scope.account.existing=='yes_mist'))); 
+      if ($scope.account.currencyType=='FIAT' && $scope.account.existing!='yes_mist') return false;
+      return $scope.needsAccount() &&  $scope.account.existing && (
+         $scope.account.existing=='no' ? 
+             ($scope.account.unlocked && $scope.account.currencyType!='FIAT') : 
+             ($scope.account.currencyType=='ETH' || ( isValidAddress($scope.account.adr) || $scope.account.existing=='yes_mist'))
+         ); 
    };
    
    
@@ -323,33 +313,6 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
       window.open(link,'1418115287605','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');
    };
             
-            
-   $scope.checkBalances = function(ev) {
-      function sendRequest (method,params,cb) {
-        $.post("/web3/", JSON.stringify({
-           jsonrpc:"2.0",
-           method:method,
-           params: params,
-           id: parseInt(Math.random()*65535)
-        }), function(data) {
-           cb(data.result);
-           $scope.$apply();
-        });
-     }
-     
-     $scope.isCheckingBalance = true;
-     sendRequest("eth_getBalance",['0x'+normalizeAdr($scope.account.adr),'latest'],function(balance) {
-       sendRequest("eth_call",[{ to : $scope.daoAddress,  data : '0x70a08231'+ normalizeAdr($scope.account.adr,64)},'latest'],function(tokens) {
-         $scope.isCheckingBalance = false;
-         var web3 = new Web3();
-         $scope.checkResult = {
-            balance :  round(web3.fromWei(balance,'ether')) || 0,
-            tokens  :  (round(web3.fromWei(tokens,'ether')) || 0)/$scope.tokenUnits
-         }
-       });
-     });
-   };
-   
             
 }
 
