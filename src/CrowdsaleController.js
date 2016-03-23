@@ -6,7 +6,7 @@
 // define the module
 angular
 .module('crowdsale', [ 'ngMaterial', 'ngAnimate','ngMessages' ])
-.controller('CrowdsaleController', [ '$scope', '$mdBottomSheet', '$mdDialog','$log', '$q', '$http','accountService',  CrowdsaleController ])
+.controller('CrowdsaleController', [ '$scope', '$mdBottomSheet', '$mdDialog','$log', '$q', '$http','$timeout','accountService',  CrowdsaleController ])
 .config(function($mdThemingProvider){
     $mdThemingProvider.theme('default')
     .primaryPalette('blue-grey')
@@ -88,7 +88,7 @@ function detectMistLink() {
 
 
 // define main-controller
-function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $http, accountService) {
+function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $http,$timeout,accountService) {
 
    // helper for error-handling
    function showError(title,msg,ev) {
@@ -275,6 +275,26 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
             var $qrDepAddr=$("#"+id);
             $qrDepAddr.empty();
             $qrDepAddr.qrcode({width: 175, height: 175, text: 'bitcoin:' + $scope.account.btc.adr + '?amount=' + $scope.account.btc.amount});
+            
+            // start watching ...
+            function checkTx() {
+                $http.post("server/gatecoin.php",result.data,{}).then(function(checkRes){
+                   if (checkRes.data && checkRes.data.payments) {
+                      var status="";
+                      checkRes.data.payments.forEach(function(p){
+                         if (p.txID==result.data.txID)
+                            status = p.status;
+                      });
+                      
+                      $scope.account.btc.status=status;
+                      
+                      if (status=='New' || status=='Unconfirmed') 
+                         $timeout(checkTx, 5000);
+                   }
+                });
+            }
+            
+            checkTx();
          }
       }, function(error){
          showError("Error establishing the gatecoin-connection",error,ev);

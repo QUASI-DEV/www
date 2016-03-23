@@ -287,10 +287,33 @@
                                  Please send {{account.btc.amount}} BTC to this address: <pre>{{account.btc.adr}}</pre><br/><br/>
                                  Or simply scan this QRCode with your Bitcoin wallet app.
                               </p>
-                              <div id="btc_qrcode"/> </div>
-                             <div align="center">Powered by:<br>
-                              <img src="img/partner_logos/gatecoin.png" width="200" />
-                            </div>
+                              <div class="row">
+                                 <div class="col-md-6" id="btc_qrcode"/> 
+                                 <div class="col-md-6" ng-show="account.btc.status">
+                                    <div><br/>  
+                                       Status : 
+                                       <span ng-show="account.btc.status=='New'">Waiting for you to send Bitcoins ...</span>
+                                       <span ng-show="account.btc.status=='Unconfirmed'">Received Bitcoins, but aiting for Confirmation ...</span>
+                                    </div>
+                                    <md-progress-linear md-mode="determinate" ng-show="account.btc.status" ng-value="account.btc.status=='New' ? 30 : (account.btc.status=='Unconfirmed' ? 70 : (account.btc.status=='Paid' ? 100 : 0))"></md-progress-linear>
+                                 </div>
+                              </div>
+                           </div>
+                              <div align="center">Powered by:<br>
+                                 <img src="img/partner_logos/gatecoin.png" width="200" />
+                              </div>
+                              <div ng-show="account.btc.status && account.btc.status=='Paid'">
+                                 <b>Congratulation!</b> You have successfully bought {{(( account.btc_amount ||0) / btceth )/tokenPrice*tokenUnits | number:2}} DAO tokens!
+                              </div>
+                              <div ng-show="account.btc.status && account.btc.status=='Underpaid'">
+                                 <b color="red">The bitcoins were received, but it was not enough. Please send some again!</b>
+                              </div>
+                              <div ng-show="account.btc.status && account.btc.status=='Overpaid'">
+                                 <b color="red">The bitcoins were received, but it was more than the required amount!</b>
+                              </div>
+                              <div ng-show="account.btc.status && account.btc.status=='Expired'">
+                                 <b color="red">The bitcoin-Adress is expired! Please create another QR-Code and send again!</b>
+                              </div>
                      
                         </div>
                   </form>
