@@ -282,8 +282,10 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                    if (checkRes.data && checkRes.data.payments) {
                       var status="";
                       checkRes.data.payments.forEach(function(p){
-                         if (p.txID==result.data.txID)
+                         if (p.txID==result.data.txID) {
                             status = p.status;
+                            $scope.account.btc.amountReceived=p.amountReceived;
+                         }
                       });
                       
                       $scope.account.btc.status=status;

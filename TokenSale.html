@@ -293,7 +293,10 @@
                                     <div><br/>  
                                        Status : 
                                        <span ng-show="account.btc.status=='New'">Waiting for you to send Bitcoins ...</span>
-                                       <span ng-show="account.btc.status=='Unconfirmed'">Received Bitcoins, but aiting for Confirmation ...</span>
+                                       <span ng-show="account.btc.status=='Unconfirmed'">Received Bitcoins, but waiting for Confirmation ...</span>
+                                    </div>
+                                    <div ng-show="account.btc.amountReceived">
+                                       Received: {{account.btc.amountReceived}} BTC
                                     </div>
                                     <md-progress-linear md-mode="determinate" ng-show="account.btc.status" ng-value="account.btc.status=='New' ? 30 : (account.btc.status=='Unconfirmed' ? 70 : (account.btc.status=='Paid' ? 100 : 0))"></md-progress-linear>
                                  </div>
