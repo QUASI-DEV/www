@@ -294,6 +294,7 @@
                                        Status : 
                                        <span ng-show="account.btc.status=='New'">Waiting for you to send Bitcoins ...</span>
                                        <span ng-show="account.btc.status=='Unconfirmed'">Received Bitcoins, but waiting for Confirmation ...</span>
+                                       <span ng-show="account.btc.status!='Unconfirmed' && account.btc.status!='New'">{{account.btc.status}}</span>
                                     </div>
                                     <div ng-show="account.btc.amountReceived">
                                        Received: {{account.btc.amountReceived}} BTC
