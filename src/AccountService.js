@@ -6,12 +6,18 @@
 
 var scryptsy  = require("scryptsy");
 var crypt_aes = aesjs;
-var ethUtil   = require('ethereumjs-util');
-//var Buffer    = require('buffer').Buffer;
+var ethUtil   = window.daoUtils.ethutil;// require('ethereumjs-util');
+var EthTx     = window.daoUtils.tx;// require('ethereumjs-util');
+
+var Buffer    = window.daoUtils.buffer.Buffer;
 var gas      = 50000;
 var gasPrice = 56000000000;
 var fnHash   = "0xa4821719";
 
+function formatHex(str){
+    str = str ? String(str) : '00';
+    return str.length % 2 ? '0' + str : str;
+}
 
 function randomBytes(length) {
     var charset = "abcdef0123456789";
@@ -114,21 +120,19 @@ angular.module('crowdsale').service('accountService', ['$q','$http','$interval',
 
       signTransaction : function(options) {
          var d            = $q.defer();
-         var tx           = { 
-            from     : options.account, 
-            to       : options.to,
-            gas      : toHex(gas), 
-            gasPrice : toHex(gasPrice), 
-            value    : toHex(getValueWithoutGas(web3.toWei(options.amount,'ether'))),
-            data     : fnHash,
-            nonce    : toHex(nextNonce(options.account))
-          };
-         
-         this.ks.signTransaction(tx, function(err, raw_tx) {
-            if (err != null)     d.reject("Could not sign the transaction : "+err);
-            else                 d.resolve({ data:raw_tx, value: web3.toWei(options.amount,'ether')});
-          });
-          return d.promise;
+         var ac           = this.accountList[0];
+         var rawTx = {
+            nonce: toHex(nextNonce(options.account)).substr(2),
+            gasPrice: toHex(gasPrice).substr(2),
+            gasLimit: toHex(gas).substr(2),
+            to      : '0x'+formatHex(ethUtil.stripHexPrefix(options.to)),
+            value   : toHex(getValueWithoutGas(web3.toWei(options.amount,'ether'))).substr(2),
+            data    : fnHash
+         };
+         var tx = new EthTx(rawTx);
+         tx.sign(new Buffer(this.accountList[0].private, 'hex'));
+         d.resolve({ data: '0x'+ tx.serialize().toString('hex'), value: web3.toWei(options.amount,'ether')});
+         return d.promise;
       } 
       
    };

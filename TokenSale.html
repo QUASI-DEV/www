@@ -266,7 +266,7 @@
                            
                            
                            <div class="row">
-                              <md-input-container class="col-md-6">
+                              <md-input-container class="col-md-4">
                                  <label>The amount of BTC you would like to spend on DAO tokens</label>
                                  <input required type="number" step="any" min="0" max="1000000" name="btc_amount" id="account_btc_amount" ng-model="account.btc_amount" />
                                  <div ng-messages="btcForm.btc_amount.$error" role="alert" multiple  >
@@ -275,37 +275,54 @@
                                     <div ng-message="max"> Please enter a realistic number of BTC!</div>
                                  </div>
                               </md-input-container>
-                              <div class="col-md-6" style="padding-top:40px"> BTC ( 1 ETH = {{btceth}} BTC ) <br> &nbsp; = approx. {{(( account.btc_amount ||0) / btceth )/tokenPrice*tokenUnits | number:2}} DAO tokens</div>
+                              <div class="col-md-4" style="padding-top:40px"> BTC ( 1 ETH = {{btceth}} BTC ) <br> &nbsp; = approx. {{(( account.btc_amount ||0) / btceth )/tokenPrice*tokenUnits | number:2}} DAO tokens</div>
+                              <div class="col-md-4"><md-button class="md-raised md-primary" ng-disabled="!account.btc_amount || account.isSendingEther">Create QRCode {{ account.success ? 'again' : ''}}</md-button></div>
                            </div>
 
-                           <div><md-button class="md-raised md-primary" ng-disabled="!account.btc_amount || account.isSendingEther">Create QRCode {{ account.success ? 'again' : ''}}</md-button></div>
                            <md-progress-linear md-mode="indeterminate" ng-show="account.isSendingBTC"></md-progress-linear>
                            <div ng-show="account.isSendingEther"><p>{{account.status}}</p></div>
                            
-                           <div ng-show="account.btc">
-                              <p>
-                                 Please send {{account.btc.amount}} BTC to this address: <pre>{{account.btc.adr}}</pre><br/><br/>
-                                 Or simply scan this QRCode with your Bitcoin wallet app.
-                              </p>
+                           <div ng-show="account.btc" style="padding-top:10px;margin-top:10px;border-top-style:solid;border-top-color:gray">
                               <div class="row">
-                                 <div class="col-md-6" id="btc_qrcode"/> 
-                                 <div class="col-md-6" ng-show="account.btc.status">
-                                    <div><br/>  
-                                       Status : 
-                                       <span ng-show="account.btc.status=='New'">Waiting for you to send Bitcoins ...</span>
-                                       <span ng-show="account.btc.status=='Unconfirmed'">Received Bitcoins, but waiting for Confirmation ...</span>
-                                       <span ng-show="account.btc.status!='Unconfirmed' && account.btc.status!='New'">{{account.btc.status}}</span>
+                                  <div class="col-md-6">
+                                       Please send {{account.btc.amount}} BTC to this address: <b><pre>{{account.btc.adr}}</pre></b><br/><br/>
+                                       Or simply scan this QRCode with your Bitcoin wallet app.
+                                       
+                                       <div style="margin-top:20px" id="btc_qrcode"/> 
+                                  </div>
+                                  <div class="col-md-6">
+                                     
+                                     
+                                    
+                                    <div  ng-show="account.btc.status">
+                                       <div><br/>  
+                                          Status : 
+                                          <span ng-show="account.btc.status=='New'">Waiting for you to send Bitcoins ...</span>
+                                          <span ng-show="account.btc.status=='Unconfirmed'">Received Bitcoins, but waiting for Confirmation ...</span>
+                                          <span ng-show="account.btc.status!='Unconfirmed' && account.btc.status!='New'">{{account.btc.status}}</span>
+                                       </div>
+                                       <md-progress-linear md-mode="determinate" ng-show="account.btc.status" ng-value="account.btc.status=='New' ? 30 : (account.btc.status=='Unconfirmed' ? 70 : (account.btc.status=='Paid' ? 100 : 0))"></md-progress-linear>
+                                       <div ng-show="account.btc.tx.amountReceived">
+                                          Received : {{account.btc.tx.amountReceived}} BTC<br/>
+                                          Confirmed: {{account.btc.tx.confirmation}} <br/>
+                                       </div>
+                                       <div ng-show="account.btc.tx.expires">
+                                          Expires &nbsp;: {{account.btc.tx.expires}}
+                                       </div>
+                                       
                                     </div>
-                                    <div ng-show="account.btc.amountReceived">
-                                       Received: {{account.btc.amountReceived}} BTC
+                                                                         
+                                     <div align="center" style="padding-top:80px">Powered by:<br>
+                                       <img src="img/partner_logos/gatecoin.png" width="150" />
                                     </div>
-                                    <md-progress-linear md-mode="determinate" ng-show="account.btc.status" ng-value="account.btc.status=='New' ? 30 : (account.btc.status=='Unconfirmed' ? 70 : (account.btc.status=='Paid' ? 100 : 0))"></md-progress-linear>
-                                 </div>
+
+                                    
+                                  </div>
                               </div>
+                              
                            </div>
-                              <div align="center">Powered by:<br>
-                                 <img src="img/partner_logos/gatecoin.png" width="200" />
-                              </div>
+                           
+                           <div style="padding-top:40px">
                               <div ng-show="account.btc.status && account.btc.status=='Paid'">
                                  <b>Congratulation!</b> You have successfully bought {{(( account.btc_amount ||0) / btceth )/tokenPrice*tokenUnits | number:2}} DAO tokens!
                               </div>
@@ -318,6 +335,7 @@
                               <div ng-show="account.btc.status && account.btc.status=='Expired'">
                                  <b color="red">The bitcoin-Adress is expired! Please create another QR-Code and send again!</b>
                               </div>
+                           </div>
                      
                         </div>
                   </form>

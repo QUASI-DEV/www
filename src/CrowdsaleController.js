@@ -81,9 +81,9 @@ function detectMistLink() {
          ? createLink('linux64') :  createLink('linux32');
             
    else if (navigator.appVersion.indexOf("Mac")>=0)
-         return createLink('MacOSX');
+      return createLink('MacOSX');
    else
-         return baseUrl;
+      return baseUrl;
 }
 
 
@@ -284,14 +284,16 @@ function CrowdsaleController( $scope, $mdBottomSheet, $mdDialog,  $log, $q, $htt
                       checkRes.data.payments.forEach(function(p){
                          if (p.txID==result.data.txID) {
                             status = p.status;
-                            $scope.account.btc.amountReceived=p.amountReceived;
+                            p.expires = new Date(parseInt(p.expiryDate)*1000).toLocaleTimeString();
+                            p.created = new Date(parseInt(p.expiryDate)*1000).toLocaleTimeString();
+                            $scope.account.btc.tx=p;
                          }
                       });
                       
                       $scope.account.btc.status=status;
                       
                       if (status=='New' || status=='Unconfirmed') 
-                         $timeout(checkTx, 5000);
+                         $timeout(checkTx, 10000);
                    }
                 });
             }
