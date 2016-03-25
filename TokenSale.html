@@ -233,7 +233,7 @@
                                     <div ng-message="max">You cannot transfer more than 1000000 with one transaction!</div>
                                  </div>
                               </md-input-container>
-                              <div class="col-md-6" style="padding-top:40px"> ETH &nbsp; &nbsp; &nbsp; &nbsp; = approx. {{(account.ether||0)/tokenPrice*tokenUnits}} DAO tokens</div>
+                              <div class="col-md-6" style="padding-top:40px"> ETH &nbsp; &nbsp; &nbsp; &nbsp; = approx. <b>{{(account.ether||0)/tokenPrice*tokenUnits | number:2}}</b> DAO tokens</div>
                            </div>
 
                            <div><md-button class="md-raised md-primary" ng-disabled="!account.ether || account.isSendingEther || !account.adr">Send Transaction {{ account.success ? 'again' : ''}}</md-button></div>
