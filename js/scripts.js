@@ -581,7 +581,6 @@ $(document).ready(function(){
 
 
 
-document.write('\x3Cscript type="text/javascript" src="src/init.js">\x3C/script>');
 
 
 
