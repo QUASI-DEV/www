@@ -3,7 +3,7 @@
 # Slock.it, in-depth
   
 > This document is in development, it can and will change. We'd love your feedback.<br>
-> To become part of the conversation, ask questions or receive help, join our [Slack chat room](http://Slock.it:3000/).
+> To become part of the conversation, ask questions or receive help, join our [Slack chat room](http://slack.slock.it:3000/).
 
 
 
@@ -74,7 +74,7 @@ Things we could use help with include:
 - Operating local forums (especially in non-roman character sets)
 - Testing prototype hardware
 
-To join, simply request access to our [chat room](http://Slock.it:3000/).
+To join, simply request access to our [chat room](http://slack.slock.it:3000/).
 
 
 

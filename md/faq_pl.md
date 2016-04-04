@@ -4,7 +4,7 @@
   
 > Ten dokument jest w trakcie opracowywania, może i będzie się zmieniać. 
 Zależy nam na informacji zwrotnej od ciebie.<br>
-> Żeby uczestniczyć w rozmowie, zadać pytanie lub otrzymać pomoc, dołącz do [Slack](http://Slock.it:3000/).
+> Żeby uczestniczyć w rozmowie, zadać pytanie lub otrzymać pomoc, dołącz do [Slack](http://slack.slock.it:3000/).
 
 
 
@@ -76,7 +76,7 @@ Sprawy, w których możesz pomóc:
 - Obsługa lokalnych forum (szczególnie w językach ze znakami spoza rzymskiego alfabetu)
 - Testowanie prototypowego oprogramowania
 
-Żeby dołączyć, po prostu zażądaj dostępu do naszego [komunikatora](http://slock.it:3000/).
+Żeby dołączyć, po prostu zażądaj dostępu do naszego [komunikatora](http://slack.slock.it:3000/).
 
 
 
@@ -327,7 +327,7 @@ W każdej chwili i tak często, jak wydaje się to zasadne.
 
 
 ### Gdzie będą omawiane oferty i oddziaływanie inteligentnych kontraktów?
-Obie kwestie będą omawiane w naszym [Slack](http://Slock.it:3000/), a głosowanie odbędzie się całkowicie w blockchain.
+Obie kwestie będą omawiane w naszym [Slack](http://slack.slock.it:3000/), a głosowanie odbędzie się całkowicie w blockchain.
 
 
 

@@ -3,7 +3,7 @@
 # Slock.it, en profondeur
 
 > Ce document est en développement, peut et va changer. Nous aimerions vos commentaires.
-> Pour faire partie de la conversation, poser des questions ou recevoir de l'aide, se joindre à notre [Slack salle de chat](http://Slock.it:3000/).
+> Pour faire partie de la conversation, poser des questions ou recevoir de l'aide, se joindre à notre [Slack salle de chat](http://slack.slock.it:3000/).
 
 
 
@@ -80,7 +80,7 @@ Ce qui pourrait nous être utile :
 - Animer les forums locaux (en particulier pour les jeux de caractères non-romains)
 - Tester des prototypes
 
-Pour adhérer, il suffit de communiquer avec l'un de nous [ici](http://slock.it:3000/).
+Pour adhérer, il suffit de communiquer avec l'un de nous [ici](http://slack.slock.it:3000/).
 
 
 

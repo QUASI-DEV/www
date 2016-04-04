@@ -2,7 +2,7 @@
 
 # Frequently Asked Questions
   
-> To become part of the conversation, ask questions and receive help, join our [Slack chat room](http://Slock.it:3000/).
+> To become part of the conversation, ask questions and receive help, join our [Slack chat room](http://slack.slock.it:3000/).
 
 
 
@@ -73,7 +73,7 @@ At the end of the the DAO token sale, Slock.it UG will become the DAO's default 
 
 ### Can I help with anything?
 
-Yes, it's an open source project and everyone is encouraged to participate in any way they can. We're currently trialling a volunteer program in the #communityorganizers of our [Slack](http://slock.it:3000/).
+Yes, it's an open source project and everyone is encouraged to participate in any way they can. We're currently trialling a volunteer program in the #communityorganizers of our [Slack](http://slack.slock.it:3000/).
 
 Things we could use help with include:
 
@@ -83,7 +83,7 @@ Things we could use help with include:
 - Introduce Slock.it at meetups
 - Testing prototype hardware
 
-To join, simply request access to our [chat room](http://slock.it:3000/).
+To join, simply request access to our [chat room](http://slack.slock.it:3000/).
 
 
 
@@ -137,6 +137,7 @@ The same thing that would happen if any other smart lock was employed: some will
 
 ## The Ethereum Computer
 
+For the full proposal on the Ethereum computer, please refer to the [Proposal by Slock.it UG](https://download.slock.it/public/DAO/proposal_slockit_mar2016.pdf) to the DAO. 
 
 ### What exactly is the "Ethereum Computer"?
 
@@ -204,6 +205,8 @@ We're still defining the Ethereum Computer cost of productions, as they will be 
 
 
 ## The DAO Token Sale
+
+The full details of the DAO token sale can now be found as part of the [DAO Token Sale Information document](https://download.slock.it/public/DAO/dao_token_sale_information.pdf). 
 
 
 ### When is the DAO token sale?
@@ -425,7 +428,7 @@ Using this model we are able to guarantee that the core DAO code itself (the par
 
 ### Where will proposals and smart contract interactions be discussed?
 
-Both will be discussed in our [Slack chat room](http://Slock.it:3000/), while voting will be done entirely on the blockchain.
+Both will be discussed in our [Slack chat room](http://slack.slock.it:3000/), while voting will be done entirely on the blockchain.
 
 
 
