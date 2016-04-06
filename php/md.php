@@ -132,7 +132,7 @@
 							<h1 style="font-size: 42px; margin-bottom: 5px;"><?php echo $title; ?></h1>
               <div class="alt-font" style="margin-bottom: 20px"><?php echo $pre; ?></div>
 							<p class="lead">
-								<?php echo $post; ?><br><br>
+								<?php echo $post; ?><br>
 								<ul style="font-size:20px; line-height: 200%;">									
 									<?php echo $header; ?>
 								</ul>
