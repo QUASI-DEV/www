@@ -1,4 +1,4 @@
-> Version 1.7
+> Version 1.8
 
 # Frequently Asked Questions
   
@@ -177,7 +177,7 @@ We're still defining the Ethereum Computer cost of productions, as they will be 
 
 ### DA.. what?
 
-A DAO is a new type of organization that lives on the blockchain, best comparable to a digital company, but without an attached legal entity. A DAO is composed of DAO token holders that can review Proposals and cast their votes to elect and direct a Service Provider which will act as a DAO's 'construction foreman' in the physical world. This process is very similar to selecting a vendor or supplier. A DAO is however superior in many respects to a traditional company in the sense that all the decisions it makes are transparent, its finances can be audited by anyone and corruption is impossible.
+A DAO is a new type of organization that lives on the blockchain, best comparable to a digital company, but without an attached legal entity. A DAO is composed of DAO token holders that can review Proposals and cast their votes to elect and direct Contractors in the physical world. This process is very similar to selecting a vendor or supplier. A DAO is however superior in many respects to a traditional company in the sense that all the decisions it makes are transparent, its finances can be audited by anyone and corruption is impossible.
 
 A primer to the mechanisms powering a DAO can be found on our <a href="https://blog.slock.it/a-primer-to-the-decentralized-autonomous-organization-dao-69fb125bd3cd#.wsxe19yc1" target="_new">blog</a>. The whitepaper can be downloaded from our [website](https://download.slock.it/public/DAO/WhitePaper.pdf). 
 
@@ -190,8 +190,6 @@ The DAO framework is side project of Slock.it UG and a gift to the Ethereum comm
 ### What's in it for Slock.it UG then?
 
 Slock.it UG is a Blockchain + IoT solutions company. However Slock.it UG (future GmbH) is not a DAO itself — we are a for-profit company registered in Germany. We are creating what we hope will be the future infrastructure of the Service Economy. We believe that Decentralized autonomous organizations (“DAOs”) will play an important role in that infrastructure.
-
-It's possible that one day, Slock.it will have a DAO will be one of its clients. 
 
 
 ### Can I help with anything?
@@ -215,31 +213,31 @@ Definitely not. In order to make decisions, DAO token holders are be able to vot
 
 ### Will it be a lot of work? 
 
-The Proposals to a DAO define how much or how little control over its operational responsibilities a DAO 'outsources' to the Service Provider for each project or product. It can range from an "every little details left to token holders" approach with weekly votes to a "100% hands off" approach equivalent to putting a DAO's trust into the Service Provider capability to execute on the concept. A DAO's underlying code is generic enough to support both - or anything in between.
+The Proposals to a DAO define how much or how little control over its operational responsibilities a DAO 'outsources' to a Contractor for any given project, task or product. It can range from an "every little details left to token holders" approach with weekly votes to a "100% hands off" approach equivalent to putting a DAO's trust into the Contractor's capability to execute on the concept. A DAO's underlying code is generic enough to support both - or anything in between.
 
 
 ### What can a DAO do exactly?
 
-A DAO can commission a Service Provider to implement a technology or develop a product by signing a smart contract. The smart contract specifies the terms of the relationship between a DAO and its Service Provider.
+A DAO can commission a Contractor to implement a technology or develop a product by signing a smart contract. The smart contract specifies the terms of the relationship between a DAO and its Contractor.
 
-Once the Service Provider's Proposal has been approved, a DAO can call functions on this smart contract, setting the values of operating parameters. What parameters are available depend on the Service Provider's smart contract and can range from a 'hands off' approach to having a DAO hold complete operational control.
+Once a Contractor's Proposal has been approved, a DAO can call functions on this smart contract, setting the values of operating parameters. What parameters are available depend on the Contractor's smart contract and can range from a 'hands off' approach to having a DAO hold complete operational control.
 
 
 ### Can a DAO acts on more than one Proposal?
 
-Of course. No business can predict the future, not even a DAO - so it's expected for DAOs to review thier engagement with their Service Provider at regular intervals. New Proposals can be submitted by the Service Provider at anytime - each of these can be as simple or as complex as needed as the terms are written in a turing complete smart contract language. 
+Of course. No business can predict the future, not even a DAO - so it's expected for DAOs to review their engagement with their Contractors at regular intervals. New Proposals can be submitted by any Token Holder at anytime - each of these can be as simple or as complex as needed as the terms are written as part of Ethereum smart contracts.
 
 
 ### Can the term of a Proposal be explained in plain English? 
 
-Yes, the Proposal smart contract itself can a hash of a plain English document - holding the Service Provider responsible for its Proposal. 
+Yes, the Proposal smart contract itself can a hash of a plain English document - holding the Contractor responsible for its Proposal. 
 
 
-### Can a DAO fire a Service Provider?
+### Can a DAO fire a Contractor?
 
-Of course. Proposals will usually include a total amount (say, USD 5M to complete project A), an initial deposit (USD 1M to bootstrap project A) and a monthly payment (for example, USD 200K / month for 20 months). At anytime, a DAO can stop the regular payments if it is dissatisfied by the Service Provider, effectively firing it. 
+Of course. Proposals will usually include a total amount (say, USD 5M to complete project A), an initial deposit (USD 1M to bootstrap project A) and a monthly payment (for example, USD 200K / month for 20 months). At anytime, a DAO can stop the regular payments if it is dissatisfied by the Contractor, effectively firing it. 
 
-We believe a relationship where a DAO stays in control of its ether is actually more beneficial to both parties.
+We believe a relationship where a DAO stays in control of its ether is actually more beneficial to all parties.
 
 
 ### How will DAO votes take place?
@@ -249,44 +247,64 @@ DAO votes can take place via the [official Ethereum GUI wallet](https://github.c
 
 ### How can a DAO protect itself from ether's volatility?
 
-A DAO could enter into a hedging contract to protect itself from ether's volatility. This contract could be provided by the Service Provider as part of a new Proposal, or by a third party added to the 'whitelist'.
+A DAO could enter into a hedging contract to protect itself from ether's volatility. This contract could be provided by a Contractor as part of a new Proposal.
 
 
 ### Who owns the intellectual property created as part of Proposals?
 
-This depends entirely on the terms of the Proposal from the Service Provider - and then it's up to the DAO in question to approve these terms or not. 
+This depends entirely on the terms of the Proposal from the Contractor - and then it's up to the DAO in question to approve these terms or not. 
 
 
-### How often can a DAO change Service Provider?
+### How many Contractors can a DAO have?
 
-At anytime and as often as it sees fit. 
+A DAO can hire as many Contractors as it sees fit.
 
 
-### What is the process for selecting a new Service Provider?
+### Can a DAO fire a Contractor?
 
-Changing the Service Provider takes the form of a Proposal with a special flag. Votes on changing the Service Provider take place in two steps. The first, a non-binding vote on whether the DAO would like to switch Service Provider or not. The second, a confirmation vote to give a chance to participants to confirm the result of the first vote, or a chance for the minority to ‘split’ the DAO into two and retain control over their ether.
+Of course, by simply terminating the smart contract engagement with the Contractor in question. 
+
+
+### How is the DAO protected from malicious Contractors?
+
+To guarantee the Contractors will not act against the interest of the DAO, a group of signatories validates Contractors’ Proposals then add them to the list of addresses authorized to receive ether (ETH) from the DAO. This group of signatories is collectively referred to as a Curator. 
+
+
+### How many Curators does a DAO have?
+
+A single one at any given time, although it's likely Curators will often be represented by a multisig of neutral and trusted parties. 
+
+
+### Is the DAO dependent on the Curator?
+
+No. To maintain decentralization, the Curator can be fired by the DAO at any time and for any reason.
+
+
+### What is the process for selecting a new Curator?
+
+Changing the Curator takes the form of a Proposal with a special flag. Votes on changing the Curator take place in two steps. The first, a non-binding vote on whether the DAO would like to switch Curator or not. The second, a confirmation vote to give a chance to participants to confirm the result of the first vote, or a chance for the minority to ‘split’ the DAO into two and retain control over their ether.
 
 
 ### Would DAO Token Holders still be entitled to rewards after a DAO split?
 
-Yes. If a split occurs, a new DAO is created and both DAOs would continue to operate, each with their own tokens, and each with a different Service Provider. This would be the equivalent of a large company splitting into two. The rewards for Proposals previously voted on are also split and fairly distributed between the DAOs. Of course, Proposals voted on after the split will only pay out rewards to their respective DAO.
+Yes. If a split occurs, a new DAO is created and both DAOs would continue to operate, each with their own tokens, and each with different Curator and Contractors. This would be the equivalent of a large company splitting into two. The rewards for Proposals previously voted on are also split and fairly distributed between the DAOs. Of course, Proposals voted on after the split will only pay out rewards to their respective DAO.
 
 
 ### What's a 51% attack, and how do you prevent it?
 
-In previous DAO models, if someone was to acquire 51% of a DAO's tokens, they could vote themselves as the Service Provider, and then send 100% of the ether to their own account. In order to prevent this, a DAO using our framework is able to split itself proportionally to the vote results, leaving the attacker with its ether and the rest of the participants in control of their own. Because of this mechanism renders the attack unprofitable, so there is no incentive to execute it. This originates a blog post by Vitalik Buterin on [The Subjectivity / Exploitability Tradeoff](https://blog.ethereum.org/2015/02/14/subjectivity).*
+In previous DAO models, if someone was to acquire 51% of a DAO's tokens, they could vote themselves as the Curator, and then send 100% of the ether to their own account. In order to prevent this, a DAO using our framework is able to split itself proportionally to the vote results, leaving the attacker with its ether and the rest of the participants in control of their own. Because of this mechanism renders the attack unprofitable, so there is no incentive to execute it. This originates a blog post by Vitalik Buterin on [The Subjectivity / Exploitability Tradeoff](https://blog.ethereum.org/2015/02/14/subjectivity).*
 
 
-### Why is there only a single Service Provider at any given time?
+### Why is there only a single Curator at any given time?
 
-For safety reasons. In order to prevent a 51% attack, we needed to introduce the rule that a DAO may split in case there is no mutual agreement on a selecting a Service Provider, which in turn removes any incentive to even attempt to bring about such an attack. Having room for more than a single Service Provider would negate this fail-safe. A DAO can still send ether directly to other parties, but only to parties that the Service Provider has verified and added to a whitelist of permitted payees. 
+For safety reasons. In order to prevent a 51% attack, we needed to introduce the rule that a DAO may split in case there is no mutual agreement on a selecting a Curator, which in turn removes any incentive to even attempt to bring about such an attack. Having room for more than a single Curator would negate this fail-safe. On the other hand, a DAO can of course with an unlimited number of Contractors. 
 
 
 ### Why did you choose to abstract the operational parameters of a DAO?
 
-You might wonder why the operational parameters of a DAO have been abstracted as part of a series of smart contracts between a DAO and its Service Provider. This is because a DAO will hold 100% of its ether from day one and therefore stay secure using immutable code, while at the same time needing to retain enough flexibility to hire and fire Service Providers. 
+You might wonder why the operational parameters of a DAO have been abstracted as part of a series of smart contracts between a DAO and its Contractors. This is because a DAO will hold 100% of its ether from day one and therefore stay secure using immutable code, while at the same time needing to retain enough flexibility to hire and fire both Curator and Contractors. 
 
-Using this model we are able to guarantee that the core of a DAO (the code that holds the ether) will rarely, if ever need to be updated. To keep adapting rapidly to market changes, a DAO will vote on Proposals and could even change Service Providers. This means a DAO will still be able to not only affect the operational parameters of its relationships with suppliers, but also completely change business models if desired.
+Using this model we are able to guarantee that the core of a DAO (the code that holds the ether) will rarely, if ever need to be updated. To keep adapting rapidly to market changes, a DAO will vote on Proposals and could even change Curator. This means a DAO will still be able to not only affect the operational parameters of its relationships with suppliers, but also entirely change business models if desired.
 
 
 ### I still want to learn more.
