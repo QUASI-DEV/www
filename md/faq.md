@@ -213,7 +213,7 @@ Definitely not. In order to make decisions, DAO token holders are be able to vot
 
 ### Will it be a lot of work? 
 
-The Proposals to a DAO define how much or how little control over its operational responsibilities a DAO 'outsources' to a Contractor for any given project, task or product. It can range from an "every little details left to token holders" approach with weekly votes to a "100% hands off" approach equivalent to putting a DAO's trust into the Contractor's capability to execute on the concept. A DAO's underlying code is generic enough to support both - or anything in between.
+The Proposals to a DAO define how much or how little control over its operational responsibilities a DAO 'outsources' to a Contractor for any given project, task or product. It can range from an "every little details left to token holders" approach with weekly votes to a "100% hands off" approach equivalent to putting a DAO's trust into the Contractor's capability to execute on the concept. A DAO's underlying code is flexible enough to support both - or anything in between.
 
 
 ### What can a DAO do exactly?
@@ -309,6 +309,6 @@ Using this model we are able to guarantee that the core of a DAO (the code that 
 
 ### I still want to learn more.
 
-Our [Slack chat room](http://slack.slock.it:3000/) has more than 3,500 participants discussing the generic DAO framework, we look forward to see you there!
+Our [Slack chat room](http://slack.slock.it:3000/) has more than 3,500 participants discussing the Standard DAO Framework, we look forward to see you there!
 
 
