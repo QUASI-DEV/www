@@ -2,14 +2,14 @@
 /// <reference path="../typings/node/node.d.ts" />
 var allLangs= false; 
 var langs = [
-  ['index.html'   ,'img/icon_en.png','english'], 
+  ['index.html'   ,'img/icon_en.png','english',true], 
   ['index_de.html','img/icon_de.png','german',allLangs], 
   ['index_fr.html','img/icon_fr.png','french',allLangs], 
-  ['index_ru.html','img/icon_ru.png','russian'], 
-  ['index_pl.html','img/icon_pl.png','polish'], 
+  ['index_ru.html','img/icon_ru.png','russian',false], 
+  ['index_pl.html','img/icon_pl.png','polish',false], 
   ['index_es.html','img/icon_es.png','spanish',allLangs], 
   ['index_ja.html','img/icon_ja.png','japanese',allLangs], 
-  ['index_zh.html','img/icon_zh.png','chinese'] 
+  ['index_zh.html','img/icon_zh.png','chinese',false] 
 ];
 
 var rootDir = process.argv[2] || ".";
