@@ -17,13 +17,13 @@ SetEnvIf Request_URI ^/$            toplevel
 #RewriteCond %{ENV:toplevel}         1
 #RewriteRule ^(.*)$ index_de.html
 
-RewriteCond %{HTTP:Accept-Language} ^zh.*$ [NC]
-RewriteCond %{ENV:toplevel}         1
-RewriteRule ^(.*)$ index_zh.html
+#RewriteCond %{HTTP:Accept-Language} ^zh.*$ [NC]
+#RewriteCond %{ENV:toplevel}         1
+#RewriteRule ^(.*)$ index_zh.html
 
-RewriteCond %{HTTP:Accept-Language} ^pl.*$ [NC]
-RewriteCond %{ENV:toplevel}         1
-RewriteRule ^(.*)$ index_pl.html
+#RewriteCond %{HTTP:Accept-Language} ^pl.*$ [NC]
+#RewriteCond %{ENV:toplevel}         1
+#RewriteRule ^(.*)$ index_pl.html
 
 #RewriteCond %{HTTP:Accept-Language} ^fr.*$ [NC]
 #RewriteCond %{ENV:toplevel}         1
