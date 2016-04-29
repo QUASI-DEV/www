@@ -155,7 +155,7 @@ To remove the contract dependencies would would means losing all the advantages 
 
 ### When will the Ethereum Computer become available to purchase?
 
-This depends on the scope of the Proposal we intend to submit to a suitable DAO. Slock.it UG will however make a small number of prototypes available to early adopters that can demonstrate a clear and active engagement in the development of related apps and have the intention and proven capability to deploy these apps on the Ethereum Computer. Applications to receive a prototype can be submitted by <a href="mailto:info@slock.it?subject=Ethereum%20Computer%20Devkit&body=Full%20name:%0ACountry:%0ACity:%0AProject%20Description:">contacting us</a>. 
+This depends on the scope of the <a href="http://download.slock.it/public/DAO/Proposal1.pdf" target="_new">Proposal</a> negotiated and chosen by the DAO. Slock.it UG will however make a small number of prototypes available to early adopters that can demonstrate a clear and active engagement in the development of related apps and have the intention and proven capability to deploy these apps on the Ethereum Computer. Applications to receive a prototype can be submitted by <a href="mailto:info@slock.it?subject=Ethereum%20Computer%20Devkit&body=Full%20name:%0ACountry:%0ACity:%0AProject%20Description:">contacting us</a>. 
 
 
 ### Will it be useful for mining?
